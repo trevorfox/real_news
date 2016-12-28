@@ -5,5 +5,4 @@
 !.elasticbeanstalk/*.global.yml
 _pychache_/*
 eb-virt/*
-archive.json
 *.pyc
