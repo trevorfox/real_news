@@ -5,11 +5,11 @@ from storage import Archive
 from forms import StoryForm
 
 # EB looks for an 'application' callable by default.
-app = Flask(__name__)
-app.config.from_object('config')
+application = Flask(__name__)
+application.config.from_object('config')
 
 # interface to create shareble story pages
-@app.route('/')
+@application.route('/')
 def index():
     ## some intro
     # a form to create stories
@@ -18,8 +18,8 @@ def index():
 
 # page that renders the fake stories
 # uses the Archive class to render the page from JSON file
-@app.route('/story', methods=['POST'])
-@app.route('/story/<story_id>', methods=['GET'])
+@application.route('/story', methods=['POST'])
+@application.route('/story/<story_id>', methods=['GET'])
 def story(story_id=None):
     form = StoryForm(request.form)
     if request.method == 'POST':
@@ -37,9 +37,9 @@ def story(story_id=None):
     else:
         return redirect(url_for('index'))
 
-# run the app.
+# run the application.
 if __name__ == "__main__":
     # Setting debug to True enables debug output. This line should be
-    # removed before deploying a production app.
-    app.debug = True
-    app.run()
+    # removed before deploying a production application.
+    application.debug = True
+    application.run()
