@@ -1,0 +1,14 @@
+<html>
+<head>
+</head>
+<body>
+  <form action={{ url_for('story') }} method="post">
+    {{ form.hidden_tag() }}
+    <div>{{ form.title(class="css_class") }}</div>
+    <div>{{ form.description() }}</div>
+    <div>{{ form.image() }}</div>
+    <div>{{ form.author() }}</div>
+    <input type=submit value="Submit Story">
+  </form>
+</body>
+</html>
