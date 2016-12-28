@@ -1,7 +1,13 @@
-<html>
-<head>
-</head>
-<body>
+{% extends "base.html" %}
+
+{% block description %}Get the best real news here!{% endblock %}
+{% block url %}{{ url_for('index') }}{% endblock %}
+{% block type %}website{% endblock %}
+{% block post_title %}Real News!{% endblock %}
+{% block post_description %}Get the best real news here!{% endblock %}
+{% block image %}asdf{% endblock %}
+
+{% block content %}
   <form action={{ url_for('story') }} method="post">
     {{ form.hidden_tag() }}
     <div>{{ form.title(class="css_class") }}</div>
@@ -10,5 +16,4 @@
     <div>{{ form.author() }}</div>
     <input type=submit value="Submit Story">
   </form>
-</body>
-</html>
+{% endblock %}

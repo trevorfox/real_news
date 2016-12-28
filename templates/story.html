@@ -1,11 +1,15 @@
-<html>
-  <head>
-    <title>{{ story.title }}</title>
-  </head>
-  <body>
-      <h1>{{ story.title }}</h1>
-      <p>{{ story.description}}</p>
-      <img src="{{ story.image }}" alt="{{story.title}}"/>
-      <p>{{ story.votes}}</p>
-  </body>
-</html>
+{% extends "base.html" %}
+
+{% block description %}{{ story.description }}{% endblock %}
+{% block url %}{{ url_for('story') + story.id }}{% endblock %}
+{% block type %}article{% endblock %}
+{% block post_title %}{{ story.title }}{% endblock %}
+{% block post_description %}{{ story.description }}{% endblock %}
+{% block image %}{{ story.image }}{% endblock %}
+
+{% block content %}
+  <h1>{{ story.title }}</h1>
+  <p>{{ story.description}}</p>
+  <img src="{{ story.image }}" alt="{{story.title}}"/>
+  <p>{{ story.votes}}</p>
+{% endblock %}
