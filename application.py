@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request, redirect, url_for
+from urllib import urlencode
 
 # import my stuff
 from storage import Archive
@@ -33,7 +34,11 @@ def story(story_id=None):
     #sid = str(request.args.get('id'))
     story_exists, story = Archive().read_story(story_id)
     if story_exists:
-        return render_template('story.html', story=story)
+        web_intent = {
+            "facebook" : urlencode({"u": request.url, "title": story['title'] }),
+            "twitter" : urlencode({"url": request.url, "text": story['title'] })
+        }
+        return render_template('story.html', story=story, web_intent=web_intent)
     else:
         return redirect(url_for('index'))
 

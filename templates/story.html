@@ -1,15 +1,58 @@
 {% extends "base.html" %}
 
+{% block title %}Real News: {{ story.title }}{% endblock %}
 {% block description %}{{ story.description }}{% endblock %}
-{% block url %}{{ url_for('story') + story.id }}{% endblock %}
+{% block url %}{{ request.url }}{% endblock %}
 {% block type %}article{% endblock %}
 {% block post_title %}{{ story.title }}{% endblock %}
 {% block post_description %}{{ story.description }}{% endblock %}
 {% block image %}{{ story.image }}{% endblock %}
+{% block style %}
+  #sharing { margin-top: 20px; }
+  #sharing a { color: white; }
+  .Facebook { background-color: #365899; }
+  .Twitter { background-color: #1DA1F2; }
+{% endblock %}
 
 {% block content %}
-  <h1>{{ story.title }}</h1>
-  <p>{{ story.description}}</p>
-  <img src="{{ story.image }}" alt="{{story.title}}"/>
-  <p>{{ story.votes}}</p>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <h1>{{ story.title }}</h1>
+        <p class="lead">{{ story.description}}</p>
+        <div class="text-center center-block">
+          <img src="{{ story.image }}" alt="{{story.title}}" class="img-responsive "/>
+        </div>
+        <div class="row">
+          <div class="col-xs-12 col-sm-3 col-sm-push-9 text-right">
+            <p class="h3 text-right">{{ story.votes}} Vote{% if story.votes != 1%}s{% endif %}</p>
+          </div>
+          <div class="col-xs-12 col-sm-pull-3 col-sm-9">
+            <div class="row" id="sharing">
+              <div class="col-xs-6 text-center">
+                <a class="btn btn-block share Twitter" href="{{ "https://twitter.com/intent/tweet?" + web_intent["twitter"] }}">Twitter</a>
+              </div>
+              <div class="col-xs-6 text-center">
+                <a class="btn btn-block share Facebook" href="{{ "http://www.facebook.com/share.php?" + web_intent["facebook"] }}">Facebook</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <hr>
+          <div class="col-xs-12">
+            <h3>Congratulations, you found some fake news!</h3>
+            <p class="lead"><em>{{story.title}}</em> is a fake news story
+              {% if story.author is defined %}
+                  created by <em>{{story.author}}</em>
+              {% else %}.
+              {% endif %}
+              </p>
+            <p class="lead">Can you do better? <a href="{{ url_for('index') }}"><b>Create your own!</b></a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 {% endblock %}

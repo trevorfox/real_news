@@ -1,21 +1,33 @@
 <html>
   <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <!-- <title>{% block title %}{% endblock %}</title> -->
+    <style>
+    .navbar { background-color: rgba(49, 112, 143, 0.2)}
+    .navbar-brand { padding-right: 5px;}
+    .navbar-text { margin-left: 0px;}
+    {% block style %}
+    {% endblock %}
+    </style>
+    <title>{% block title %}{% endblock %} | Real News</title>
     <meta name="description" content="{% block description %}{% endblock %}">
     <meta property="og:url" content="{% block url %}{% endblock %}" />
     <meta property="og:type" content="{% block type %}{% endblock %}" />
     <meta property="og:title" content="{% block post_title %}{% endblock %}" />
     <meta property="og:description" content="{% block post_description %}{% endblock %}" />
     <meta property="og:image" content="{% block image %}{% endblock %}" />
+    <link rel="icon" href="{{url_for('static', filename='globe-report-news.png')}}">
   </head>
   <body>
+    <nav class="navbar navbar-light">
+      <a class="navbar-brand" href="/">Real News |</a><span class="navbar-text">You can share it. They might believe it.</span>
+    </nav>
     <div class="container">
-      <div>Real News: <a href="/">Home</a></div>
-      <hr>
       {% block content %}{% endblock %}
     </div>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   </body>
 </html>

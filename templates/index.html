@@ -1,19 +1,38 @@
 {% extends "base.html" %}
 
+{% block title %}Real News | You can share it. They might believe it.{% endblock %}
 {% block description %}Get the best real news here!{% endblock %}
-{% block url %}{{ url_for('index') }}{% endblock %}
+{% block url %}{{ url }}{% endblock %}
 {% block type %}website{% endblock %}
 {% block post_title %}Real News!{% endblock %}
 {% block post_description %}Get the best real news here!{% endblock %}
 {% block image %}asdf{% endblock %}
 
 {% block content %}
+<div class="col-xs-12 col-md-9">
+  <h1>Real News</h1>
+  <p class="lead">An experiment to observe the effects of the proliferation of fake news in social media.</p>
+  <p>Create a fake news story and watch how many of your followers click on your link.</p>
+  <br>
   <form action={{ url_for('story') }} method="post">
     {{ form.hidden_tag() }}
-    <div>{{ form.title(class="css_class") }}</div>
-    <div>{{ form.description() }}</div>
-    <div>{{ form.image() }}</div>
-    <div>{{ form.author() }}</div>
-    <input type=submit value="Submit Story">
+    <div class="form-group row">
+      <label class="col-xs-6 col-sm-3 col-form-label" for="title">Story Title *</label>
+      {{ form.title(placeholder="Mouth Breathing Causes Heart Attacks", class_="col-xs-12 col-sm-9 form-control", required="true") }}
+    </div>
+    <div class="form-group row">
+      <label class="col-xs-6 col-sm-3 col-form-label">Story Description *</label>
+      {{ form.description(placeholder="Up to 200 characters", class_="col-xs-12 col-sm-9 form-control") }}
+    </div>
+    <div class="form-group row">
+      <label class="col-xs-6 col-sm-3 col-form-label">Story Image URL *</label>
+      {{ form.image(placeholder="http://www.example.com/some-image.jpg", type="URL", class_="col-xs-12 col-sm-9 form-control") }}
+    </div>
+    <div class="form-group row">
+      <label class="col-xs-6 col-sm-3 col-form-label">Story Author</label>
+      {{ form.author(placeholder="Your name or alias", class_="col-xs-12 col-sm-9 form-control") }}
+    </div>
+    <input type=submit value="Submit Your Story" class="btn btn-primary">
   </form>
+</div>
 {% endblock %}
