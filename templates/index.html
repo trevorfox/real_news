@@ -1,17 +1,16 @@
 {% extends "base.html" %}
 
 {% block title %}Real News | You can share it. They might believe it.{% endblock %}
-{% block description %}Get the best real news here!{% endblock %}
+{% block description %}An experiment to observe the effects of fake news in social media.{% endblock %}
 {% block url %}{{ url }}{% endblock %}
 {% block type %}website{% endblock %}
-{% block post_title %}Real News!{% endblock %}
 {% block post_description %}Get the best real news here!{% endblock %}
-{% block image %}asdf{% endblock %}
+{% block image %}{{url_for('static', filename='globe-report-news.png')}}{% endblock %}
 
 {% block content %}
 <div class="col-xs-12 col-md-9">
   <h1>Real News</h1>
-  <p class="lead">An experiment to observe the effects of the proliferation of fake news in social media.</p>
+  <p class="lead">An experiment to observe the effects of fake news in social media.</p>
   <p>Create a fake news story and watch how many of your followers click on your link.</p>
   <br>
   <form action={{ url_for('story') }} method="post">
