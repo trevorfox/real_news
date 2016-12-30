@@ -50,3 +50,8 @@ class Archive:
 
     def upvote(self,story):
         story["votes"] += 1
+
+    def get_top_stories():
+        with open(self.archive_path, 'r+') as archive_file:
+            archive = json.load(archive_file)
+            
