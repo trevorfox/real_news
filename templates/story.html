@@ -45,7 +45,7 @@
             <h3>Congratulations, you found some fake news!</h3>
             <p class="lead"><em>{{story.title}}</em> is a fake news story
               {% if story.author is defined %}
-                  created by <em>{{story.author}}</em>
+                  created <em><b>by {{story.author}}</b></em>
               {% else %}.
               {% endif %}
               </p>
