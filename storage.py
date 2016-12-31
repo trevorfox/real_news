@@ -25,7 +25,7 @@ class Archive:
                 return False, {}
 
 
-    def write_story(self,story_form):
+    def write_story(self, story_form):
         # shortened timestamp string
         story_id = str(time.time()).split('.')[0][4:]
 
@@ -48,10 +48,10 @@ class Archive:
 
             return complete_story
 
-    def upvote(self,story):
+    def upvote(self, story):
         story["votes"] += 1
 
-    def get_top_stories():
+    def get_top_stories(self, num_stories):
         with open(self.archive_path, 'r+') as archive_file:
             archive = json.load(archive_file)
-            
+            return sorted(list(archive.values()), key=lambda k: k['votes'], reverse=True)[:num_stories]
