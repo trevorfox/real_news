@@ -38,9 +38,13 @@ def story(story_id=None):
             "facebook" : urlencode({"u": request.url, "title": story['title'] }),
             "twitter" : urlencode({"url": request.url, "text": story['title'] })
         }
-        return render_template('story.html', story=story, web_intent=web_intent)
+        return render_template('story.html', story=story, web_intent=web_intent, archive=Archive())
     else:
         return redirect(url_for('index'))
+
+@application.route('/list')
+def list():
+    return render_template('list.html', archive=Archive())
 
 # run the application.
 if __name__ == "__main__":

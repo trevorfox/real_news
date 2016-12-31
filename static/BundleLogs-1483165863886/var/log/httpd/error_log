@@ -1,0 +1,302 @@
+[Wed Dec 28 10:13:06.743750 2016] [suexec:notice] [pid 2811] AH01232: suEXEC mechanism enabled (wrapper: /usr/sbin/suexec)
+[Wed Dec 28 10:13:06.769886 2016] [auth_digest:notice] [pid 2811] AH01757: generating secret for digest authentication ...
+[Wed Dec 28 10:13:06.770443 2016] [lbmethod_heartbeat:notice] [pid 2811] AH02282: No slotmem from mod_heartmonitor
+[Wed Dec 28 10:13:06.770487 2016] [:warn] [pid 2811] mod_wsgi: Compiled for Python/2.7.10.
+[Wed Dec 28 10:13:06.770491 2016] [:warn] [pid 2811] mod_wsgi: Runtime using Python/2.7.12.
+[Wed Dec 28 10:13:06.772160 2016] [mpm_prefork:notice] [pid 2811] AH00163: Apache/2.4.23 (Amazon) mod_wsgi/3.5 Python/2.7.12 configured -- resuming normal operations
+[Wed Dec 28 10:13:06.772175 2016] [core:notice] [pid 2811] AH00094: Command line: '/usr/sbin/httpd -D FOREGROUND'
+[Wed Dec 28 10:13:47.713924 2016] [mpm_prefork:notice] [pid 2811] AH00169: caught SIGTERM, shutting down
+[Wed Dec 28 10:13:48.767997 2016] [suexec:notice] [pid 3126] AH01232: suEXEC mechanism enabled (wrapper: /usr/sbin/suexec)
+[Wed Dec 28 10:13:48.779577 2016] [so:warn] [pid 3126] AH01574: module wsgi_module is already loaded, skipping
+[Wed Dec 28 10:13:48.782063 2016] [auth_digest:notice] [pid 3126] AH01757: generating secret for digest authentication ...
+[Wed Dec 28 10:13:48.782696 2016] [lbmethod_heartbeat:notice] [pid 3126] AH02282: No slotmem from mod_heartmonitor
+[Wed Dec 28 10:13:48.782738 2016] [:warn] [pid 3126] mod_wsgi: Compiled for Python/2.7.10.
+[Wed Dec 28 10:13:48.782742 2016] [:warn] [pid 3126] mod_wsgi: Runtime using Python/2.7.12.
+[Wed Dec 28 10:13:48.784788 2016] [mpm_prefork:notice] [pid 3126] AH00163: Apache/2.4.23 (Amazon) mod_wsgi/3.5 Python/2.7.12 configured -- resuming normal operations
+[Wed Dec 28 10:13:48.784803 2016] [core:notice] [pid 3126] AH00094: Command line: '/usr/sbin/httpd -D FOREGROUND'
+[Wed Dec 28 10:13:51.483875 2016] [:error] [pid 3131] [remote 127.0.0.1:42815] mod_wsgi (pid=3131): Target WSGI script '/opt/python/current/app/application.py' does not contain WSGI application 'application'.
+[Wed Dec 28 10:13:52.486381 2016] [:error] [pid 3131] [remote 127.0.0.1:43071] mod_wsgi (pid=3131): Target WSGI script '/opt/python/current/app/application.py' does not contain WSGI application 'application'.
+[Wed Dec 28 10:13:53.488768 2016] [:error] [pid 3131] [remote 127.0.0.1:38719] mod_wsgi (pid=3131): Target WSGI script '/opt/python/current/app/application.py' does not contain WSGI application 'application'.
+[Wed Dec 28 10:13:54.491338 2016] [:error] [pid 3131] [remote 127.0.0.1:43071] mod_wsgi (pid=3131): Target WSGI script '/opt/python/current/app/application.py' does not contain WSGI application 'application'.
+[Wed Dec 28 10:15:37.726660 2016] [:error] [pid 3131] [remote 172.31.9.131:43071] mod_wsgi (pid=3131): Target WSGI script '/opt/python/current/app/application.py' does not contain WSGI application 'application'.
+[Wed Dec 28 10:15:38.305981 2016] [:error] [pid 3131] [remote 172.31.9.131:43071] mod_wsgi (pid=3131): Target WSGI script '/opt/python/current/app/application.py' does not contain WSGI application 'application'.
+[Wed Dec 28 10:18:52.996125 2016] [mpm_prefork:notice] [pid 3126] AH00169: caught SIGTERM, shutting down
+[Wed Dec 28 10:18:54.050648 2016] [suexec:notice] [pid 3526] AH01232: suEXEC mechanism enabled (wrapper: /usr/sbin/suexec)
+[Wed Dec 28 10:18:54.061712 2016] [so:warn] [pid 3526] AH01574: module wsgi_module is already loaded, skipping
+[Wed Dec 28 10:18:54.064032 2016] [auth_digest:notice] [pid 3526] AH01757: generating secret for digest authentication ...
+[Wed Dec 28 10:18:54.064658 2016] [lbmethod_heartbeat:notice] [pid 3526] AH02282: No slotmem from mod_heartmonitor
+[Wed Dec 28 10:18:54.064700 2016] [:warn] [pid 3526] mod_wsgi: Compiled for Python/2.7.10.
+[Wed Dec 28 10:18:54.064708 2016] [:warn] [pid 3526] mod_wsgi: Runtime using Python/2.7.12.
+[Wed Dec 28 10:18:54.066689 2016] [mpm_prefork:notice] [pid 3526] AH00163: Apache/2.4.23 (Amazon) mod_wsgi/3.5 Python/2.7.12 configured -- resuming normal operations
+[Wed Dec 28 10:18:54.066705 2016] [core:notice] [pid 3526] AH00094: Command line: '/usr/sbin/httpd -D FOREGROUND'
+[Wed Dec 28 10:18:56.762269 2016] [:error] [pid 3531] [remote 127.0.0.1:258] mod_wsgi (pid=3531): Target WSGI script '/opt/python/current/app/application.py' does not contain WSGI application 'application'.
+[Wed Dec 28 10:18:57.764751 2016] [:error] [pid 3531] [remote 127.0.0.1:258] mod_wsgi (pid=3531): Target WSGI script '/opt/python/current/app/application.py' does not contain WSGI application 'application'.
+[Wed Dec 28 10:18:58.767217 2016] [:error] [pid 3531] [remote 127.0.0.1:61441] mod_wsgi (pid=3531): Target WSGI script '/opt/python/current/app/application.py' does not contain WSGI application 'application'.
+[Wed Dec 28 10:18:59.769576 2016] [:error] [pid 3531] [remote 127.0.0.1:258] mod_wsgi (pid=3531): Target WSGI script '/opt/python/current/app/application.py' does not contain WSGI application 'application'.
+[Wed Dec 28 10:19:21.119819 2016] [:error] [pid 3531] [remote 172.31.23.199:258] mod_wsgi (pid=3531): Target WSGI script '/opt/python/current/app/application.py' does not contain WSGI application 'application'.
+[Wed Dec 28 10:19:21.490752 2016] [:error] [pid 3531] [remote 172.31.23.199:258] mod_wsgi (pid=3531): Target WSGI script '/opt/python/current/app/application.py' does not contain WSGI application 'application'.
+[Wed Dec 28 10:19:40.035852 2016] [:error] [pid 3531] [remote 172.31.23.199:258] mod_wsgi (pid=3531): Target WSGI script '/opt/python/current/app/application.py' does not contain WSGI application 'application'.
+[Wed Dec 28 10:24:44.482865 2016] [mpm_prefork:notice] [pid 3526] AH00169: caught SIGTERM, shutting down
+[Wed Dec 28 10:24:45.537124 2016] [suexec:notice] [pid 3997] AH01232: suEXEC mechanism enabled (wrapper: /usr/sbin/suexec)
+[Wed Dec 28 10:24:45.548307 2016] [so:warn] [pid 3997] AH01574: module wsgi_module is already loaded, skipping
+[Wed Dec 28 10:24:45.550765 2016] [auth_digest:notice] [pid 3997] AH01757: generating secret for digest authentication ...
+[Wed Dec 28 10:24:45.551379 2016] [lbmethod_heartbeat:notice] [pid 3997] AH02282: No slotmem from mod_heartmonitor
+[Wed Dec 28 10:24:45.551425 2016] [:warn] [pid 3997] mod_wsgi: Compiled for Python/2.7.10.
+[Wed Dec 28 10:24:45.551429 2016] [:warn] [pid 3997] mod_wsgi: Runtime using Python/2.7.12.
+[Wed Dec 28 10:24:45.553408 2016] [mpm_prefork:notice] [pid 3997] AH00163: Apache/2.4.23 (Amazon) mod_wsgi/3.5 Python/2.7.12 configured -- resuming normal operations
+[Wed Dec 28 10:24:45.553422 2016] [core:notice] [pid 3997] AH00094: Command line: '/usr/sbin/httpd -D FOREGROUND'
+[Wed Dec 28 10:24:48.247368 2016] [:error] [pid 4002] [remote 127.0.0.1:58630] mod_wsgi (pid=4002): Target WSGI script '/opt/python/current/app/application.py' does not contain WSGI application 'application'.
+[Wed Dec 28 10:24:49.248944 2016] [:error] [pid 4002] [remote 127.0.0.1:58886] mod_wsgi (pid=4002): Target WSGI script '/opt/python/current/app/application.py' does not contain WSGI application 'application'.
+[Wed Dec 28 10:24:50.251398 2016] [:error] [pid 4002] [remote 127.0.0.1:54534] mod_wsgi (pid=4002): Target WSGI script '/opt/python/current/app/application.py' does not contain WSGI application 'application'.
+[Wed Dec 28 10:24:51.253779 2016] [:error] [pid 4002] [remote 127.0.0.1:58630] mod_wsgi (pid=4002): Target WSGI script '/opt/python/current/app/application.py' does not contain WSGI application 'application'.
+[Wed Dec 28 10:25:17.775202 2016] [:error] [pid 4002] [remote 172.31.23.199:58886] mod_wsgi (pid=4002): Target WSGI script '/opt/python/current/app/application.py' does not contain WSGI application 'application'.
+[Wed Dec 28 10:25:18.631823 2016] [:error] [pid 4002] [remote 172.31.23.199:58630] mod_wsgi (pid=4002): Target WSGI script '/opt/python/current/app/application.py' does not contain WSGI application 'application'.
+[Wed Dec 28 10:26:58.849238 2016] [:error] [pid 4002] [remote 172.31.23.199:58630] mod_wsgi (pid=4002): Target WSGI script '/opt/python/current/app/application.py' does not contain WSGI application 'application'.
+[Wed Dec 28 10:27:31.237529 2016] [mpm_prefork:notice] [pid 3997] AH00169: caught SIGTERM, shutting down
+[Wed Dec 28 10:27:32.293766 2016] [suexec:notice] [pid 4341] AH01232: suEXEC mechanism enabled (wrapper: /usr/sbin/suexec)
+[Wed Dec 28 10:27:32.305084 2016] [so:warn] [pid 4341] AH01574: module wsgi_module is already loaded, skipping
+[Wed Dec 28 10:27:32.307590 2016] [auth_digest:notice] [pid 4341] AH01757: generating secret for digest authentication ...
+[Wed Dec 28 10:27:32.308231 2016] [lbmethod_heartbeat:notice] [pid 4341] AH02282: No slotmem from mod_heartmonitor
+[Wed Dec 28 10:27:32.308282 2016] [:warn] [pid 4341] mod_wsgi: Compiled for Python/2.7.10.
+[Wed Dec 28 10:27:32.308287 2016] [:warn] [pid 4341] mod_wsgi: Runtime using Python/2.7.12.
+[Wed Dec 28 10:27:32.310367 2016] [mpm_prefork:notice] [pid 4341] AH00163: Apache/2.4.23 (Amazon) mod_wsgi/3.5 Python/2.7.12 configured -- resuming normal operations
+[Wed Dec 28 10:27:32.310389 2016] [core:notice] [pid 4341] AH00094: Command line: '/usr/sbin/httpd -D FOREGROUND'
+[Wed Dec 28 10:28:50.683461 2016] [:error] [pid 4346] [remote 172.31.9.131:57849] [2016-12-28 10:28:50,682] ERROR in app: Exception on /story [POST]
+[Wed Dec 28 10:28:50.683492 2016] [:error] [pid 4346] [remote 172.31.9.131:57849] Traceback (most recent call last):
+[Wed Dec 28 10:28:50.683494 2016] [:error] [pid 4346] [remote 172.31.9.131:57849]   File "/opt/python/run/venv/lib/python2.7/site-packages/flask/app.py", line 1988, in wsgi_app
+[Wed Dec 28 10:28:50.683497 2016] [:error] [pid 4346] [remote 172.31.9.131:57849]     response = self.full_dispatch_request()
+[Wed Dec 28 10:28:50.683499 2016] [:error] [pid 4346] [remote 172.31.9.131:57849]   File "/opt/python/run/venv/lib/python2.7/site-packages/flask/app.py", line 1641, in full_dispatch_request
+[Wed Dec 28 10:28:50.683501 2016] [:error] [pid 4346] [remote 172.31.9.131:57849]     rv = self.handle_user_exception(e)
+[Wed Dec 28 10:28:50.683503 2016] [:error] [pid 4346] [remote 172.31.9.131:57849]   File "/opt/python/run/venv/lib/python2.7/site-packages/flask/app.py", line 1544, in handle_user_exception
+[Wed Dec 28 10:28:50.683505 2016] [:error] [pid 4346] [remote 172.31.9.131:57849]     reraise(exc_type, exc_value, tb)
+[Wed Dec 28 10:28:50.683507 2016] [:error] [pid 4346] [remote 172.31.9.131:57849]   File "/opt/python/run/venv/lib/python2.7/site-packages/flask/app.py", line 1639, in full_dispatch_request
+[Wed Dec 28 10:28:50.683509 2016] [:error] [pid 4346] [remote 172.31.9.131:57849]     rv = self.dispatch_request()
+[Wed Dec 28 10:28:50.683511 2016] [:error] [pid 4346] [remote 172.31.9.131:57849]   File "/opt/python/run/venv/lib/python2.7/site-packages/flask/app.py", line 1625, in dispatch_request
+[Wed Dec 28 10:28:50.683513 2016] [:error] [pid 4346] [remote 172.31.9.131:57849]     return self.view_functions[rule.endpoint](**req.view_args)
+[Wed Dec 28 10:28:50.683515 2016] [:error] [pid 4346] [remote 172.31.9.131:57849]   File "/opt/python/current/app/application.py", line 27, in story
+[Wed Dec 28 10:28:50.683517 2016] [:error] [pid 4346] [remote 172.31.9.131:57849]     story = Archive().write_story(form.data)
+[Wed Dec 28 10:28:50.683518 2016] [:error] [pid 4346] [remote 172.31.9.131:57849]   File "/opt/python/current/app/storage.py", line 32, in write_story
+[Wed Dec 28 10:28:50.683520 2016] [:error] [pid 4346] [remote 172.31.9.131:57849]     with open(self.archive_path, 'r+') as archive_file:
+[Wed Dec 28 10:28:50.683522 2016] [:error] [pid 4346] [remote 172.31.9.131:57849] IOError: [Errno 2] No such file or directory: 'archive.json'
+[Wed Dec 28 10:30:22.927894 2016] [mpm_prefork:notice] [pid 4341] AH00169: caught SIGTERM, shutting down
+[Wed Dec 28 10:30:24.030992 2016] [suexec:notice] [pid 4688] AH01232: suEXEC mechanism enabled (wrapper: /usr/sbin/suexec)
+[Wed Dec 28 10:30:24.043052 2016] [so:warn] [pid 4688] AH01574: module wsgi_module is already loaded, skipping
+[Wed Dec 28 10:30:24.045940 2016] [auth_digest:notice] [pid 4688] AH01757: generating secret for digest authentication ...
+[Wed Dec 28 10:30:24.046608 2016] [lbmethod_heartbeat:notice] [pid 4688] AH02282: No slotmem from mod_heartmonitor
+[Wed Dec 28 10:30:24.046660 2016] [:warn] [pid 4688] mod_wsgi: Compiled for Python/2.7.10.
+[Wed Dec 28 10:30:24.046664 2016] [:warn] [pid 4688] mod_wsgi: Runtime using Python/2.7.12.
+[Wed Dec 28 10:30:24.048764 2016] [mpm_prefork:notice] [pid 4688] AH00163: Apache/2.4.23 (Amazon) mod_wsgi/3.5 Python/2.7.12 configured -- resuming normal operations
+[Wed Dec 28 10:30:24.048780 2016] [core:notice] [pid 4688] AH00094: Command line: '/usr/sbin/httpd -D FOREGROUND'
+[Wed Dec 28 10:35:28.793818 2016] [:error] [pid 4693] [remote 172.31.23.199:25187] [2016-12-28 10:35:28,793] ERROR in app: Exception on /story [POST]
+[Wed Dec 28 10:35:28.793846 2016] [:error] [pid 4693] [remote 172.31.23.199:25187] Traceback (most recent call last):
+[Wed Dec 28 10:35:28.793849 2016] [:error] [pid 4693] [remote 172.31.23.199:25187]   File "/opt/python/run/venv/lib/python2.7/site-packages/flask/app.py", line 1988, in wsgi_app
+[Wed Dec 28 10:35:28.793851 2016] [:error] [pid 4693] [remote 172.31.23.199:25187]     response = self.full_dispatch_request()
+[Wed Dec 28 10:35:28.793853 2016] [:error] [pid 4693] [remote 172.31.23.199:25187]   File "/opt/python/run/venv/lib/python2.7/site-packages/flask/app.py", line 1641, in full_dispatch_request
+[Wed Dec 28 10:35:28.793855 2016] [:error] [pid 4693] [remote 172.31.23.199:25187]     rv = self.handle_user_exception(e)
+[Wed Dec 28 10:35:28.793857 2016] [:error] [pid 4693] [remote 172.31.23.199:25187]   File "/opt/python/run/venv/lib/python2.7/site-packages/flask/app.py", line 1544, in handle_user_exception
+[Wed Dec 28 10:35:28.793859 2016] [:error] [pid 4693] [remote 172.31.23.199:25187]     reraise(exc_type, exc_value, tb)
+[Wed Dec 28 10:35:28.793861 2016] [:error] [pid 4693] [remote 172.31.23.199:25187]   File "/opt/python/run/venv/lib/python2.7/site-packages/flask/app.py", line 1639, in full_dispatch_request
+[Wed Dec 28 10:35:28.793863 2016] [:error] [pid 4693] [remote 172.31.23.199:25187]     rv = self.dispatch_request()
+[Wed Dec 28 10:35:28.793865 2016] [:error] [pid 4693] [remote 172.31.23.199:25187]   File "/opt/python/run/venv/lib/python2.7/site-packages/flask/app.py", line 1625, in dispatch_request
+[Wed Dec 28 10:35:28.793866 2016] [:error] [pid 4693] [remote 172.31.23.199:25187]     return self.view_functions[rule.endpoint](**req.view_args)
+[Wed Dec 28 10:35:28.793868 2016] [:error] [pid 4693] [remote 172.31.23.199:25187]   File "/opt/python/current/app/application.py", line 27, in story
+[Wed Dec 28 10:35:28.793870 2016] [:error] [pid 4693] [remote 172.31.23.199:25187]     story = Archive().write_story(form.data)
+[Wed Dec 28 10:35:28.793871 2016] [:error] [pid 4693] [remote 172.31.23.199:25187]   File "/opt/python/current/app/storage.py", line 32, in write_story
+[Wed Dec 28 10:35:28.793873 2016] [:error] [pid 4693] [remote 172.31.23.199:25187]     with open(self.archive_path, 'r+') as archive_file:
+[Wed Dec 28 10:35:28.793875 2016] [:error] [pid 4693] [remote 172.31.23.199:25187] IOError: [Errno 2] No such file or directory: 'archive.json'
+[Wed Dec 28 10:35:32.624304 2016] [:error] [pid 4693] [remote 172.31.23.199:22883] [2016-12-28 10:35:32,624] ERROR in app: Exception on /story [POST]
+[Wed Dec 28 10:35:32.624334 2016] [:error] [pid 4693] [remote 172.31.23.199:22883] Traceback (most recent call last):
+[Wed Dec 28 10:35:32.624337 2016] [:error] [pid 4693] [remote 172.31.23.199:22883]   File "/opt/python/run/venv/lib/python2.7/site-packages/flask/app.py", line 1988, in wsgi_app
+[Wed Dec 28 10:35:32.624339 2016] [:error] [pid 4693] [remote 172.31.23.199:22883]     response = self.full_dispatch_request()
+[Wed Dec 28 10:35:32.624341 2016] [:error] [pid 4693] [remote 172.31.23.199:22883]   File "/opt/python/run/venv/lib/python2.7/site-packages/flask/app.py", line 1641, in full_dispatch_request
+[Wed Dec 28 10:35:32.624343 2016] [:error] [pid 4693] [remote 172.31.23.199:22883]     rv = self.handle_user_exception(e)
+[Wed Dec 28 10:35:32.624345 2016] [:error] [pid 4693] [remote 172.31.23.199:22883]   File "/opt/python/run/venv/lib/python2.7/site-packages/flask/app.py", line 1544, in handle_user_exception
+[Wed Dec 28 10:35:32.624347 2016] [:error] [pid 4693] [remote 172.31.23.199:22883]     reraise(exc_type, exc_value, tb)
+[Wed Dec 28 10:35:32.624361 2016] [:error] [pid 4693] [remote 172.31.23.199:22883]   File "/opt/python/run/venv/lib/python2.7/site-packages/flask/app.py", line 1639, in full_dispatch_request
+[Wed Dec 28 10:35:32.624363 2016] [:error] [pid 4693] [remote 172.31.23.199:22883]     rv = self.dispatch_request()
+[Wed Dec 28 10:35:32.624365 2016] [:error] [pid 4693] [remote 172.31.23.199:22883]   File "/opt/python/run/venv/lib/python2.7/site-packages/flask/app.py", line 1625, in dispatch_request
+[Wed Dec 28 10:35:32.624367 2016] [:error] [pid 4693] [remote 172.31.23.199:22883]     return self.view_functions[rule.endpoint](**req.view_args)
+[Wed Dec 28 10:35:32.624368 2016] [:error] [pid 4693] [remote 172.31.23.199:22883]   File "/opt/python/current/app/application.py", line 27, in story
+[Wed Dec 28 10:35:32.624370 2016] [:error] [pid 4693] [remote 172.31.23.199:22883]     story = Archive().write_story(form.data)
+[Wed Dec 28 10:35:32.624371 2016] [:error] [pid 4693] [remote 172.31.23.199:22883]   File "/opt/python/current/app/storage.py", line 32, in write_story
+[Wed Dec 28 10:35:32.624373 2016] [:error] [pid 4693] [remote 172.31.23.199:22883]     with open(self.archive_path, 'r+') as archive_file:
+[Wed Dec 28 10:35:32.624375 2016] [:error] [pid 4693] [remote 172.31.23.199:22883] IOError: [Errno 2] No such file or directory: 'archive.json'
+[Wed Dec 28 10:37:19.057910 2016] [mpm_prefork:notice] [pid 4688] AH00169: caught SIGTERM, shutting down
+[Wed Dec 28 10:37:20.162083 2016] [suexec:notice] [pid 5175] AH01232: suEXEC mechanism enabled (wrapper: /usr/sbin/suexec)
+[Wed Dec 28 10:37:20.173977 2016] [so:warn] [pid 5175] AH01574: module wsgi_module is already loaded, skipping
+[Wed Dec 28 10:37:20.176717 2016] [auth_digest:notice] [pid 5175] AH01757: generating secret for digest authentication ...
+[Wed Dec 28 10:37:20.177369 2016] [lbmethod_heartbeat:notice] [pid 5175] AH02282: No slotmem from mod_heartmonitor
+[Wed Dec 28 10:37:20.177418 2016] [:warn] [pid 5175] mod_wsgi: Compiled for Python/2.7.10.
+[Wed Dec 28 10:37:20.177426 2016] [:warn] [pid 5175] mod_wsgi: Runtime using Python/2.7.12.
+[Wed Dec 28 10:37:20.179578 2016] [mpm_prefork:notice] [pid 5175] AH00163: Apache/2.4.23 (Amazon) mod_wsgi/3.5 Python/2.7.12 configured -- resuming normal operations
+[Wed Dec 28 10:37:20.179611 2016] [core:notice] [pid 5175] AH00094: Command line: '/usr/sbin/httpd -D FOREGROUND'
+[Wed Dec 28 10:37:43.695452 2016] [:error] [pid 5180] read story
+[Wed Dec 28 10:39:01.888454 2016] [:error] [pid 5180] read story
+[Wed Dec 28 16:56:10.974991 2016] [cgi:error] [pid 5291] [client 172.31.9.131:51464] AH02811: script not found or unable to stat: /var/www/cgi-bin/php
+[Wed Dec 28 16:56:11.278808 2016] [cgi:error] [pid 5291] [client 172.31.9.131:51464] AH02811: script not found or unable to stat: /var/www/cgi-bin/php5
+[Wed Dec 28 16:56:11.584388 2016] [cgi:error] [pid 5291] [client 172.31.9.131:51464] AH02811: script not found or unable to stat: /var/www/cgi-bin/php-cgi
+[Wed Dec 28 16:56:11.889055 2016] [cgi:error] [pid 5291] [client 172.31.9.131:51464] AH02811: script not found or unable to stat: /var/www/cgi-bin/php.cgi
+[Wed Dec 28 16:56:12.193014 2016] [cgi:error] [pid 5291] [client 172.31.9.131:51464] AH02811: script not found or unable to stat: /var/www/cgi-bin/php4
+[Wed Dec 28 17:13:40.537110 2016] [cgi:error] [pid 6816] [client 172.31.23.199:38999] AH02811: script not found or unable to stat: /var/www/cgi-bin/php
+[Wed Dec 28 17:13:40.832081 2016] [cgi:error] [pid 6816] [client 172.31.23.199:38999] AH02811: script not found or unable to stat: /var/www/cgi-bin/php5
+[Wed Dec 28 17:13:41.126965 2016] [cgi:error] [pid 6816] [client 172.31.23.199:38999] AH02811: script not found or unable to stat: /var/www/cgi-bin/php-cgi
+[Wed Dec 28 17:13:41.421096 2016] [cgi:error] [pid 6816] [client 172.31.23.199:38999] AH02811: script not found or unable to stat: /var/www/cgi-bin/php.cgi
+[Wed Dec 28 17:13:41.715641 2016] [cgi:error] [pid 6816] [client 172.31.23.199:38999] AH02811: script not found or unable to stat: /var/www/cgi-bin/php4
+[Fri Dec 30 03:58:52.516476 2016] [:error] [pid 5180] read story
+[Fri Dec 30 03:59:02.285272 2016] [:error] [pid 5180] read story
+[Fri Dec 30 11:47:55.003303 2016] [mpm_prefork:notice] [pid 5175] AH00169: caught SIGTERM, shutting down
+[Fri Dec 30 11:47:56.059955 2016] [suexec:notice] [pid 23455] AH01232: suEXEC mechanism enabled (wrapper: /usr/sbin/suexec)
+[Fri Dec 30 11:47:56.072077 2016] [so:warn] [pid 23455] AH01574: module wsgi_module is already loaded, skipping
+[Fri Dec 30 11:47:56.075124 2016] [auth_digest:notice] [pid 23455] AH01757: generating secret for digest authentication ...
+[Fri Dec 30 11:47:56.075794 2016] [lbmethod_heartbeat:notice] [pid 23455] AH02282: No slotmem from mod_heartmonitor
+[Fri Dec 30 11:47:56.075844 2016] [:warn] [pid 23455] mod_wsgi: Compiled for Python/2.7.10.
+[Fri Dec 30 11:47:56.075849 2016] [:warn] [pid 23455] mod_wsgi: Runtime using Python/2.7.12.
+[Fri Dec 30 11:47:56.078381 2016] [mpm_prefork:notice] [pid 23455] AH00163: Apache/2.4.23 (Amazon) mod_wsgi/3.5 Python/2.7.12 configured -- resuming normal operations
+[Fri Dec 30 11:47:56.078397 2016] [core:notice] [pid 23455] AH00094: Command line: '/usr/sbin/httpd -D FOREGROUND'
+[Fri Dec 30 12:52:37.909252 2016] [mpm_prefork:notice] [pid 23455] AH00169: caught SIGTERM, shutting down
+[Fri Dec 30 12:52:39.008878 2016] [suexec:notice] [pid 25759] AH01232: suEXEC mechanism enabled (wrapper: /usr/sbin/suexec)
+[Fri Dec 30 12:52:39.020084 2016] [so:warn] [pid 25759] AH01574: module wsgi_module is already loaded, skipping
+[Fri Dec 30 12:52:39.022310 2016] [auth_digest:notice] [pid 25759] AH01757: generating secret for digest authentication ...
+[Fri Dec 30 12:52:39.022927 2016] [lbmethod_heartbeat:notice] [pid 25759] AH02282: No slotmem from mod_heartmonitor
+[Fri Dec 30 12:52:39.022969 2016] [:warn] [pid 25759] mod_wsgi: Compiled for Python/2.7.10.
+[Fri Dec 30 12:52:39.022973 2016] [:warn] [pid 25759] mod_wsgi: Runtime using Python/2.7.12.
+[Fri Dec 30 12:52:39.024954 2016] [mpm_prefork:notice] [pid 25759] AH00163: Apache/2.4.23 (Amazon) mod_wsgi/3.5 Python/2.7.12 configured -- resuming normal operations
+[Fri Dec 30 12:52:39.024967 2016] [core:notice] [pid 25759] AH00094: Command line: '/usr/sbin/httpd -D FOREGROUND'
+[Fri Dec 30 12:54:22.828745 2016] [:error] [pid 25764] read story
+[Fri Dec 30 12:54:34.706116 2016] [:error] [pid 25764] read story
+[Fri Dec 30 13:00:17.659907 2016] [:error] [pid 25764] read story
+[Fri Dec 30 13:02:14.430935 2016] [:error] [pid 25764] read story
+[Fri Dec 30 13:03:11.921397 2016] [mpm_prefork:notice] [pid 25759] AH00169: caught SIGTERM, shutting down
+[Fri Dec 30 13:03:12.975607 2016] [suexec:notice] [pid 26391] AH01232: suEXEC mechanism enabled (wrapper: /usr/sbin/suexec)
+[Fri Dec 30 13:03:12.987014 2016] [so:warn] [pid 26391] AH01574: module wsgi_module is already loaded, skipping
+[Fri Dec 30 13:03:12.991509 2016] [auth_digest:notice] [pid 26391] AH01757: generating secret for digest authentication ...
+[Fri Dec 30 13:03:12.992132 2016] [lbmethod_heartbeat:notice] [pid 26391] AH02282: No slotmem from mod_heartmonitor
+[Fri Dec 30 13:03:12.992178 2016] [:warn] [pid 26391] mod_wsgi: Compiled for Python/2.7.10.
+[Fri Dec 30 13:03:12.992183 2016] [:warn] [pid 26391] mod_wsgi: Runtime using Python/2.7.12.
+[Fri Dec 30 13:03:12.994317 2016] [mpm_prefork:notice] [pid 26391] AH00163: Apache/2.4.23 (Amazon) mod_wsgi/3.5 Python/2.7.12 configured -- resuming normal operations
+[Fri Dec 30 13:03:12.994335 2016] [core:notice] [pid 26391] AH00094: Command line: '/usr/sbin/httpd -D FOREGROUND'
+[Fri Dec 30 13:17:59.230253 2016] [mpm_prefork:notice] [pid 26391] AH00169: caught SIGTERM, shutting down
+[Fri Dec 30 13:18:00.338219 2016] [suexec:notice] [pid 27120] AH01232: suEXEC mechanism enabled (wrapper: /usr/sbin/suexec)
+[Fri Dec 30 13:18:00.349830 2016] [so:warn] [pid 27120] AH01574: module wsgi_module is already loaded, skipping
+[Fri Dec 30 13:18:00.352182 2016] [auth_digest:notice] [pid 27120] AH01757: generating secret for digest authentication ...
+[Fri Dec 30 13:18:00.352843 2016] [lbmethod_heartbeat:notice] [pid 27120] AH02282: No slotmem from mod_heartmonitor
+[Fri Dec 30 13:18:00.352894 2016] [:warn] [pid 27120] mod_wsgi: Compiled for Python/2.7.10.
+[Fri Dec 30 13:18:00.352897 2016] [:warn] [pid 27120] mod_wsgi: Runtime using Python/2.7.12.
+[Fri Dec 30 13:18:00.355143 2016] [mpm_prefork:notice] [pid 27120] AH00163: Apache/2.4.23 (Amazon) mod_wsgi/3.5 Python/2.7.12 configured -- resuming normal operations
+[Fri Dec 30 13:18:00.355157 2016] [core:notice] [pid 27120] AH00094: Command line: '/usr/sbin/httpd -D FOREGROUND'
+[Fri Dec 30 13:19:24.393873 2016] [mpm_prefork:notice] [pid 27120] AH00169: caught SIGTERM, shutting down
+[Fri Dec 30 13:19:25.451475 2016] [suexec:notice] [pid 27392] AH01232: suEXEC mechanism enabled (wrapper: /usr/sbin/suexec)
+[Fri Dec 30 13:19:25.463081 2016] [so:warn] [pid 27392] AH01574: module wsgi_module is already loaded, skipping
+[Fri Dec 30 13:19:25.465761 2016] [auth_digest:notice] [pid 27392] AH01757: generating secret for digest authentication ...
+[Fri Dec 30 13:19:25.466405 2016] [lbmethod_heartbeat:notice] [pid 27392] AH02282: No slotmem from mod_heartmonitor
+[Fri Dec 30 13:19:25.466450 2016] [:warn] [pid 27392] mod_wsgi: Compiled for Python/2.7.10.
+[Fri Dec 30 13:19:25.466455 2016] [:warn] [pid 27392] mod_wsgi: Runtime using Python/2.7.12.
+[Fri Dec 30 13:19:25.468588 2016] [mpm_prefork:notice] [pid 27392] AH00163: Apache/2.4.23 (Amazon) mod_wsgi/3.5 Python/2.7.12 configured -- resuming normal operations
+[Fri Dec 30 13:19:25.468604 2016] [core:notice] [pid 27392] AH00094: Command line: '/usr/sbin/httpd -D FOREGROUND'
+[Fri Dec 30 13:20:30.820593 2016] [:error] [pid 27397] read story
+[Fri Dec 30 14:06:12.707799 2016] [:error] [pid 27397] read story
+[Fri Dec 30 14:06:50.579309 2016] [:error] [pid 27397] read story
+[Fri Dec 30 14:07:11.330285 2016] [:error] [pid 27397] read story
+[Fri Dec 30 14:07:38.322096 2016] [:error] [pid 27397] read story
+[Fri Dec 30 14:07:55.342944 2016] [:error] [pid 27397] read story
+[Fri Dec 30 14:10:39.041681 2016] [:error] [pid 27397] read story
+[Fri Dec 30 14:24:44.387301 2016] [:error] [pid 27397] read story
+[Fri Dec 30 14:50:59.345427 2016] [:error] [pid 27397] read story
+[Fri Dec 30 14:56:13.870514 2016] [:error] [pid 27397] read story
+[Sat Dec 31 00:01:32.165363 2016] [:error] [pid 27397] read story
+[Sat Dec 31 00:27:36.983131 2016] [:error] [pid 27397] read story
+[Sat Dec 31 00:34:43.429560 2016] [:error] [pid 27397] read story
+[Sat Dec 31 00:35:38.935552 2016] [:error] [pid 27397] read story
+[Sat Dec 31 00:36:22.275490 2016] [:error] [pid 27397] read story
+[Sat Dec 31 00:36:24.577223 2016] [:error] [pid 27397] read story
+[Sat Dec 31 00:37:26.492803 2016] [:error] [pid 27397] read story
+[Sat Dec 31 00:37:28.364349 2016] [:error] [pid 27397] read story
+[Sat Dec 31 00:37:49.333283 2016] [:error] [pid 27397] read story
+[Sat Dec 31 00:37:59.192566 2016] [:error] [pid 27397] read story
+[Sat Dec 31 00:39:24.696012 2016] [:error] [pid 27397] read story
+[Sat Dec 31 00:39:40.598274 2016] [:error] [pid 27397] read story
+[Sat Dec 31 00:40:53.283817 2016] [:error] [pid 27397] read story
+[Sat Dec 31 00:40:55.514338 2016] [:error] [pid 27397] read story
+[Sat Dec 31 00:41:41.267854 2016] [:error] [pid 27397] read story
+[Sat Dec 31 00:44:47.097237 2016] [:error] [pid 27397] read story
+[Sat Dec 31 00:44:47.142789 2016] [:error] [pid 27397] read story
+[Sat Dec 31 00:44:48.228514 2016] [:error] [pid 27397] read story
+[Sat Dec 31 00:44:51.254438 2016] [:error] [pid 27397] read story
+[Sat Dec 31 00:45:01.645232 2016] [:error] [pid 27397] read story
+[Sat Dec 31 00:45:03.168070 2016] [:error] [pid 27397] read story
+[Sat Dec 31 00:45:12.728088 2016] [:error] [pid 27397] read story
+[Sat Dec 31 00:45:25.157368 2016] [:error] [pid 27397] read story
+[Sat Dec 31 00:45:31.163523 2016] [:error] [pid 27397] read story
+[Sat Dec 31 00:46:46.145237 2016] [:error] [pid 27397] read story
+[Sat Dec 31 00:47:07.384265 2016] [:error] [pid 27397] read story
+[Sat Dec 31 00:52:31.489419 2016] [:error] [pid 27397] read story
+[Sat Dec 31 00:55:31.059553 2016] [:error] [pid 27397] read story
+[Sat Dec 31 00:55:49.377997 2016] [:error] [pid 27397] read story
+[Sat Dec 31 01:00:21.465163 2016] [:error] [pid 27397] read story
+[Sat Dec 31 01:01:15.308381 2016] [:error] [pid 27397] read story
+[Sat Dec 31 01:01:50.570201 2016] [:error] [pid 27397] read story
+[Sat Dec 31 01:07:06.839387 2016] [:error] [pid 27397] read story
+[Sat Dec 31 01:09:56.768672 2016] [:error] [pid 27397] read story
+[Sat Dec 31 01:12:11.638199 2016] [:error] [pid 27397] read story
+[Sat Dec 31 01:13:50.969121 2016] [:error] [pid 27397] read story
+[Sat Dec 31 01:14:17.855926 2016] [:error] [pid 27397] read story
+[Sat Dec 31 01:21:08.614110 2016] [:error] [pid 27397] read story
+[Sat Dec 31 01:23:41.374310 2016] [:error] [pid 27397] read story
+[Sat Dec 31 01:24:33.083901 2016] [:error] [pid 27397] read story
+[Sat Dec 31 01:24:54.776274 2016] [:error] [pid 27397] read story
+[Sat Dec 31 01:29:32.141582 2016] [:error] [pid 27397] read story
+[Sat Dec 31 01:35:50.466785 2016] [:error] [pid 27397] read story
+[Sat Dec 31 01:41:13.223665 2016] [:error] [pid 27397] read story
+[Sat Dec 31 01:44:14.497611 2016] [:error] [pid 27397] read story
+[Sat Dec 31 01:46:21.999170 2016] [:error] [pid 27397] read story
+[Sat Dec 31 01:52:45.268192 2016] [:error] [pid 27397] read story
+[Sat Dec 31 02:01:59.183900 2016] [:error] [pid 27397] read story
+[Sat Dec 31 02:02:06.707454 2016] [:error] [pid 27397] read story
+[Sat Dec 31 02:02:17.847230 2016] [:error] [pid 27397] read story
+[Sat Dec 31 02:14:09.585089 2016] [:error] [pid 27397] read story
+[Sat Dec 31 02:14:55.299354 2016] [:error] [pid 27397] read story
+[Sat Dec 31 02:16:58.349857 2016] [:error] [pid 27397] read story
+[Sat Dec 31 02:21:14.733552 2016] [:error] [pid 27397] read story
+[Sat Dec 31 02:28:23.731596 2016] [:error] [pid 27397] read story
+[Sat Dec 31 02:32:49.483552 2016] [:error] [pid 27397] read story
+[Sat Dec 31 02:37:26.817988 2016] [:error] [pid 27397] read story
+[Sat Dec 31 02:39:30.084164 2016] [:error] [pid 27397] read story
+[Sat Dec 31 02:44:24.352596 2016] [:error] [pid 27397] read story
+[Sat Dec 31 02:48:49.714037 2016] [:error] [pid 27397] read story
+[Sat Dec 31 03:00:47.441174 2016] [:error] [pid 27397] read story
+[Sat Dec 31 03:33:07.168943 2016] [:error] [pid 27397] read story
+[Sat Dec 31 03:48:32.547346 2016] [:error] [pid 27397] read story
+[Sat Dec 31 04:32:55.599567 2016] [:error] [pid 27397] read story
+[Sat Dec 31 04:33:38.552956 2016] [:error] [pid 27397] read story
+[Sat Dec 31 04:35:33.786590 2016] [:error] [pid 27397] read story
+[Sat Dec 31 04:47:40.480047 2016] [:error] [pid 27397] read story
+[Sat Dec 31 04:47:41.684302 2016] [:error] [pid 27397] read story
+[Sat Dec 31 04:47:51.367382 2016] [:error] [pid 27397] read story
+[Sat Dec 31 04:48:00.019402 2016] [:error] [pid 27397] read story
+[Sat Dec 31 04:48:07.452998 2016] [:error] [pid 27397] read story
+[Sat Dec 31 04:48:15.354745 2016] [:error] [pid 27397] read story
+[Sat Dec 31 04:48:16.861537 2016] [:error] [pid 27397] read story
+[Sat Dec 31 04:48:22.954681 2016] [:error] [pid 27397] read story
+[Sat Dec 31 04:48:24.860488 2016] [:error] [pid 27397] read story
+[Sat Dec 31 04:51:11.016070 2016] [:error] [pid 27397] read story
+[Sat Dec 31 04:51:29.342908 2016] [:error] [pid 27397] read story
+[Sat Dec 31 04:53:36.214309 2016] [:error] [pid 27397] read story
+[Sat Dec 31 04:55:06.170598 2016] [:error] [pid 27397] read story
+[Sat Dec 31 04:55:10.914827 2016] [:error] [pid 27397] read story
+[Sat Dec 31 04:58:01.876673 2016] [:error] [pid 27397] read story
+[Sat Dec 31 05:05:21.877905 2016] [:error] [pid 27397] read story
+[Sat Dec 31 05:05:46.881677 2016] [:error] [pid 27397] read story
+[Sat Dec 31 05:08:20.844730 2016] [:error] [pid 27397] read story
+[Sat Dec 31 05:09:13.130531 2016] [:error] [pid 27397] read story
+[Sat Dec 31 05:09:25.664733 2016] [:error] [pid 27397] read story
+[Sat Dec 31 05:09:47.357832 2016] [:error] [pid 27397] read story
+[Sat Dec 31 05:15:50.680051 2016] [:error] [pid 27397] read story
+[Sat Dec 31 05:21:34.973184 2016] [:error] [pid 27397] read story
+[Sat Dec 31 05:23:39.445580 2016] [:error] [pid 27397] read story
+[Sat Dec 31 05:24:42.064156 2016] [:error] [pid 27397] read story
+[Sat Dec 31 05:45:07.577273 2016] [:error] [pid 27397] read story
+[Sat Dec 31 05:52:56.578905 2016] [:error] [pid 27397] read story
+[Sat Dec 31 05:53:13.696086 2016] [:error] [pid 27397] read story
+[Sat Dec 31 06:11:05.468101 2016] [:error] [pid 27397] read story
+[Sat Dec 31 06:23:12.311404 2016] [:error] [pid 27397] read story
+[Sat Dec 31 06:25:05.739198 2016] [:error] [pid 27397] read story

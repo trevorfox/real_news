@@ -1,0 +1,134 @@
+2016-12-28 10:12:55,902 [INFO] -----------------------Starting build-----------------------
+2016-12-28 10:12:55,923 [INFO] Running configSets: _OnInstanceBoot
+2016-12-28 10:12:55,923 [INFO] Running configSet _OnInstanceBoot
+2016-12-28 10:12:55,927 [INFO] Running config AWSEBBaseConfig
+2016-12-28 10:12:55,933 [INFO] Command clearbackupfiles succeeded
+2016-12-28 10:12:55,939 [INFO] Running config AWSEBMessageOfTheDay
+2016-12-28 10:12:55,942 [INFO] Command 01clearoriginal succeeded
+2016-12-28 10:12:55,946 [INFO] Command 02createbanner succeeded
+2016-12-28 10:12:55,956 [INFO] Command 03updatebanner succeeded
+2016-12-28 10:12:55,964 [INFO] Running config AWSEBULimitConfig
+2016-12-28 10:12:55,968 [INFO] Command 00removebackup succeeded
+2016-12-28 10:12:55,973 [INFO] Running config Infra-InstallContainerHooksPkg
+2016-12-28 10:12:55,976 [INFO] Command 00mkdir succeeded
+2016-12-28 10:12:56,189 [INFO] Command 01download_container_hooks succeeded
+2016-12-28 10:12:56,222 [INFO] Command 02install_container_hooks succeeded
+2016-12-28 10:12:56,225 [INFO] Command 03cleanup succeeded
+2016-12-28 10:12:56,232 [INFO] Running config Infra-WriteLeaderTestScript
+2016-12-28 10:12:56,237 [INFO] Running config Infra-WriteTailLogsConf
+2016-12-28 10:12:56,243 [INFO] Running config Infra-WriteSystemTailLogsConf
+2016-12-28 10:12:56,248 [INFO] Running config Infra-WriteBundleLogsConf
+2016-12-28 10:12:56,253 [INFO] Running config Infra-WritePublishLogsConf
+2016-12-28 10:12:56,256 [INFO] Running config Infra-WritePublishLogsCron
+2016-12-28 10:12:56,258 [INFO] ConfigSets completed
+2016-12-28 10:12:56,262 [INFO] -----------------------Build complete-----------------------
+2016-12-28 10:13:37,025 [INFO] -----------------------Starting build-----------------------
+2016-12-28 10:13:37,042 [INFO] Running configSets: Infra-EmbeddedPreBuild
+2016-12-28 10:13:37,043 [INFO] Running configSet Infra-EmbeddedPreBuild
+2016-12-28 10:13:37,043 [INFO] ConfigSets completed
+2016-12-28 10:13:37,046 [INFO] -----------------------Build complete-----------------------
+2016-12-28 10:13:47,118 [INFO] -----------------------Starting build-----------------------
+2016-12-28 10:13:47,136 [INFO] Running configSets: Infra-EmbeddedPostBuild
+2016-12-28 10:13:47,137 [INFO] Running configSet Infra-EmbeddedPostBuild
+2016-12-28 10:13:47,137 [INFO] ConfigSets completed
+2016-12-28 10:13:47,140 [INFO] -----------------------Build complete-----------------------
+2016-12-28 10:18:49,880 [INFO] -----------------------Starting build-----------------------
+2016-12-28 10:18:49,893 [INFO] Running configSets: Infra-EmbeddedPreBuild
+2016-12-28 10:18:49,894 [INFO] Running configSet Infra-EmbeddedPreBuild
+2016-12-28 10:18:49,894 [INFO] ConfigSets completed
+2016-12-28 10:18:49,898 [INFO] -----------------------Build complete-----------------------
+2016-12-28 10:18:52,487 [INFO] -----------------------Starting build-----------------------
+2016-12-28 10:18:52,500 [INFO] Running configSets: Infra-EmbeddedPostBuild
+2016-12-28 10:18:52,501 [INFO] Running configSet Infra-EmbeddedPostBuild
+2016-12-28 10:18:52,501 [INFO] ConfigSets completed
+2016-12-28 10:18:52,504 [INFO] -----------------------Build complete-----------------------
+2016-12-28 10:24:41,344 [INFO] -----------------------Starting build-----------------------
+2016-12-28 10:24:41,357 [INFO] Running configSets: Infra-EmbeddedPreBuild
+2016-12-28 10:24:41,358 [INFO] Running configSet Infra-EmbeddedPreBuild
+2016-12-28 10:24:41,358 [INFO] ConfigSets completed
+2016-12-28 10:24:41,361 [INFO] -----------------------Build complete-----------------------
+2016-12-28 10:24:43,958 [INFO] -----------------------Starting build-----------------------
+2016-12-28 10:24:43,982 [INFO] Running configSets: Infra-EmbeddedPostBuild
+2016-12-28 10:24:43,983 [INFO] Running configSet Infra-EmbeddedPostBuild
+2016-12-28 10:24:43,983 [INFO] ConfigSets completed
+2016-12-28 10:24:43,986 [INFO] -----------------------Build complete-----------------------
+2016-12-28 10:27:28,117 [INFO] -----------------------Starting build-----------------------
+2016-12-28 10:27:28,131 [INFO] Running configSets: Infra-EmbeddedPreBuild
+2016-12-28 10:27:28,131 [INFO] Running configSet Infra-EmbeddedPreBuild
+2016-12-28 10:27:28,132 [INFO] ConfigSets completed
+2016-12-28 10:27:28,135 [INFO] -----------------------Build complete-----------------------
+2016-12-28 10:27:30,719 [INFO] -----------------------Starting build-----------------------
+2016-12-28 10:27:30,732 [INFO] Running configSets: Infra-EmbeddedPostBuild
+2016-12-28 10:27:30,732 [INFO] Running configSet Infra-EmbeddedPostBuild
+2016-12-28 10:27:30,733 [INFO] ConfigSets completed
+2016-12-28 10:27:30,735 [INFO] -----------------------Build complete-----------------------
+2016-12-28 10:30:19,645 [INFO] -----------------------Starting build-----------------------
+2016-12-28 10:30:19,670 [INFO] Running configSets: Infra-EmbeddedPreBuild
+2016-12-28 10:30:19,670 [INFO] Running configSet Infra-EmbeddedPreBuild
+2016-12-28 10:30:19,671 [INFO] ConfigSets completed
+2016-12-28 10:30:19,673 [INFO] -----------------------Build complete-----------------------
+2016-12-28 10:30:22,391 [INFO] -----------------------Starting build-----------------------
+2016-12-28 10:30:22,405 [INFO] Running configSets: Infra-EmbeddedPostBuild
+2016-12-28 10:30:22,405 [INFO] Running configSet Infra-EmbeddedPostBuild
+2016-12-28 10:30:22,406 [INFO] ConfigSets completed
+2016-12-28 10:30:22,408 [INFO] -----------------------Build complete-----------------------
+2016-12-28 10:37:15,799 [INFO] -----------------------Starting build-----------------------
+2016-12-28 10:37:15,820 [INFO] Running configSets: Infra-EmbeddedPreBuild
+2016-12-28 10:37:15,821 [INFO] Running configSet Infra-EmbeddedPreBuild
+2016-12-28 10:37:15,821 [INFO] ConfigSets completed
+2016-12-28 10:37:15,826 [INFO] -----------------------Build complete-----------------------
+2016-12-28 10:37:18,510 [INFO] -----------------------Starting build-----------------------
+2016-12-28 10:37:18,530 [INFO] Running configSets: Infra-EmbeddedPostBuild
+2016-12-28 10:37:18,531 [INFO] Running configSet Infra-EmbeddedPostBuild
+2016-12-28 10:37:18,531 [INFO] ConfigSets completed
+2016-12-28 10:37:18,534 [INFO] -----------------------Build complete-----------------------
+2016-12-30 11:47:51,891 [INFO] -----------------------Starting build-----------------------
+2016-12-30 11:47:51,905 [INFO] Running configSets: Infra-EmbeddedPreBuild
+2016-12-30 11:47:51,905 [INFO] Running configSet Infra-EmbeddedPreBuild
+2016-12-30 11:47:51,906 [INFO] ConfigSets completed
+2016-12-30 11:47:51,909 [INFO] -----------------------Build complete-----------------------
+2016-12-30 11:47:54,488 [INFO] -----------------------Starting build-----------------------
+2016-12-30 11:47:54,502 [INFO] Running configSets: Infra-EmbeddedPostBuild
+2016-12-30 11:47:54,503 [INFO] Running configSet Infra-EmbeddedPostBuild
+2016-12-30 11:47:54,503 [INFO] ConfigSets completed
+2016-12-30 11:47:54,507 [INFO] -----------------------Build complete-----------------------
+2016-12-30 12:52:34,624 [INFO] -----------------------Starting build-----------------------
+2016-12-30 12:52:34,638 [INFO] Running configSets: Infra-EmbeddedPreBuild
+2016-12-30 12:52:34,638 [INFO] Running configSet Infra-EmbeddedPreBuild
+2016-12-30 12:52:34,638 [INFO] ConfigSets completed
+2016-12-30 12:52:34,641 [INFO] -----------------------Build complete-----------------------
+2016-12-30 12:52:37,362 [INFO] -----------------------Starting build-----------------------
+2016-12-30 12:52:37,376 [INFO] Running configSets: Infra-EmbeddedPostBuild
+2016-12-30 12:52:37,376 [INFO] Running configSet Infra-EmbeddedPostBuild
+2016-12-30 12:52:37,377 [INFO] ConfigSets completed
+2016-12-30 12:52:37,389 [INFO] -----------------------Build complete-----------------------
+2016-12-30 13:03:08,734 [INFO] -----------------------Starting build-----------------------
+2016-12-30 13:03:08,748 [INFO] Running configSets: Infra-EmbeddedPreBuild
+2016-12-30 13:03:08,749 [INFO] Running configSet Infra-EmbeddedPreBuild
+2016-12-30 13:03:08,749 [INFO] ConfigSets completed
+2016-12-30 13:03:08,752 [INFO] -----------------------Build complete-----------------------
+2016-12-30 13:03:11,404 [INFO] -----------------------Starting build-----------------------
+2016-12-30 13:03:11,417 [INFO] Running configSets: Infra-EmbeddedPostBuild
+2016-12-30 13:03:11,418 [INFO] Running configSet Infra-EmbeddedPostBuild
+2016-12-30 13:03:11,418 [INFO] ConfigSets completed
+2016-12-30 13:03:11,421 [INFO] -----------------------Build complete-----------------------
+2016-12-30 13:17:55,960 [INFO] -----------------------Starting build-----------------------
+2016-12-30 13:17:55,975 [INFO] Running configSets: Infra-EmbeddedPreBuild
+2016-12-30 13:17:55,975 [INFO] Running configSet Infra-EmbeddedPreBuild
+2016-12-30 13:17:55,976 [INFO] ConfigSets completed
+2016-12-30 13:17:55,978 [INFO] -----------------------Build complete-----------------------
+2016-12-30 13:17:58,687 [INFO] -----------------------Starting build-----------------------
+2016-12-30 13:17:58,710 [INFO] Running configSets: Infra-EmbeddedPostBuild
+2016-12-30 13:17:58,710 [INFO] Running configSet Infra-EmbeddedPostBuild
+2016-12-30 13:17:58,711 [INFO] ConfigSets completed
+2016-12-30 13:17:58,713 [INFO] -----------------------Build complete-----------------------
+2016-12-30 13:19:21,135 [INFO] -----------------------Starting build-----------------------
+2016-12-30 13:19:21,158 [INFO] Running configSets: Infra-EmbeddedPreBuild
+2016-12-30 13:19:21,158 [INFO] Running configSet Infra-EmbeddedPreBuild
+2016-12-30 13:19:21,159 [INFO] ConfigSets completed
+2016-12-30 13:19:21,161 [INFO] -----------------------Build complete-----------------------
+2016-12-30 13:19:23,868 [INFO] -----------------------Starting build-----------------------
+2016-12-30 13:19:23,881 [INFO] Running configSets: Infra-EmbeddedPostBuild
+2016-12-30 13:19:23,882 [INFO] Running configSet Infra-EmbeddedPostBuild
+2016-12-30 13:19:23,882 [INFO] ConfigSets completed
+2016-12-30 13:19:23,885 [INFO] -----------------------Build complete-----------------------

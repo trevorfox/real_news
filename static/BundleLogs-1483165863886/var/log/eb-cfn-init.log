@@ -1,0 +1,247 @@
+[2016-12-28T10:12:47Z] Started EB User Data
++ SLEEP_TIME=10
++ SLEEP_TIME_MAX=3600
++ true
++ curl https://s3-us-west-2.amazonaws.com/elasticbeanstalk-env-resources-us-west-2/stalks/eb_python_4.0.1.57.3/lib/UserDataScript.sh
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:01 --:--:--     0100 12245  100 12245    0     0   6156      0  0:00:01  0:00:01 --:--:--  6156
++ RESULT=0
++ [[ 0 -ne 0 ]]
++ /bin/bash /tmp/ebbootstrap.sh https://s3-us-west-2.amazonaws.com/elasticbeanstalk-env-resources-us-west-2/stalks/eb_python_4.0.1.57.3/lib/aws-elasticbeanstalk-tools-1.19-1.noarch.rpm 'https://s3-us-west-2.amazonaws.com/elasticbeanstalk-env-resources-us-west-2/stalks/eb_python_4.0.1.57.3/lib/awseb-ruby-2.2.4-x86_64-20160503_1008.tar.gz https://s3-us-west-2.amazonaws.com/elasticbeanstalk-env-resources-us-west-2/stalks/eb_python_4.0.1.57.3/lib/basehooks.tar.gz' 'https://s3-us-west-2.amazonaws.com/elasticbeanstalk-env-resources-us-west-2/stalks/eb_python_4.0.1.57.3/lib/beanstalk-core-2.6.gem https://s3-us-west-2.amazonaws.com/elasticbeanstalk-env-resources-us-west-2/stalks/eb_python_4.0.1.57.3/lib/beanstalk-core-healthd-1.1.gem https://s3-us-west-2.amazonaws.com/elasticbeanstalk-env-resources-us-west-2/stalks/eb_python_4.0.1.57.3/lib/executor-1.1.gem' 'https://cloudformation-waitcondition-us-west-2.s3-us-west-2.amazonaws.com/arn%3Aaws%3Acloudformation%3Aus-west-2%3A341826891138%3Astack/awseb-e-rzpyvmyjqg-stack/f58a56c0-cce5-11e6-9d62-500c33711099/AWSEBInstanceLaunchWaitHandle?AWSAccessKeyId=AKIAIY5RM4DUXMU25KNA&Expires=1483006276&Signature=U9v48SK%2FAEZq1VQ5jNjuyD3PbsU%3D' arn:aws:cloudformation:us-west-2:341826891138:stack/awseb-e-rzpyvmyjqg-stack/f58a56c0-cce5-11e6-9d62-500c33711099 us-west-2 054252057bce f0e1a146-7b70-47a9-a00f-cf39fdea57db '' httpd ''
+[2016-12-28T10:12:49.960Z] Started EB Bootstrapping Script.
+[2016-12-28T10:12:49.967Z] Received parameters:
+ RPMS = https://s3-us-west-2.amazonaws.com/elasticbeanstalk-env-resources-us-west-2/stalks/eb_python_4.0.1.57.3/lib/aws-elasticbeanstalk-tools-1.19-1.noarch.rpm
+ TARBALLS = https://s3-us-west-2.amazonaws.com/elasticbeanstalk-env-resources-us-west-2/stalks/eb_python_4.0.1.57.3/lib/awseb-ruby-2.2.4-x86_64-20160503_1008.tar.gz https://s3-us-west-2.amazonaws.com/elasticbeanstalk-env-resources-us-west-2/stalks/eb_python_4.0.1.57.3/lib/basehooks.tar.gz
+ EB_GEMS = https://s3-us-west-2.amazonaws.com/elasticbeanstalk-env-resources-us-west-2/stalks/eb_python_4.0.1.57.3/lib/beanstalk-core-2.6.gem https://s3-us-west-2.amazonaws.com/elasticbeanstalk-env-resources-us-west-2/stalks/eb_python_4.0.1.57.3/lib/beanstalk-core-healthd-1.1.gem https://s3-us-west-2.amazonaws.com/elasticbeanstalk-env-resources-us-west-2/stalks/eb_python_4.0.1.57.3/lib/executor-1.1.gem
+ SIGNAL_URL = https://cloudformation-waitcondition-us-west-2.s3-us-west-2.amazonaws.com/arn%3Aaws%3Acloudformation%3Aus-west-2%3A341826891138%3Astack/awseb-e-rzpyvmyjqg-stack/f58a56c0-cce5-11e6-9d62-500c33711099/AWSEBInstanceLaunchWaitHandle?AWSAccessKeyId=AKIAIY5RM4DUXMU25KNA&Expires=1483006276&Signature=U9v48SK%2FAEZq1VQ5jNjuyD3PbsU%3D
+ STACK_ID = arn:aws:cloudformation:us-west-2:341826891138:stack/awseb-e-rzpyvmyjqg-stack/f58a56c0-cce5-11e6-9d62-500c33711099
+ REGION = us-west-2
+ GUID = 054252057bce
+ HEALTHD_GROUP_ID = f0e1a146-7b70-47a9-a00f-cf39fdea57db
+ HEALTHD_ENDPOINT = 
+ PROXY_SERVER = httpd
+ HEALTHD_PROXY_LOG_LOCATION =
+[2016-12-28T10:12:50.003Z] Synchronizing network time in background.
+[2016-12-28T10:12:50.024Z] yum repo has already been locked to 054252057bce.
+[2016-12-28T10:12:50.026Z] yum update has already been done.
+[2016-12-28T10:12:50.150Z] Completed creating AWS EB users and groups.
+[2016-12-28T10:12:50.154Z] Started executing install_rpms https://s3-us-west-2.amazonaws.com/elasticbeanstalk-env-resources-us-west-2/stalks/eb_python_4.0.1.57.3/lib/aws-elasticbeanstalk-tools-1.19-1.noarch.rpm.
+[2016-12-28T10:12:50.161Z] Installing RPM: https://s3-us-west-2.amazonaws.com/elasticbeanstalk-env-resources-us-west-2/stalks/eb_python_4.0.1.57.3/lib/aws-elasticbeanstalk-tools-1.19-1.noarch.rpm.
+[2016-12-28T10:12:51.336Z] aws-elasticbeanstalk-tools-1.19-1.noarch has already been installed. Skip installing.
+[2016-12-28T10:12:51.341Z] Command Returned: 
+[2016-12-28T10:12:51.345Z] Completed executing install_rpms.
+[2016-12-28T10:12:51.348Z] Started executing install_tarballs https://s3-us-west-2.amazonaws.com/elasticbeanstalk-env-resources-us-west-2/stalks/eb_python_4.0.1.57.3/lib/awseb-ruby-2.2.4-x86_64-20160503_1008.tar.gz https://s3-us-west-2.amazonaws.com/elasticbeanstalk-env-resources-us-west-2/stalks/eb_python_4.0.1.57.3/lib/basehooks.tar.gz.
+[2016-12-28T10:12:51.359Z] Installing tarball: https://s3-us-west-2.amazonaws.com/elasticbeanstalk-env-resources-us-west-2/stalks/eb_python_4.0.1.57.3/lib/awseb-ruby-2.2.4-x86_64-20160503_1008.tar.gz.
+[2016-12-28T10:12:51.365Z] awseb-ruby-2.2.4-x86_64-20160503_1008.tar.gz has already been installed. Skip installing.
+[2016-12-28T10:12:51.371Z] Installing tarball: https://s3-us-west-2.amazonaws.com/elasticbeanstalk-env-resources-us-west-2/stalks/eb_python_4.0.1.57.3/lib/basehooks.tar.gz.
+[2016-12-28T10:12:51.635Z] Command Returned: 
+
+2016-12-28 10:12:51 URL:https://s3-us-west-2.amazonaws.com/elasticbeanstalk-env-resources-us-west-2/stalks/eb_python_4.0.1.57.3/lib/basehooks.tar.gz [5760/5760] -> "/tmp/basehooks.tar.gz" [1]
+[2016-12-28T10:12:51.646Z] Completed executing install_tarballs.
+[2016-12-28T10:12:51.650Z] Started executing install_eb_gems https://s3-us-west-2.amazonaws.com/elasticbeanstalk-env-resources-us-west-2/stalks/eb_python_4.0.1.57.3/lib/beanstalk-core-2.6.gem https://s3-us-west-2.amazonaws.com/elasticbeanstalk-env-resources-us-west-2/stalks/eb_python_4.0.1.57.3/lib/beanstalk-core-healthd-1.1.gem https://s3-us-west-2.amazonaws.com/elasticbeanstalk-env-resources-us-west-2/stalks/eb_python_4.0.1.57.3/lib/executor-1.1.gem.
+[2016-12-28T10:12:51.668Z] Installing EB Gem: https://s3-us-west-2.amazonaws.com/elasticbeanstalk-env-resources-us-west-2/stalks/eb_python_4.0.1.57.3/lib/beanstalk-core-2.6.gem.
+[2016-12-28T10:12:54.840Z] beanstalk-core-2.6 has already been installed. Skip installing.
+[2016-12-28T10:12:54.845Z] Installing EB Gem: https://s3-us-west-2.amazonaws.com/elasticbeanstalk-env-resources-us-west-2/stalks/eb_python_4.0.1.57.3/lib/beanstalk-core-healthd-1.1.gem.
+[2016-12-28T10:12:55.008Z] beanstalk-core-healthd-1.1 has already been installed. Skip installing.
+[2016-12-28T10:12:55.013Z] Installing EB Gem: https://s3-us-west-2.amazonaws.com/elasticbeanstalk-env-resources-us-west-2/stalks/eb_python_4.0.1.57.3/lib/executor-1.1.gem.
+[2016-12-28T10:12:55.177Z] executor-1.1 has already been installed. Skip installing.
+[2016-12-28T10:12:55.187Z] Command Returned: 
+[2016-12-28T10:12:55.190Z] Completed executing install_eb_gems.
+[2016-12-28T10:12:55.194Z] Starting healthd
+initctl: Unknown instance: 
+healthd start/running, process 2601
+[2016-12-28T10:12:55.402Z] First init of instance.
+[2016-12-28T10:12:55.410Z] Started executing cfn_init _OnInstanceBoot first_init.
+[2016-12-28T10:12:55.422Z] Running cfn-init ConfigSet: _OnInstanceBoot.
+[2016-12-28T10:12:56.274Z] Command Returned: 
+[2016-12-28T10:12:56.278Z] Completed executing cfn_init.
+[2016-12-28T10:12:56.375Z] Check whether controlled by launch workflow...
+[2016-12-28T10:12:56.840Z] Worflow running.
+[2016-12-28T10:12:56.844Z] Workflow controlled instance. Running container provisioning...
+[2016-12-28T10:12:56.849Z] Started executing start_cfn_hup.
+[2016-12-28T10:12:56.853Z] Starting cfn-hup.
+[2016-12-28T10:12:56.861Z] Command Returned: cfn-hup start/running, process 2680
+[2016-12-28T10:12:56.873Z] Completed executing start_cfn_hup.
+[2016-12-28T10:12:56.882Z] Started executing run_eb_command { "api_version" : "1.0", "request_id": "0", "command_name": "CMD-PreInit" } .
+[2016-12-28T10:12:56.891Z] Running EB Command: { "api_version" : "1.0", "request_id": "0", "command_name": "CMD-PreInit" } .
+28 Dec 10:12:59 ntpdate[2516]: adjust time server 198.60.22.240 offset 0.003458 sec
+[2016-12-28T10:13:09.479Z] Command Returned: {"status":"SUCCESS","api_version":"1.0","results":[{"status":"SUCCESS","msg":"","returncode":0,"events":[]}]}
+[2016-12-28T10:13:09.489Z] Completed executing run_eb_command.
+[2016-12-28T10:13:09.494Z] Successfully bootstrapped instance.
+[2016-12-28T10:13:09.589Z] Sending signal 0 to CFN wait condition https://cloudformation-waitcondition-us-west-2.s3-us-west-2.amazonaws.com/arn%3Aaws%3Acloudformation%3Aus-west-2%3A341826891138%3Astack/awseb-e-rzpyvmyjqg-stack/f58a56c0-cce5-11e6-9d62-500c33711099/AWSEBInstanceLaunchWaitHandle?AWSAccessKeyId=AKIAIY5RM4DUXMU25KNA&Expires=1483006276&Signature=U9v48SK%2FAEZq1VQ5jNjuyD3PbsU%3D
+CloudFormation signaled successfully with SUCCESS.
+[2016-12-28T10:13:09.804Z] Tailing /var/log/eb-commandprocessor.log
+
+******************* eb-commandprocessor taillog *******************
+[2016-12-28T10:12:57.169Z] DEBUG [2690]  : Reading config file: /etc/elasticbeanstalk/.aws-eb-stack.properties
+[2016-12-28T10:12:57.169Z] DEBUG [2690]  : Checking if the command processor should execute...
+[2016-12-28T10:12:57.171Z] DEBUG [2690]  : Checking whether the command is applicable to instance (i-0132531ca8714bc80)..
+[2016-12-28T10:12:57.171Z] INFO  [2690]  : Command is applicable to this instance (i-0132531ca8714bc80)..
+[2016-12-28T10:12:57.171Z] DEBUG [2690]  : Checking if the received command stage is valid..
+[2016-12-28T10:12:57.171Z] INFO  [2690]  : No stage_num in command. Valid stage..
+[2016-12-28T10:12:57.171Z] INFO  [2690]  : Received command CMD-PreInit: 
+{
+  "api_version" : "1.0",
+  "request_id": "0",
+  "command_name": "CMD-PreInit"
+}
+
+[2016-12-28T10:12:57.171Z] INFO  [2690]  : Command processor should execute command.
+[2016-12-28T10:12:57.171Z] DEBUG [2690]  : Storing current stage..
+[2016-12-28T10:12:57.171Z] DEBUG [2690]  : Stage_num does not exist. Not saving null stage. Returning..
+[2016-12-28T10:12:57.171Z] DEBUG [2690]  : Reading config file: /etc/elasticbeanstalk/.aws-eb-stack.properties
+[2016-12-28T10:12:57.171Z] DEBUG [2690]  : Retrieving metadata for key: AWS::ElasticBeanstalk::Ext||_ContainerConfigFileContent||commands..
+[2016-12-28T10:12:57.172Z] DEBUG [2690]  : Retrieving metadata for key: AWS::ElasticBeanstalk::Ext||_API||_Commands..
+[2016-12-28T10:12:57.172Z] INFO  [2690]  : Found enabled addons: ["logpublish", "logstreaming"].
+[2016-12-28T10:12:57.176Z] INFO  [2690]  : Updating Command definition of addon logpublish.
+[2016-12-28T10:12:57.176Z] INFO  [2690]  : Updating Command definition of addon logstreaming.
+[2016-12-28T10:12:57.176Z] DEBUG [2690]  : Refreshing metadata...
+[2016-12-28T10:12:57.176Z] DEBUG [2690]  : Using cached environment metadata.
+[2016-12-28T10:12:57.176Z] DEBUG [2690]  : Retrieving metadata for key: AWS::ElasticBeanstalk::Ext||_ContainerConfigFileContent||commands..
+[2016-12-28T10:12:57.177Z] DEBUG [2690]  : Retrieving metadata for key: AWS::ElasticBeanstalk::Ext||_API||_Commands..
+[2016-12-28T10:12:57.177Z] INFO  [2690]  : Found enabled addons: ["logpublish", "logstreaming"].
+[2016-12-28T10:12:57.178Z] INFO  [2690]  : Updating Command definition of addon logpublish.
+[2016-12-28T10:12:57.178Z] INFO  [2690]  : Updating Command definition of addon logstreaming.
+[2016-12-28T10:12:57.178Z] DEBUG [2690]  : Retrieving metadata for key: AWS::CloudFormation::Init||Infra-WriteApplication2||files..
+[2016-12-28T10:12:57.179Z] DEBUG [2690]  : Retrieving metadata for key: AWS::ElasticBeanstalk::Ext||ManifestFileS3Key..
+[2016-12-28T10:12:57.318Z] INFO  [2690]  : Finding latest manifest from bucket 'elasticbeanstalk-us-west-2-341826891138' with prefix 'resources/environments/e-rzpyvmyjqg/_runtime/versions/manifest_'.
+[2016-12-28T10:12:57.521Z] INFO  [2690]  : Found manifest with key 'resources/environments/e-rzpyvmyjqg/_runtime/versions/manifest_1482919871374'.
+[2016-12-28T10:12:57.530Z] INFO  [2690]  : Updated manifest cache: deployment ID 1 and serial 1.
+[2016-12-28T10:12:57.530Z] DEBUG [2690]  : Loaded definition of Command CMD-PreInit.
+[2016-12-28T10:12:57.530Z] INFO  [2690]  : Executing Initialization
+[2016-12-28T10:12:57.531Z] INFO  [2690]  : Executing command: CMD-PreInit...
+[2016-12-28T10:12:57.531Z] INFO  [2690]  : Executing command CMD-PreInit activities...
+[2016-12-28T10:12:57.531Z] DEBUG [2690]  : Setting environment variables..
+[2016-12-28T10:12:57.531Z] INFO  [2690]  : Running AddonsBefore for command CMD-PreInit...
+[2016-12-28T10:12:57.531Z] DEBUG [2690]  : Running stages of Command CMD-PreInit from stage 0 to stage 0...
+[2016-12-28T10:12:57.531Z] INFO  [2690]  : Running stage 0 of command CMD-PreInit...
+[2016-12-28T10:12:57.531Z] DEBUG [2690]  : Loaded 3 actions for stage 0.
+[2016-12-28T10:12:57.531Z] INFO  [2690]  : Running 1 of 3 actions: InfraWriteConfig...
+[2016-12-28T10:12:57.533Z] INFO  [2690]  : Running 2 of 3 actions: DownloadSourceBundle...
+[2016-12-28T10:12:57.851Z] INFO  [2690]  : Running 3 of 3 actions: PreInitHook...
+[2016-12-28T10:13:05.658Z] INFO  [2690]  : Running AddonsAfter for command CMD-PreInit...
+[2016-12-28T10:13:09.467Z] INFO  [2690]  : Command CMD-PreInit succeeded!
+[2016-12-28T10:13:09.467Z] INFO  [2690]  : Command processor returning results: 
+{"status":"SUCCESS","api_version":"1.0","results":[{"status":"SUCCESS","msg":"","returncode":0,"events":[]}]}
+******************* End of taillog *******************
+
+
+[2016-12-28T10:13:09.817Z] Tailing /var/log/eb-activity.log
+
+******************* eb-activity taillog *******************
+  
+  Dependencies Resolved
+  
+  ================================================================================
+   Package                          Arch     Version            Repository   Size
+  ================================================================================
+  Installing:
+   awslogs                          noarch   1.1.2-1.10.amzn1   amzn-main   8.8 k
+  Installing for dependencies:
+   aws-cli-plugin-cloudwatch-logs   noarch   1.3.3-1.15.amzn1   amzn-main    69 k
+  
+  Transaction Summary
+  ================================================================================
+  Install  1 Package (+1 Dependent package)
+  
+  Total download size: 78 k
+  Installed size: 240 k
+  Downloading packages:
+  --------------------------------------------------------------------------------
+  Total                                              3.5 MB/s |  78 kB  00:00     
+  Running transaction check
+  Running transaction test
+  Transaction test succeeded
+  Running transaction
+    Installing : aws-cli-plugin-cloudwatch-logs-1.3.3-1.15.amzn1.noarch       1/2 
+    Installing : awslogs-1.1.2-1.10.amzn1.noarch                              2/2 
+    Verifying  : awslogs-1.1.2-1.10.amzn1.noarch                              1/2 
+    Verifying  : aws-cli-plugin-cloudwatch-logs-1.3.3-1.15.amzn1.noarch       2/2 
+  
+  Installed:
+    awslogs.noarch 0:1.1.2-1.10.amzn1                                             
+  
+  Dependency Installed:
+    aws-cli-plugin-cloudwatch-logs.noarch 0:1.3.3-1.15.amzn1                      
+  
+  Complete!
+  + cat
+  + /opt/elasticbeanstalk/bin/log-conf -n awslogs -l/var/log/awslogs.log
+  ++ sed 's/.$//'
+  ++ curl 169.254.169.254/latest/meta-data/placement/availability-zone
+    % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                   Dload  Upload   Total   Spent    Left  Speed
+    0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100    10  100    10    0     0   6191      0 --:--:-- --:--:-- --:--:-- 10000
+  + region=us-west-2
+  + sed -i -e 's/region = us-east-1/region = us-west-2/g' /etc/awslogs/awscli.conf
+[2016-12-28T10:13:09.467Z] INFO  [2690]  - [Initialization/AddonsAfter/InstallCWLAgent] : Completed activity. Result:
+  Successfully execute hooks in directory /opt/elasticbeanstalk/addons/logstreaming/hooks/install.
+[2016-12-28T10:13:09.467Z] INFO  [2690]  - [Initialization/AddonsAfter] : Completed activity.
+[2016-12-28T10:13:09.467Z] INFO  [2690]  - [Initialization] : Completed activity. Result:
+  Initialization - Command CMD-PreInit succeeded
+******************* End of taillog *******************
+
+
+[2016-12-28T10:13:09.827Z] Tailing /var/log/eb-tools.log
+
+******************* eb-tools taillog *******************
+***eb-tools is not available yet.***
+******************* End of taillog *******************
+
+
+[2016-12-28T10:13:09.834Z] Tailing /var/log/eb-version-deployment.log
+
+******************* eb-version-deployment taillog *******************
+***eb-version-deployment is not available yet.***
+******************* End of taillog *******************
+
+
+[2016-12-28T10:13:09.839Z] Tailing /var/log/cfn-init.log
+
+******************* cfn-init taillog *******************
+2016-12-28 10:12:55,902 [INFO] -----------------------Starting build-----------------------
+2016-12-28 10:12:55,923 [INFO] Running configSets: _OnInstanceBoot
+2016-12-28 10:12:55,923 [INFO] Running configSet _OnInstanceBoot
+2016-12-28 10:12:55,927 [INFO] Running config AWSEBBaseConfig
+2016-12-28 10:12:55,933 [INFO] Command clearbackupfiles succeeded
+2016-12-28 10:12:55,939 [INFO] Running config AWSEBMessageOfTheDay
+2016-12-28 10:12:55,942 [INFO] Command 01clearoriginal succeeded
+2016-12-28 10:12:55,946 [INFO] Command 02createbanner succeeded
+2016-12-28 10:12:55,956 [INFO] Command 03updatebanner succeeded
+2016-12-28 10:12:55,964 [INFO] Running config AWSEBULimitConfig
+2016-12-28 10:12:55,968 [INFO] Command 00removebackup succeeded
+2016-12-28 10:12:55,973 [INFO] Running config Infra-InstallContainerHooksPkg
+2016-12-28 10:12:55,976 [INFO] Command 00mkdir succeeded
+2016-12-28 10:12:56,189 [INFO] Command 01download_container_hooks succeeded
+2016-12-28 10:12:56,222 [INFO] Command 02install_container_hooks succeeded
+2016-12-28 10:12:56,225 [INFO] Command 03cleanup succeeded
+2016-12-28 10:12:56,232 [INFO] Running config Infra-WriteLeaderTestScript
+2016-12-28 10:12:56,237 [INFO] Running config Infra-WriteTailLogsConf
+2016-12-28 10:12:56,243 [INFO] Running config Infra-WriteSystemTailLogsConf
+2016-12-28 10:12:56,248 [INFO] Running config Infra-WriteBundleLogsConf
+2016-12-28 10:12:56,253 [INFO] Running config Infra-WritePublishLogsConf
+2016-12-28 10:12:56,256 [INFO] Running config Infra-WritePublishLogsCron
+2016-12-28 10:12:56,258 [INFO] ConfigSets completed
+2016-12-28 10:12:56,262 [INFO] -----------------------Build complete-----------------------
+******************* End of taillog *******************
+
+
+[2016-12-28T10:13:09.847Z] Tailing /var/log/cfn-hup.log
+
+******************* cfn-hup taillog *******************
+2016-12-28 10:12:57,131 [DEBUG] CloudFormation client initialized with endpoint https://cloudformation.us-west-2.amazonaws.com
+2016-12-28 10:12:57,131 [DEBUG] SQS client initialized with endpoint https://us-west-2.queue.amazonaws.com
+2016-12-28 10:12:57,132 [DEBUG] CloudFormation client initialized with endpoint https://cloudformation.us-west-2.amazonaws.com
+2016-12-28 10:12:57,132 [DEBUG] Enabled single threading mode.
+2016-12-28 10:12:57,132 [DEBUG] Creating /var/lib/cfn-hup/data
+2016-12-28 10:12:57,138 [DEBUG] Registering listener i-0132531ca8714bc80 for stack arn:aws:cloudformation:us-west-2:341826891138:stack/awseb-e-rzpyvmyjqg-stack/f58a56c0-cce5-11e6-9d62-500c33711099
+2016-12-28 10:12:57,806 [INFO] Refreshing listener credentials
+2016-12-28 10:12:57,809 [DEBUG] Get listener credentials for listener i-0132531ca8714bc80 in stack arn:aws:cloudformation:us-west-2:341826891138:stack/awseb-e-rzpyvmyjqg-stack/f58a56c0-cce5-11e6-9d62-500c33711099
+2016-12-28 10:12:57,923 [INFO] Scheduling next credential refresh in 7200 seconds
+2016-12-28 10:12:57,929 [DEBUG] Receiving messages for queue https://us-west-2.queue.amazonaws.com/520209054035/afb59013d8ee8a7e196e8de995c8ac81dd8a985bc1374f3ca407ea51cd0f24d2
+******************* End of taillog *******************
+
+
+[2016-12-28T10:13:09.858Z] Completed EB Bootstrapping Script.
++ exit 0

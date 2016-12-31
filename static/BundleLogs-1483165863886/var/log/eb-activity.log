@@ -1,0 +1,1417 @@
+[2016-12-28T10:12:57.531Z] INFO  [2690]  - [Initialization] : Starting activity...
+[2016-12-28T10:12:57.531Z] INFO  [2690]  - [Initialization/AddonsBefore] : Starting activity...
+[2016-12-28T10:12:57.531Z] INFO  [2690]  - [Initialization/AddonsBefore] : Completed activity.
+[2016-12-28T10:12:57.531Z] INFO  [2690]  - [Initialization/PreInitStage0] : Starting activity...
+[2016-12-28T10:12:57.531Z] INFO  [2690]  - [Initialization/PreInitStage0/InfraWriteConfig] : Starting activity...
+[2016-12-28T10:12:57.533Z] INFO  [2690]  - [Initialization/PreInitStage0/InfraWriteConfig] : Completed activity. Result:
+  Recreated directory /opt/elasticbeanstalk/deploy/configuration/.
+  Generate appsource url file at /opt/elasticbeanstalk/deploy/configuration/appsourceurl.
+  Generate container config file at /opt/elasticbeanstalk/deploy/configuration/containerconfiguration.
+[2016-12-28T10:12:57.533Z] INFO  [2690]  - [Initialization/PreInitStage0/DownloadSourceBundle] : Starting activity...
+[2016-12-28T10:12:57.851Z] INFO  [2690]  - [Initialization/PreInitStage0/DownloadSourceBundle] : Completed activity. Result:
+  [2016-12-28T10:12:57.633Z] INFO  [2703]  : Application version will be saved to /opt/elasticbeanstalk/deploy/appsource.
+  [2016-12-28T10:12:57.633Z] INFO  [2703]  : Using manifest cache with deployment ID 1 and serial 1.
+  [2016-12-28T10:12:57.633Z] INFO  [2703]  : Attempting to download application source bundle to: '/opt/elasticbeanstalk/deploy/appsource/source_bundle'.
+  [2016-12-28T10:12:57.633Z] INFO  [2703]  : Using computed s3 key.
+  [2016-12-28T10:12:57.745Z] INFO  [2703]  : Downloading from bucket 'elasticbeanstalk-us-west-2-341826891138' with key 'resources/environments/e-rzpyvmyjqg/_runtime/_versions/flask-tutorial/app-869a-161228_181057' and version '' to '/opt/elasticbeanstalk/deploy/appsource/source_bundle'.
+  [2016-12-28T10:12:57.821Z] INFO  [2703]  : Size: 3855, ETag: "993e929da370136b0115e46a8302fbf9", Metadata: {"environmentid"=>"e-rzpyvmyjqg", "requestid"=>"f131d229-cce5-11e6-abf9-afc1a894005e"}.
+  [2016-12-28T10:12:57.836Z] INFO  [2703]  : Downloaded size: 3855.
+  [2016-12-28T10:12:57.836Z] INFO  [2703]  : Successfully downloaded to '/opt/elasticbeanstalk/deploy/appsource/source_bundle'.
+[2016-12-28T10:12:57.851Z] INFO  [2690]  - [Initialization/PreInitStage0/PreInitHook] : Starting activity...
+[2016-12-28T10:12:57.852Z] INFO  [2690]  - [Initialization/PreInitStage0/PreInitHook/01setuplogs.sh] : Starting activity...
+[2016-12-28T10:12:58.073Z] INFO  [2690]  - [Initialization/PreInitStage0/PreInitHook/01setuplogs.sh] : Completed activity. Result:
+  + mkdir -p /opt/elasticbeanstalk/tasks/taillogs.d /opt/elasticbeanstalk/tasks/sytemtaillogs.d /opt/elasticbeanstalk/tasks/bundlelogs.d /opt/elasticbeanstalk/tasks/publishlogs.d
+  + /opt/elasticbeanstalk/bin/log-conf -n python '-l/opt/python/log/*' -t taillogs,systemtaillogs,bundlelogs
+  + /opt/elasticbeanstalk/bin/log-conf -n python-app '-l/opt/python/log/app.out.*' -t publishlogs
+  + /opt/elasticbeanstalk/bin/log-conf -n supervisord '-l/opt/python/log/supervisord.log.*' -t publishlogs
+  + /opt/elasticbeanstalk/bin/log-conf -nhttpd '-l/var/log/httpd/*' -f /opt/elasticbeanstalk/containerfiles/beanstalkhttpd
+[2016-12-28T10:12:58.073Z] INFO  [2690]  - [Initialization/PreInitStage0/PreInitHook/02installpackages.sh] : Starting activity...
+[2016-12-28T10:12:58.160Z] INFO  [2690]  - [Initialization/PreInitStage0/PreInitHook/02installpackages.sh] : Completed activity. Result:
+  ++ /opt/elasticbeanstalk/bin/get-config container -k python_version
+  + PYTHON_VERSION=2.7
+  + is_baked python_packages
+  + [[ -f /etc/elasticbeanstalk/baking_manifest/python_packages ]]
+  + true
+  + echo python common packages have already been installed. Skipping installation.
+  python common packages have already been installed. Skipping installation.
+  + '[' 2.7 = 2.6 ']'
+  + '[' 2.7 = 2.7 ']'
+  + is_baked python27_packages
+  + [[ -f /etc/elasticbeanstalk/baking_manifest/python27_packages ]]
+  + true
+  + echo python-2.7 has already been installed. Skipping installation.
+  python-2.7 has already been installed. Skipping installation.
+  + is_baked python_libs
+  + [[ -f /etc/elasticbeanstalk/baking_manifest/python_libs ]]
+  + true
+  + echo python libs has already been installed. Skipping installation.
+  python libs has already been installed. Skipping installation.
+[2016-12-28T10:12:58.160Z] INFO  [2690]  - [Initialization/PreInitStage0/PreInitHook/03rmdefaultconfig.sh] : Starting activity...
+[2016-12-28T10:12:58.163Z] INFO  [2690]  - [Initialization/PreInitStage0/PreInitHook/03rmdefaultconfig.sh] : Completed activity. Result:
+  + [[ true == \t\r\u\e ]]
+  + rm -f /etc/httpd/conf.d/autoindex.conf /etc/httpd/conf.d/notrace.conf /etc/httpd/conf.d/README /etc/httpd/conf.d/userdir.conf /etc/httpd/conf.d/welcome.conf
+[2016-12-28T10:12:58.163Z] INFO  [2690]  - [Initialization/PreInitStage0/PreInitHook/04installconfig.py] : Starting activity...
+[2016-12-28T10:13:05.324Z] INFO  [2690]  - [Initialization/PreInitStage0/PreInitHook/04installconfig.py] : Completed activity. Result:
+  New python executable in /opt/python/run/baselinenv/bin/python2.7
+  Also creating executable in /opt/python/run/baselinenv/bin/python
+  Installing setuptools, pip...done.
+  Already using interpreter /usr/bin/python2.7
+  New python executable in /opt/python/run/venv/bin/python2.7
+  Also creating executable in /opt/python/run/venv/bin/python
+  Installing setuptools, pip...done.
+  Ignoring indexes: https://pypi.python.org/simple
+  Processing /opt/elasticbeanstalk/containerfiles/packages/pip-7.1.2-py2.py3-none-any.whl
+  Installing collected packages: pip
+    Found existing installation: pip 6.0.8
+      Uninstalling pip-6.0.8:
+        Successfully uninstalled pip-6.0.8
+  
+  Successfully installed pip-7.1.2
+  Ignoring indexes: https://pypi.python.org/simple
+  Collecting setuptools
+  Installing collected packages: setuptools
+    Found existing installation: setuptools 12.0.5
+      Uninstalling setuptools-12.0.5:
+        Successfully uninstalled setuptools-12.0.5
+  Successfully installed setuptools-18.4
+[2016-12-28T10:13:05.324Z] INFO  [2690]  - [Initialization/PreInitStage0/PreInitHook/05wsgiuser.sh] : Starting activity...
+[2016-12-28T10:13:05.450Z] INFO  [2690]  - [Initialization/PreInitStage0/PreInitHook/05wsgiuser.sh] : Completed activity. Result:
+  ++ /opt/elasticbeanstalk/bin/get-config container -k app_user
+  + APP_USER=wsgi
+  + id -u wsgi
+  id: wsgi: no such user
+  + adduser --system --user-group wsgi -s /sbin/nologin
+[2016-12-28T10:13:05.450Z] INFO  [2690]  - [Initialization/PreInitStage0/PreInitHook/06startsupervisor.sh] : Starting activity...
+[2016-12-28T10:13:05.458Z] INFO  [2690]  - [Initialization/PreInitStage0/PreInitHook/06startsupervisor.sh] : Completed activity. Result:
+  ++ pgrep supervisord
+  + '[' '!' ']'
+  + start supervisord
+  supervisord start/running, process 2789
+[2016-12-28T10:13:05.458Z] INFO  [2690]  - [Initialization/PreInitStage0/PreInitHook/07updatepermissions.sh] : Starting activity...
+[2016-12-28T10:13:05.655Z] INFO  [2690]  - [Initialization/PreInitStage0/PreInitHook/07updatepermissions.sh] : Completed activity. Result:
+  ++ /opt/elasticbeanstalk/bin/get-config container -k app_user
+  + APP_USER=wsgi
+  + chgrp wsgi /opt/python/log
+  + chmod 775 /opt/python/log
+  + chmod -R 755 /var/log
+[2016-12-28T10:13:05.656Z] INFO  [2690]  - [Initialization/PreInitStage0/PreInitHook/99cleanup.sh] : Starting activity...
+[2016-12-28T10:13:05.658Z] INFO  [2690]  - [Initialization/PreInitStage0/PreInitHook/99cleanup.sh] : Completed activity. Result:
+  + rm -f /etc/logrotate.d/httpd
+[2016-12-28T10:13:05.658Z] INFO  [2690]  - [Initialization/PreInitStage0/PreInitHook] : Completed activity. Result:
+  Successfully execute hooks in directory /opt/elasticbeanstalk/hooks/preinit.
+[2016-12-28T10:13:05.658Z] INFO  [2690]  - [Initialization/PreInitStage0] : Completed activity. Result:
+  Initialization - Command CMD-PreInit stage 0 completed
+[2016-12-28T10:13:05.658Z] INFO  [2690]  - [Initialization/AddonsAfter] : Starting activity...
+[2016-12-28T10:13:05.659Z] INFO  [2690]  - [Initialization/AddonsAfter/InstallCWLAgent] : Starting activity...
+[2016-12-28T10:13:05.659Z] INFO  [2690]  - [Initialization/AddonsAfter/InstallCWLAgent/01-install-cwl-agent.sh] : Starting activity...
+[2016-12-28T10:13:09.467Z] INFO  [2690]  - [Initialization/AddonsAfter/InstallCWLAgent/01-install-cwl-agent.sh] : Completed activity. Result:
+  + yum install -y awslogs
+  Loaded plugins: priorities, update-motd, upgrade-helper
+  Resolving Dependencies
+  --> Running transaction check
+  ---> Package awslogs.noarch 0:1.1.2-1.10.amzn1 will be installed
+  --> Processing Dependency: aws-cli-plugin-cloudwatch-logs(python27) for package: awslogs-1.1.2-1.10.amzn1.noarch
+  --> Running transaction check
+  ---> Package aws-cli-plugin-cloudwatch-logs.noarch 0:1.3.3-1.15.amzn1 will be installed
+  --> Finished Dependency Resolution
+  
+  Dependencies Resolved
+  
+  ================================================================================
+   Package                          Arch     Version            Repository   Size
+  ================================================================================
+  Installing:
+   awslogs                          noarch   1.1.2-1.10.amzn1   amzn-main   8.8 k
+  Installing for dependencies:
+   aws-cli-plugin-cloudwatch-logs   noarch   1.3.3-1.15.amzn1   amzn-main    69 k
+  
+  Transaction Summary
+  ================================================================================
+  Install  1 Package (+1 Dependent package)
+  
+  Total download size: 78 k
+  Installed size: 240 k
+  Downloading packages:
+  --------------------------------------------------------------------------------
+  Total                                              3.5 MB/s |  78 kB  00:00     
+  Running transaction check
+  Running transaction test
+  Transaction test succeeded
+  Running transaction
+    Installing : aws-cli-plugin-cloudwatch-logs-1.3.3-1.15.amzn1.noarch       1/2 
+    Installing : awslogs-1.1.2-1.10.amzn1.noarch                              2/2 
+    Verifying  : awslogs-1.1.2-1.10.amzn1.noarch                              1/2 
+    Verifying  : aws-cli-plugin-cloudwatch-logs-1.3.3-1.15.amzn1.noarch       2/2 
+  
+  Installed:
+    awslogs.noarch 0:1.1.2-1.10.amzn1                                             
+  
+  Dependency Installed:
+    aws-cli-plugin-cloudwatch-logs.noarch 0:1.3.3-1.15.amzn1                      
+  
+  Complete!
+  + cat
+  + /opt/elasticbeanstalk/bin/log-conf -n awslogs -l/var/log/awslogs.log
+  ++ sed 's/.$//'
+  ++ curl 169.254.169.254/latest/meta-data/placement/availability-zone
+    % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                   Dload  Upload   Total   Spent    Left  Speed
+    0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100    10  100    10    0     0   6191      0 --:--:-- --:--:-- --:--:-- 10000
+  + region=us-west-2
+  + sed -i -e 's/region = us-east-1/region = us-west-2/g' /etc/awslogs/awscli.conf
+[2016-12-28T10:13:09.467Z] INFO  [2690]  - [Initialization/AddonsAfter/InstallCWLAgent] : Completed activity. Result:
+  Successfully execute hooks in directory /opt/elasticbeanstalk/addons/logstreaming/hooks/install.
+[2016-12-28T10:13:09.467Z] INFO  [2690]  - [Initialization/AddonsAfter] : Completed activity.
+[2016-12-28T10:13:09.467Z] INFO  [2690]  - [Initialization] : Completed activity. Result:
+  Initialization - Command CMD-PreInit succeeded
+[2016-12-28T10:13:36.472Z] INFO  [2958]  - [Application deployment app-869a-161228_181057@1] : Starting activity...
+[2016-12-28T10:13:36.472Z] INFO  [2958]  - [Application deployment app-869a-161228_181057@1/AddonsBefore] : Starting activity...
+[2016-12-28T10:13:36.472Z] INFO  [2958]  - [Application deployment app-869a-161228_181057@1/AddonsBefore] : Completed activity.
+[2016-12-28T10:13:36.723Z] INFO  [2958]  - [Application deployment app-869a-161228_181057@1/StartupStage0] : Starting activity...
+[2016-12-28T10:13:36.723Z] INFO  [2958]  - [Application deployment app-869a-161228_181057@1/StartupStage0/HealthdLogRotation] : Starting activity...
+[2016-12-28T10:13:36.728Z] INFO  [2958]  - [Application deployment app-869a-161228_181057@1/StartupStage0/HealthdLogRotation] : Completed activity. Result:
+  ["/etc/cron.hourly/cron.logrotate.elasticbeanstalk.healthd.conf"]
+[2016-12-28T10:13:36.728Z] INFO  [2958]  - [Application deployment app-869a-161228_181057@1/StartupStage0/HealthdHTTPDLogging] : Starting activity...
+[2016-12-28T10:13:36.728Z] INFO  [2958]  - [Application deployment app-869a-161228_181057@1/StartupStage0/HealthdHTTPDLogging] : Completed activity.
+[2016-12-28T10:13:36.728Z] INFO  [2958]  - [Application deployment app-869a-161228_181057@1/StartupStage0/HealthdNginxLogging] : Starting activity...
+[2016-12-28T10:13:36.728Z] INFO  [2958]  - [Application deployment app-869a-161228_181057@1/StartupStage0/HealthdNginxLogging] : Completed activity.
+[2016-12-28T10:13:36.728Z] INFO  [2958]  - [Application deployment app-869a-161228_181057@1/StartupStage0/EbExtensionPreBuild] : Starting activity...
+[2016-12-28T10:13:37.043Z] INFO  [2958]  - [Application deployment app-869a-161228_181057@1/StartupStage0/EbExtensionPreBuild/Infra-EmbeddedPreBuild] : Starting activity...
+[2016-12-28T10:13:37.043Z] INFO  [2958]  - [Application deployment app-869a-161228_181057@1/StartupStage0/EbExtensionPreBuild/Infra-EmbeddedPreBuild] : Completed activity.
+[2016-12-28T10:13:37.058Z] INFO  [2958]  - [Application deployment app-869a-161228_181057@1/StartupStage0/EbExtensionPreBuild] : Completed activity.
+[2016-12-28T10:13:37.058Z] INFO  [2958]  - [Application deployment app-869a-161228_181057@1/StartupStage0/AppDeployPreHook] : Starting activity...
+[2016-12-28T10:13:37.058Z] INFO  [2958]  - [Application deployment app-869a-161228_181057@1/StartupStage0/AppDeployPreHook/01new.py] : Starting activity...
+[2016-12-28T10:13:37.360Z] INFO  [2958]  - [Application deployment app-869a-161228_181057@1/StartupStage0/AppDeployPreHook/01new.py] : Completed activity.
+[2016-12-28T10:13:37.360Z] INFO  [2958]  - [Application deployment app-869a-161228_181057@1/StartupStage0/AppDeployPreHook/02unzip.py] : Starting activity...
+[2016-12-28T10:13:37.674Z] INFO  [2958]  - [Application deployment app-869a-161228_181057@1/StartupStage0/AppDeployPreHook/02unzip.py] : Completed activity. Result:
+  Archive:  /opt/elasticbeanstalk/deploy/appsource/source_bundle
+  869a49093e27472218ee2d0ec209f16897ad2b34
+    inflating: /opt/python/ondeck/app/.gitignore  
+    inflating: /opt/python/ondeck/app/application.py  
+   extracting: /opt/python/ondeck/app/config.py  
+    inflating: /opt/python/ondeck/app/forms.py  
+    inflating: /opt/python/ondeck/app/requirements.txt  
+    inflating: /opt/python/ondeck/app/storage.py  
+     creating: /opt/python/ondeck/app/templates/
+    inflating: /opt/python/ondeck/app/templates/base.html  
+    inflating: /opt/python/ondeck/app/templates/index.html  
+    inflating: /opt/python/ondeck/app/templates/story.html  
+[2016-12-28T10:13:37.675Z] INFO  [2958]  - [Application deployment app-869a-161228_181057@1/StartupStage0/AppDeployPreHook/03deploy.py] : Starting activity...
+[2016-12-28T10:13:45.494Z] INFO  [2958]  - [Application deployment app-869a-161228_181057@1/StartupStage0/AppDeployPreHook/03deploy.py] : Completed activity. Result:
+  Collecting Flask==0.11.1 (from -r /opt/python/ondeck/app/requirements.txt (line 1))
+    Downloading Flask-0.11.1-py2.py3-none-any.whl (80kB)
+  Collecting itsdangerous==0.24 (from -r /opt/python/ondeck/app/requirements.txt (line 2))
+    Downloading itsdangerous-0.24.tar.gz (46kB)
+  Collecting Jinja2==2.7.3 (from -r /opt/python/ondeck/app/requirements.txt (line 3))
+    Downloading Jinja2-2.7.3.tar.gz (378kB)
+  Collecting MarkupSafe==0.23 (from -r /opt/python/ondeck/app/requirements.txt (line 4))
+    Downloading MarkupSafe-0.23.tar.gz
+  Collecting Werkzeug==0.10.1 (from -r /opt/python/ondeck/app/requirements.txt (line 5))
+    Downloading Werkzeug-0.10.1.tar.gz (1.1MB)
+  Collecting WTForms==2.1 (from -r /opt/python/ondeck/app/requirements.txt (line 6))
+    Downloading WTForms-2.1.zip (553kB)
+  Collecting Flask-WTF==0.13.1 (from -r /opt/python/ondeck/app/requirements.txt (line 7))
+    Downloading Flask-WTF-0.13.1.tar.gz (253kB)
+  Collecting click>=2.0 (from Flask==0.11.1->-r /opt/python/ondeck/app/requirements.txt (line 1))
+    Downloading click-6.6-py2.py3-none-any.whl (71kB)
+  Installing collected packages: click, itsdangerous, Werkzeug, MarkupSafe, Jinja2, Flask, WTForms, Flask-WTF
+    Running setup.py install for itsdangerous
+    Running setup.py install for Werkzeug
+    Running setup.py install for MarkupSafe
+    Running setup.py install for Jinja2
+    Running setup.py install for WTForms
+    Running setup.py install for Flask-WTF
+  Successfully installed Flask-0.11.1 Flask-WTF-0.13.1 Jinja2-2.7.3 MarkupSafe-0.23 WTForms-2.1 Werkzeug-0.10.1 click-6.6 itsdangerous-0.24
+  You are using pip version 7.1.2, however version 9.0.1 is available.
+  You should consider upgrading via the 'pip install --upgrade pip' command.
+[2016-12-28T10:13:45.495Z] INFO  [2958]  - [Application deployment app-869a-161228_181057@1/StartupStage0/AppDeployPreHook/04configen.py] : Starting activity...
+[2016-12-28T10:13:46.869Z] INFO  [2958]  - [Application deployment app-869a-161228_181057@1/StartupStage0/AppDeployPreHook/04configen.py] : Completed activity.
+[2016-12-28T10:13:46.869Z] INFO  [2958]  - [Application deployment app-869a-161228_181057@1/StartupStage0/AppDeployPreHook] : Completed activity. Result:
+  Successfully execute hooks in directory /opt/elasticbeanstalk/hooks/appdeploy/pre.
+[2016-12-28T10:13:46.870Z] INFO  [2958]  - [Application deployment app-869a-161228_181057@1/StartupStage0/EbExtensionPostBuild] : Starting activity...
+[2016-12-28T10:13:47.137Z] INFO  [2958]  - [Application deployment app-869a-161228_181057@1/StartupStage0/EbExtensionPostBuild/Infra-EmbeddedPostBuild] : Starting activity...
+[2016-12-28T10:13:47.137Z] INFO  [2958]  - [Application deployment app-869a-161228_181057@1/StartupStage0/EbExtensionPostBuild/Infra-EmbeddedPostBuild] : Completed activity.
+[2016-12-28T10:13:47.152Z] INFO  [2958]  - [Application deployment app-869a-161228_181057@1/StartupStage0/EbExtensionPostBuild] : Completed activity.
+[2016-12-28T10:13:47.152Z] INFO  [2958]  - [Application deployment app-869a-161228_181057@1/StartupStage0/InfraCleanEbExtension] : Starting activity...
+[2016-12-28T10:13:47.153Z] INFO  [2958]  - [Application deployment app-869a-161228_181057@1/StartupStage0/InfraCleanEbExtension] : Completed activity. Result:
+  Cleaned ebextensions subdirectories from /opt/python/ondeck/app.
+[2016-12-28T10:13:47.154Z] INFO  [2958]  - [Application deployment app-869a-161228_181057@1/StartupStage0] : Completed activity. Result:
+  Application deployment - Command CMD-Startup stage 0 completed
+[2016-12-28T10:13:47.154Z] INFO  [2958]  - [Application deployment app-869a-161228_181057@1/StartupStage1] : Starting activity...
+[2016-12-28T10:13:47.154Z] INFO  [2958]  - [Application deployment app-869a-161228_181057@1/StartupStage1/AppDeployEnactHook] : Starting activity...
+[2016-12-28T10:13:47.154Z] INFO  [2958]  - [Application deployment app-869a-161228_181057@1/StartupStage1/AppDeployEnactHook/01flip.py] : Starting activity...
+[2016-12-28T10:13:55.499Z] INFO  [2958]  - [Application deployment app-869a-161228_181057@1/StartupStage1/AppDeployEnactHook/01flip.py] : Completed activity. Result:
+  httpd: stopped
+  httpd: started
+  httpd                            RUNNING   pid 3126, uptime 0:00:03
+  2016-12-28 10:13:55,493 INFO     Apache is running, but root page is not responding in 3 seconds.
+[2016-12-28T10:13:55.499Z] INFO  [2958]  - [Application deployment app-869a-161228_181057@1/StartupStage1/AppDeployEnactHook/02create_pids_for_monitoring.sh] : Starting activity...
+[2016-12-28T10:13:55.597Z] INFO  [2958]  - [Application deployment app-869a-161228_181057@1/StartupStage1/AppDeployEnactHook/02create_pids_for_monitoring.sh] : Completed activity. Result:
+  + chmod 0755 /var/run/httpd
+  + /opt/elasticbeanstalk/bin/healthd-track-pidfile --proxy httpd
+  + /opt/elasticbeanstalk/bin/healthd-track-pidfile --name application --location /opt/python/run/supervisord.pid
+[2016-12-28T10:13:55.597Z] INFO  [2958]  - [Application deployment app-869a-161228_181057@1/StartupStage1/AppDeployEnactHook] : Completed activity. Result:
+  Successfully execute hooks in directory /opt/elasticbeanstalk/hooks/appdeploy/enact.
+[2016-12-28T10:13:55.597Z] INFO  [2958]  - [Application deployment app-869a-161228_181057@1/StartupStage1/AppDeployPostHook] : Starting activity...
+[2016-12-28T10:13:55.597Z] INFO  [2958]  - [Application deployment app-869a-161228_181057@1/StartupStage1/AppDeployPostHook] : Completed activity. Result:
+  Successfully execute hooks in directory /opt/elasticbeanstalk/hooks/appdeploy/post.
+[2016-12-28T10:13:55.597Z] INFO  [2958]  - [Application deployment app-869a-161228_181057@1/StartupStage1/PostInitHook] : Starting activity...
+[2016-12-28T10:13:55.597Z] INFO  [2958]  - [Application deployment app-869a-161228_181057@1/StartupStage1/PostInitHook/01processmgrstart.sh] : Starting activity...
+[2016-12-28T10:13:55.602Z] INFO  [2958]  - [Application deployment app-869a-161228_181057@1/StartupStage1/PostInitHook/01processmgrstart.sh] : Completed activity. Result:
+  + pgrep supervisord
+  2789
+[2016-12-28T10:13:55.602Z] INFO  [2958]  - [Application deployment app-869a-161228_181057@1/StartupStage1/PostInitHook] : Completed activity. Result:
+  Successfully execute hooks in directory /opt/elasticbeanstalk/hooks/postinit.
+[2016-12-28T10:13:55.602Z] INFO  [2958]  - [Application deployment app-869a-161228_181057@1/StartupStage1] : Completed activity. Result:
+  Application deployment - Command CMD-Startup stage 1 completed
+[2016-12-28T10:13:55.602Z] INFO  [2958]  - [Application deployment app-869a-161228_181057@1/AddonsAfter] : Starting activity...
+[2016-12-28T10:13:55.602Z] INFO  [2958]  - [Application deployment app-869a-161228_181057@1/AddonsAfter/ConfigLogRotation] : Starting activity...
+[2016-12-28T10:13:55.602Z] INFO  [2958]  - [Application deployment app-869a-161228_181057@1/AddonsAfter/ConfigLogRotation/10-config.sh] : Starting activity...
+[2016-12-28T10:13:55.676Z] INFO  [2958]  - [Application deployment app-869a-161228_181057@1/AddonsAfter/ConfigLogRotation/10-config.sh] : Completed activity. Result:
+  Disabled forced hourly log rotation.
+[2016-12-28T10:13:55.677Z] INFO  [2958]  - [Application deployment app-869a-161228_181057@1/AddonsAfter/ConfigLogRotation] : Completed activity. Result:
+  Successfully execute hooks in directory /opt/elasticbeanstalk/addons/logpublish/hooks/config.
+[2016-12-28T10:13:55.677Z] INFO  [2958]  - [Application deployment app-869a-161228_181057@1/AddonsAfter/ConfigCWLAgent] : Starting activity...
+[2016-12-28T10:13:55.677Z] INFO  [2958]  - [Application deployment app-869a-161228_181057@1/AddonsAfter/ConfigCWLAgent/10-config.sh] : Starting activity...
+[2016-12-28T10:13:55.789Z] INFO  [2958]  - [Application deployment app-869a-161228_181057@1/AddonsAfter/ConfigCWLAgent/10-config.sh] : Completed activity. Result:
+  Log streaming option setting is not specified, ignore cloudwatch logs setup.
+  
+  Disabled log streaming.
+[2016-12-28T10:13:55.789Z] INFO  [2958]  - [Application deployment app-869a-161228_181057@1/AddonsAfter/ConfigCWLAgent] : Completed activity. Result:
+  Successfully execute hooks in directory /opt/elasticbeanstalk/addons/logstreaming/hooks/config.
+[2016-12-28T10:13:55.789Z] INFO  [2958]  - [Application deployment app-869a-161228_181057@1/AddonsAfter] : Completed activity.
+[2016-12-28T10:13:55.789Z] INFO  [2958]  - [Application deployment app-869a-161228_181057@1] : Completed activity. Result:
+  Application deployment - Command CMD-Startup succeeded
+[2016-12-28T10:16:09.969Z] INFO  [3299]  - [CMD-TailLogs] : Starting activity...
+[2016-12-28T10:16:09.969Z] INFO  [3299]  - [CMD-TailLogs/AddonsBefore] : Starting activity...
+[2016-12-28T10:16:09.969Z] INFO  [3299]  - [CMD-TailLogs/AddonsBefore] : Completed activity.
+[2016-12-28T10:16:09.969Z] INFO  [3299]  - [CMD-TailLogs/TailLogs] : Starting activity...
+[2016-12-28T10:16:09.969Z] INFO  [3299]  - [CMD-TailLogs/TailLogs/TailLogs] : Starting activity...
+[2016-12-28T10:16:10.168Z] INFO  [3299]  - [CMD-TailLogs/TailLogs/TailLogs] : Completed activity.
+[2016-12-28T10:16:10.168Z] INFO  [3299]  - [CMD-TailLogs/TailLogs] : Completed activity. Result:
+  CMD-TailLogs - stage 0 - Command CMD-TailLogs stage 0 completed
+[2016-12-28T10:16:10.168Z] INFO  [3299]  - [CMD-TailLogs/AddonsAfter] : Starting activity...
+[2016-12-28T10:16:10.168Z] INFO  [3299]  - [CMD-TailLogs/AddonsAfter] : Completed activity.
+[2016-12-28T10:16:10.168Z] INFO  [3299]  - [CMD-TailLogs] : Completed activity. Result:
+  CMD-TailLogs - Command CMD-TailLogs succeeded
+[2016-12-28T10:18:49.069Z] INFO  [3390]  - [Application update app-869a-161228_181835@2] : Starting activity...
+[2016-12-28T10:18:49.069Z] INFO  [3390]  - [Application update app-869a-161228_181835@2/AddonsBefore] : Starting activity...
+[2016-12-28T10:18:49.069Z] INFO  [3390]  - [Application update app-869a-161228_181835@2/AddonsBefore] : Completed activity.
+[2016-12-28T10:18:49.319Z] INFO  [3390]  - [Application update app-869a-161228_181835@2/AppDeployStage0] : Starting activity...
+[2016-12-28T10:18:49.320Z] INFO  [3390]  - [Application update app-869a-161228_181835@2/AppDeployStage0/InfraWriteConfig] : Starting activity...
+[2016-12-28T10:18:49.322Z] INFO  [3390]  - [Application update app-869a-161228_181835@2/AppDeployStage0/InfraWriteConfig] : Completed activity. Result:
+  Recreated directory /opt/elasticbeanstalk/deploy/configuration/.
+  Generate appsource url file at /opt/elasticbeanstalk/deploy/configuration/appsourceurl.
+  Generate container config file at /opt/elasticbeanstalk/deploy/configuration/containerconfiguration.
+[2016-12-28T10:18:49.322Z] INFO  [3390]  - [Application update app-869a-161228_181835@2/AppDeployStage0/DownloadSourceBundle] : Starting activity...
+[2016-12-28T10:18:49.632Z] INFO  [3390]  - [Application update app-869a-161228_181835@2/AppDeployStage0/DownloadSourceBundle] : Completed activity. Result:
+  [2016-12-28T10:18:49.416Z] INFO  [3413]  : Application version will be saved to /opt/elasticbeanstalk/deploy/appsource.
+  [2016-12-28T10:18:49.417Z] INFO  [3413]  : Using manifest cache with deployment ID 2 and serial 2.
+  [2016-12-28T10:18:49.417Z] INFO  [3413]  : Attempting to download application source bundle to: '/opt/elasticbeanstalk/deploy/appsource/source_bundle'.
+  [2016-12-28T10:18:49.417Z] INFO  [3413]  : Using computed s3 key.
+  [2016-12-28T10:18:49.528Z] INFO  [3413]  : Downloading from bucket 'elasticbeanstalk-us-west-2-341826891138' with key 'resources/environments/e-rzpyvmyjqg/_runtime/_versions/flask-tutorial/app-869a-161228_181835' and version '' to '/opt/elasticbeanstalk/deploy/appsource/source_bundle'.
+  [2016-12-28T10:18:49.587Z] INFO  [3413]  : Size: 3855, ETag: "993e929da370136b0115e46a8302fbf9", Metadata: {"environmentid"=>"e-rzpyvmyjqg", "requestid"=>"01583b11-cce7-11e6-8a76-6d330041cf66"}.
+  [2016-12-28T10:18:49.619Z] INFO  [3413]  : Downloaded size: 3855.
+  [2016-12-28T10:18:49.619Z] INFO  [3413]  : Successfully downloaded to '/opt/elasticbeanstalk/deploy/appsource/source_bundle'.
+[2016-12-28T10:18:49.632Z] INFO  [3390]  - [Application update app-869a-161228_181835@2/AppDeployStage0/EbExtensionPreBuild] : Starting activity...
+[2016-12-28T10:18:49.894Z] INFO  [3390]  - [Application update app-869a-161228_181835@2/AppDeployStage0/EbExtensionPreBuild/Infra-EmbeddedPreBuild] : Starting activity...
+[2016-12-28T10:18:49.894Z] INFO  [3390]  - [Application update app-869a-161228_181835@2/AppDeployStage0/EbExtensionPreBuild/Infra-EmbeddedPreBuild] : Completed activity.
+[2016-12-28T10:18:49.910Z] INFO  [3390]  - [Application update app-869a-161228_181835@2/AppDeployStage0/EbExtensionPreBuild] : Completed activity.
+[2016-12-28T10:18:49.910Z] INFO  [3390]  - [Application update app-869a-161228_181835@2/AppDeployStage0/AppDeployPreHook] : Starting activity...
+[2016-12-28T10:18:49.910Z] INFO  [3390]  - [Application update app-869a-161228_181835@2/AppDeployStage0/AppDeployPreHook/01new.py] : Starting activity...
+[2016-12-28T10:18:50.210Z] INFO  [3390]  - [Application update app-869a-161228_181835@2/AppDeployStage0/AppDeployPreHook/01new.py] : Completed activity.
+[2016-12-28T10:18:50.210Z] INFO  [3390]  - [Application update app-869a-161228_181835@2/AppDeployStage0/AppDeployPreHook/02unzip.py] : Starting activity...
+[2016-12-28T10:18:50.513Z] INFO  [3390]  - [Application update app-869a-161228_181835@2/AppDeployStage0/AppDeployPreHook/02unzip.py] : Completed activity. Result:
+  Archive:  /opt/elasticbeanstalk/deploy/appsource/source_bundle
+  869a49093e27472218ee2d0ec209f16897ad2b34
+    inflating: /opt/python/ondeck/app/.gitignore  
+    inflating: /opt/python/ondeck/app/application.py  
+   extracting: /opt/python/ondeck/app/config.py  
+    inflating: /opt/python/ondeck/app/forms.py  
+    inflating: /opt/python/ondeck/app/requirements.txt  
+    inflating: /opt/python/ondeck/app/storage.py  
+     creating: /opt/python/ondeck/app/templates/
+    inflating: /opt/python/ondeck/app/templates/base.html  
+    inflating: /opt/python/ondeck/app/templates/index.html  
+    inflating: /opt/python/ondeck/app/templates/story.html  
+[2016-12-28T10:18:50.514Z] INFO  [3390]  - [Application update app-869a-161228_181835@2/AppDeployStage0/AppDeployPreHook/03deploy.py] : Starting activity...
+[2016-12-28T10:18:50.923Z] INFO  [3390]  - [Application update app-869a-161228_181835@2/AppDeployStage0/AppDeployPreHook/03deploy.py] : Completed activity. Result:
+  Requirement already satisfied (use --upgrade to upgrade): Flask==0.11.1 in /opt/python/run/venv/lib/python2.7/site-packages (from -r /opt/python/ondeck/app/requirements.txt (line 1))
+  Requirement already satisfied (use --upgrade to upgrade): itsdangerous==0.24 in /opt/python/run/venv/lib/python2.7/site-packages (from -r /opt/python/ondeck/app/requirements.txt (line 2))
+  Requirement already satisfied (use --upgrade to upgrade): Jinja2==2.7.3 in /opt/python/run/venv/lib/python2.7/site-packages (from -r /opt/python/ondeck/app/requirements.txt (line 3))
+  Requirement already satisfied (use --upgrade to upgrade): MarkupSafe==0.23 in /opt/python/run/venv/lib64/python2.7/site-packages (from -r /opt/python/ondeck/app/requirements.txt (line 4))
+  Requirement already satisfied (use --upgrade to upgrade): Werkzeug==0.10.1 in /opt/python/run/venv/lib/python2.7/site-packages (from -r /opt/python/ondeck/app/requirements.txt (line 5))
+  Requirement already satisfied (use --upgrade to upgrade): WTForms==2.1 in /opt/python/run/venv/lib/python2.7/site-packages (from -r /opt/python/ondeck/app/requirements.txt (line 6))
+  Requirement already satisfied (use --upgrade to upgrade): Flask-WTF==0.13.1 in /opt/python/run/venv/lib/python2.7/site-packages (from -r /opt/python/ondeck/app/requirements.txt (line 7))
+  Requirement already satisfied (use --upgrade to upgrade): click>=2.0 in /opt/python/run/venv/lib/python2.7/site-packages (from Flask==0.11.1->-r /opt/python/ondeck/app/requirements.txt (line 1))
+  You are using pip version 7.1.2, however version 9.0.1 is available.
+  You should consider upgrading via the 'pip install --upgrade pip' command.
+[2016-12-28T10:18:50.923Z] INFO  [3390]  - [Application update app-869a-161228_181835@2/AppDeployStage0/AppDeployPreHook/04configen.py] : Starting activity...
+[2016-12-28T10:18:52.241Z] INFO  [3390]  - [Application update app-869a-161228_181835@2/AppDeployStage0/AppDeployPreHook/04configen.py] : Completed activity.
+[2016-12-28T10:18:52.242Z] INFO  [3390]  - [Application update app-869a-161228_181835@2/AppDeployStage0/AppDeployPreHook] : Completed activity. Result:
+  Successfully execute hooks in directory /opt/elasticbeanstalk/hooks/appdeploy/pre.
+[2016-12-28T10:18:52.242Z] INFO  [3390]  - [Application update app-869a-161228_181835@2/AppDeployStage0/EbExtensionPostBuild] : Starting activity...
+[2016-12-28T10:18:52.501Z] INFO  [3390]  - [Application update app-869a-161228_181835@2/AppDeployStage0/EbExtensionPostBuild/Infra-EmbeddedPostBuild] : Starting activity...
+[2016-12-28T10:18:52.501Z] INFO  [3390]  - [Application update app-869a-161228_181835@2/AppDeployStage0/EbExtensionPostBuild/Infra-EmbeddedPostBuild] : Completed activity.
+[2016-12-28T10:18:52.515Z] INFO  [3390]  - [Application update app-869a-161228_181835@2/AppDeployStage0/EbExtensionPostBuild] : Completed activity.
+[2016-12-28T10:18:52.516Z] INFO  [3390]  - [Application update app-869a-161228_181835@2/AppDeployStage0/InfraCleanEbextension] : Starting activity...
+[2016-12-28T10:18:52.517Z] INFO  [3390]  - [Application update app-869a-161228_181835@2/AppDeployStage0/InfraCleanEbextension] : Completed activity. Result:
+  Cleaned ebextensions subdirectories from /opt/python/ondeck/app.
+[2016-12-28T10:18:52.517Z] INFO  [3390]  - [Application update app-869a-161228_181835@2/AppDeployStage0] : Completed activity. Result:
+  Application update - Command CMD-AppDeploy stage 0 completed
+[2016-12-28T10:18:52.517Z] INFO  [3390]  - [Application update app-869a-161228_181835@2/AppDeployStage1] : Starting activity...
+[2016-12-28T10:18:52.517Z] INFO  [3390]  - [Application update app-869a-161228_181835@2/AppDeployStage1/AppDeployEnactHook] : Starting activity...
+[2016-12-28T10:18:52.517Z] INFO  [3390]  - [Application update app-869a-161228_181835@2/AppDeployStage1/AppDeployEnactHook/01flip.py] : Starting activity...
+[2016-12-28T10:19:00.776Z] INFO  [3390]  - [Application update app-869a-161228_181835@2/AppDeployStage1/AppDeployEnactHook/01flip.py] : Completed activity. Result:
+  httpd: stopped
+  httpd: started
+  httpd                            RUNNING   pid 3526, uptime 0:00:02
+  2016-12-28 10:19:00,771 INFO     Apache is running, but root page is not responding in 3 seconds.
+[2016-12-28T10:19:00.777Z] INFO  [3390]  - [Application update app-869a-161228_181835@2/AppDeployStage1/AppDeployEnactHook/02create_pids_for_monitoring.sh] : Starting activity...
+[2016-12-28T10:19:00.872Z] INFO  [3390]  - [Application update app-869a-161228_181835@2/AppDeployStage1/AppDeployEnactHook/02create_pids_for_monitoring.sh] : Completed activity. Result:
+  + chmod 0755 /var/run/httpd
+  + /opt/elasticbeanstalk/bin/healthd-track-pidfile --proxy httpd
+  + /opt/elasticbeanstalk/bin/healthd-track-pidfile --name application --location /opt/python/run/supervisord.pid
+[2016-12-28T10:19:00.872Z] INFO  [3390]  - [Application update app-869a-161228_181835@2/AppDeployStage1/AppDeployEnactHook] : Completed activity. Result:
+  Successfully execute hooks in directory /opt/elasticbeanstalk/hooks/appdeploy/enact.
+[2016-12-28T10:19:00.873Z] INFO  [3390]  - [Application update app-869a-161228_181835@2/AppDeployStage1/AppDeployPostHook] : Starting activity...
+[2016-12-28T10:19:00.873Z] INFO  [3390]  - [Application update app-869a-161228_181835@2/AppDeployStage1/AppDeployPostHook] : Completed activity. Result:
+  Successfully execute hooks in directory /opt/elasticbeanstalk/hooks/appdeploy/post.
+[2016-12-28T10:19:00.873Z] INFO  [3390]  - [Application update app-869a-161228_181835@2/AppDeployStage1] : Completed activity. Result:
+  Application version switch - Command CMD-AppDeploy stage 1 completed
+[2016-12-28T10:19:00.873Z] INFO  [3390]  - [Application update app-869a-161228_181835@2/AddonsAfter] : Starting activity...
+[2016-12-28T10:19:00.873Z] INFO  [3390]  - [Application update app-869a-161228_181835@2/AddonsAfter/ConfigLogRotation] : Starting activity...
+[2016-12-28T10:19:00.873Z] INFO  [3390]  - [Application update app-869a-161228_181835@2/AddonsAfter/ConfigLogRotation/10-config.sh] : Starting activity...
+[2016-12-28T10:19:00.945Z] INFO  [3390]  - [Application update app-869a-161228_181835@2/AddonsAfter/ConfigLogRotation/10-config.sh] : Completed activity. Result:
+  Disabled forced hourly log rotation.
+[2016-12-28T10:19:00.945Z] INFO  [3390]  - [Application update app-869a-161228_181835@2/AddonsAfter/ConfigLogRotation] : Completed activity. Result:
+  Successfully execute hooks in directory /opt/elasticbeanstalk/addons/logpublish/hooks/config.
+[2016-12-28T10:19:00.945Z] INFO  [3390]  - [Application update app-869a-161228_181835@2/AddonsAfter/ConfigCWLAgent] : Starting activity...
+[2016-12-28T10:19:00.946Z] INFO  [3390]  - [Application update app-869a-161228_181835@2/AddonsAfter/ConfigCWLAgent/10-config.sh] : Starting activity...
+[2016-12-28T10:19:01.060Z] INFO  [3390]  - [Application update app-869a-161228_181835@2/AddonsAfter/ConfigCWLAgent/10-config.sh] : Completed activity. Result:
+  Log streaming option setting is not specified, ignore cloudwatch logs setup.
+  
+  Disabled log streaming.
+[2016-12-28T10:19:01.060Z] INFO  [3390]  - [Application update app-869a-161228_181835@2/AddonsAfter/ConfigCWLAgent] : Completed activity. Result:
+  Successfully execute hooks in directory /opt/elasticbeanstalk/addons/logstreaming/hooks/config.
+[2016-12-28T10:19:01.060Z] INFO  [3390]  - [Application update app-869a-161228_181835@2/AddonsAfter] : Completed activity.
+[2016-12-28T10:19:01.060Z] INFO  [3390]  - [Application update app-869a-161228_181835@2] : Completed activity. Result:
+  Application update - Command CMD-AppDeploy succeeded
+[2016-12-28T10:19:48.328Z] INFO  [3644]  - [CMD-TailLogs] : Starting activity...
+[2016-12-28T10:19:48.328Z] INFO  [3644]  - [CMD-TailLogs/AddonsBefore] : Starting activity...
+[2016-12-28T10:19:48.328Z] INFO  [3644]  - [CMD-TailLogs/AddonsBefore] : Completed activity.
+[2016-12-28T10:19:48.328Z] INFO  [3644]  - [CMD-TailLogs/TailLogs] : Starting activity...
+[2016-12-28T10:19:48.328Z] INFO  [3644]  - [CMD-TailLogs/TailLogs/TailLogs] : Starting activity...
+[2016-12-28T10:19:48.492Z] INFO  [3644]  - [CMD-TailLogs/TailLogs/TailLogs] : Completed activity.
+[2016-12-28T10:19:48.492Z] INFO  [3644]  - [CMD-TailLogs/TailLogs] : Completed activity. Result:
+  CMD-TailLogs - stage 0 - Command CMD-TailLogs stage 0 completed
+[2016-12-28T10:19:48.492Z] INFO  [3644]  - [CMD-TailLogs/AddonsAfter] : Starting activity...
+[2016-12-28T10:19:48.492Z] INFO  [3644]  - [CMD-TailLogs/AddonsAfter] : Completed activity.
+[2016-12-28T10:19:48.492Z] INFO  [3644]  - [CMD-TailLogs] : Completed activity. Result:
+  CMD-TailLogs - Command CMD-TailLogs succeeded
+[2016-12-28T10:20:59.715Z] INFO  [3724]  - [CMD-TailLogs] : Starting activity...
+[2016-12-28T10:20:59.715Z] INFO  [3724]  - [CMD-TailLogs/AddonsBefore] : Starting activity...
+[2016-12-28T10:20:59.715Z] INFO  [3724]  - [CMD-TailLogs/AddonsBefore] : Completed activity.
+[2016-12-28T10:20:59.715Z] INFO  [3724]  - [CMD-TailLogs/TailLogs] : Starting activity...
+[2016-12-28T10:20:59.715Z] INFO  [3724]  - [CMD-TailLogs/TailLogs/TailLogs] : Starting activity...
+[2016-12-28T10:20:59.893Z] INFO  [3724]  - [CMD-TailLogs/TailLogs/TailLogs] : Completed activity.
+[2016-12-28T10:20:59.893Z] INFO  [3724]  - [CMD-TailLogs/TailLogs] : Completed activity. Result:
+  CMD-TailLogs - stage 0 - Command CMD-TailLogs stage 0 completed
+[2016-12-28T10:20:59.893Z] INFO  [3724]  - [CMD-TailLogs/AddonsAfter] : Starting activity...
+[2016-12-28T10:20:59.893Z] INFO  [3724]  - [CMD-TailLogs/AddonsAfter] : Completed activity.
+[2016-12-28T10:20:59.893Z] INFO  [3724]  - [CMD-TailLogs] : Completed activity. Result:
+  CMD-TailLogs - Command CMD-TailLogs succeeded
+[2016-12-28T10:23:29.637Z] INFO  [3817]  - [CMD-TailLogs] : Starting activity...
+[2016-12-28T10:23:29.637Z] INFO  [3817]  - [CMD-TailLogs/AddonsBefore] : Starting activity...
+[2016-12-28T10:23:29.637Z] INFO  [3817]  - [CMD-TailLogs/AddonsBefore] : Completed activity.
+[2016-12-28T10:23:29.637Z] INFO  [3817]  - [CMD-TailLogs/TailLogs] : Starting activity...
+[2016-12-28T10:23:29.637Z] INFO  [3817]  - [CMD-TailLogs/TailLogs/TailLogs] : Starting activity...
+[2016-12-28T10:23:29.863Z] INFO  [3817]  - [CMD-TailLogs/TailLogs/TailLogs] : Completed activity.
+[2016-12-28T10:23:29.863Z] INFO  [3817]  - [CMD-TailLogs/TailLogs] : Completed activity. Result:
+  CMD-TailLogs - stage 0 - Command CMD-TailLogs stage 0 completed
+[2016-12-28T10:23:29.863Z] INFO  [3817]  - [CMD-TailLogs/AddonsAfter] : Starting activity...
+[2016-12-28T10:23:29.863Z] INFO  [3817]  - [CMD-TailLogs/AddonsAfter] : Completed activity.
+[2016-12-28T10:23:29.863Z] INFO  [3817]  - [CMD-TailLogs] : Completed activity. Result:
+  CMD-TailLogs - Command CMD-TailLogs succeeded
+[2016-12-28T10:24:40.576Z] INFO  [3861]  - [Application update app-869a-161228_182424@3] : Starting activity...
+[2016-12-28T10:24:40.576Z] INFO  [3861]  - [Application update app-869a-161228_182424@3/AddonsBefore] : Starting activity...
+[2016-12-28T10:24:40.576Z] INFO  [3861]  - [Application update app-869a-161228_182424@3/AddonsBefore] : Completed activity.
+[2016-12-28T10:24:40.826Z] INFO  [3861]  - [Application update app-869a-161228_182424@3/AppDeployStage0] : Starting activity...
+[2016-12-28T10:24:40.826Z] INFO  [3861]  - [Application update app-869a-161228_182424@3/AppDeployStage0/InfraWriteConfig] : Starting activity...
+[2016-12-28T10:24:40.829Z] INFO  [3861]  - [Application update app-869a-161228_182424@3/AppDeployStage0/InfraWriteConfig] : Completed activity. Result:
+  Recreated directory /opt/elasticbeanstalk/deploy/configuration/.
+  Generate appsource url file at /opt/elasticbeanstalk/deploy/configuration/appsourceurl.
+  Generate container config file at /opt/elasticbeanstalk/deploy/configuration/containerconfiguration.
+[2016-12-28T10:24:40.829Z] INFO  [3861]  - [Application update app-869a-161228_182424@3/AppDeployStage0/DownloadSourceBundle] : Starting activity...
+[2016-12-28T10:24:41.095Z] INFO  [3861]  - [Application update app-869a-161228_182424@3/AppDeployStage0/DownloadSourceBundle] : Completed activity. Result:
+  [2016-12-28T10:24:40.926Z] INFO  [3884]  : Application version will be saved to /opt/elasticbeanstalk/deploy/appsource.
+  [2016-12-28T10:24:40.926Z] INFO  [3884]  : Using manifest cache with deployment ID 3 and serial 3.
+  [2016-12-28T10:24:40.926Z] INFO  [3884]  : Attempting to download application source bundle to: '/opt/elasticbeanstalk/deploy/appsource/source_bundle'.
+  [2016-12-28T10:24:40.926Z] INFO  [3884]  : Using computed s3 key.
+  [2016-12-28T10:24:41.039Z] INFO  [3884]  : Downloading from bucket 'elasticbeanstalk-us-west-2-341826891138' with key 'resources/environments/e-rzpyvmyjqg/_runtime/_versions/flask-tutorial/app-869a-161228_182424' and version '' to '/opt/elasticbeanstalk/deploy/appsource/source_bundle'.
+  [2016-12-28T10:24:41.074Z] INFO  [3884]  : Size: 3855, ETag: "993e929da370136b0115e46a8302fbf9", Metadata: {"environmentid"=>"e-rzpyvmyjqg", "requestid"=>"d2b2704c-cce7-11e6-a81a-21b40acb26ef"}.
+  [2016-12-28T10:24:41.082Z] INFO  [3884]  : Downloaded size: 3855.
+  [2016-12-28T10:24:41.082Z] INFO  [3884]  : Successfully downloaded to '/opt/elasticbeanstalk/deploy/appsource/source_bundle'.
+[2016-12-28T10:24:41.095Z] INFO  [3861]  - [Application update app-869a-161228_182424@3/AppDeployStage0/EbExtensionPreBuild] : Starting activity...
+[2016-12-28T10:24:41.358Z] INFO  [3861]  - [Application update app-869a-161228_182424@3/AppDeployStage0/EbExtensionPreBuild/Infra-EmbeddedPreBuild] : Starting activity...
+[2016-12-28T10:24:41.358Z] INFO  [3861]  - [Application update app-869a-161228_182424@3/AppDeployStage0/EbExtensionPreBuild/Infra-EmbeddedPreBuild] : Completed activity.
+[2016-12-28T10:24:41.374Z] INFO  [3861]  - [Application update app-869a-161228_182424@3/AppDeployStage0/EbExtensionPreBuild] : Completed activity.
+[2016-12-28T10:24:41.374Z] INFO  [3861]  - [Application update app-869a-161228_182424@3/AppDeployStage0/AppDeployPreHook] : Starting activity...
+[2016-12-28T10:24:41.374Z] INFO  [3861]  - [Application update app-869a-161228_182424@3/AppDeployStage0/AppDeployPreHook/01new.py] : Starting activity...
+[2016-12-28T10:24:41.669Z] INFO  [3861]  - [Application update app-869a-161228_182424@3/AppDeployStage0/AppDeployPreHook/01new.py] : Completed activity.
+[2016-12-28T10:24:41.669Z] INFO  [3861]  - [Application update app-869a-161228_182424@3/AppDeployStage0/AppDeployPreHook/02unzip.py] : Starting activity...
+[2016-12-28T10:24:41.971Z] INFO  [3861]  - [Application update app-869a-161228_182424@3/AppDeployStage0/AppDeployPreHook/02unzip.py] : Completed activity. Result:
+  Archive:  /opt/elasticbeanstalk/deploy/appsource/source_bundle
+  869a49093e27472218ee2d0ec209f16897ad2b34
+    inflating: /opt/python/ondeck/app/.gitignore  
+    inflating: /opt/python/ondeck/app/application.py  
+   extracting: /opt/python/ondeck/app/config.py  
+    inflating: /opt/python/ondeck/app/forms.py  
+    inflating: /opt/python/ondeck/app/requirements.txt  
+    inflating: /opt/python/ondeck/app/storage.py  
+     creating: /opt/python/ondeck/app/templates/
+    inflating: /opt/python/ondeck/app/templates/base.html  
+    inflating: /opt/python/ondeck/app/templates/index.html  
+    inflating: /opt/python/ondeck/app/templates/story.html  
+[2016-12-28T10:24:41.971Z] INFO  [3861]  - [Application update app-869a-161228_182424@3/AppDeployStage0/AppDeployPreHook/03deploy.py] : Starting activity...
+[2016-12-28T10:24:42.378Z] INFO  [3861]  - [Application update app-869a-161228_182424@3/AppDeployStage0/AppDeployPreHook/03deploy.py] : Completed activity. Result:
+  Requirement already satisfied (use --upgrade to upgrade): Flask==0.11.1 in /opt/python/run/venv/lib/python2.7/site-packages (from -r /opt/python/ondeck/app/requirements.txt (line 1))
+  Requirement already satisfied (use --upgrade to upgrade): itsdangerous==0.24 in /opt/python/run/venv/lib/python2.7/site-packages (from -r /opt/python/ondeck/app/requirements.txt (line 2))
+  Requirement already satisfied (use --upgrade to upgrade): Jinja2==2.7.3 in /opt/python/run/venv/lib/python2.7/site-packages (from -r /opt/python/ondeck/app/requirements.txt (line 3))
+  Requirement already satisfied (use --upgrade to upgrade): MarkupSafe==0.23 in /opt/python/run/venv/lib64/python2.7/site-packages (from -r /opt/python/ondeck/app/requirements.txt (line 4))
+  Requirement already satisfied (use --upgrade to upgrade): Werkzeug==0.10.1 in /opt/python/run/venv/lib/python2.7/site-packages (from -r /opt/python/ondeck/app/requirements.txt (line 5))
+  Requirement already satisfied (use --upgrade to upgrade): WTForms==2.1 in /opt/python/run/venv/lib/python2.7/site-packages (from -r /opt/python/ondeck/app/requirements.txt (line 6))
+  Requirement already satisfied (use --upgrade to upgrade): Flask-WTF==0.13.1 in /opt/python/run/venv/lib/python2.7/site-packages (from -r /opt/python/ondeck/app/requirements.txt (line 7))
+  Requirement already satisfied (use --upgrade to upgrade): click>=2.0 in /opt/python/run/venv/lib/python2.7/site-packages (from Flask==0.11.1->-r /opt/python/ondeck/app/requirements.txt (line 1))
+  You are using pip version 7.1.2, however version 9.0.1 is available.
+  You should consider upgrading via the 'pip install --upgrade pip' command.
+[2016-12-28T10:24:42.378Z] INFO  [3861]  - [Application update app-869a-161228_182424@3/AppDeployStage0/AppDeployPreHook/04configen.py] : Starting activity...
+[2016-12-28T10:24:43.713Z] INFO  [3861]  - [Application update app-869a-161228_182424@3/AppDeployStage0/AppDeployPreHook/04configen.py] : Completed activity.
+[2016-12-28T10:24:43.713Z] INFO  [3861]  - [Application update app-869a-161228_182424@3/AppDeployStage0/AppDeployPreHook] : Completed activity. Result:
+  Successfully execute hooks in directory /opt/elasticbeanstalk/hooks/appdeploy/pre.
+[2016-12-28T10:24:43.713Z] INFO  [3861]  - [Application update app-869a-161228_182424@3/AppDeployStage0/EbExtensionPostBuild] : Starting activity...
+[2016-12-28T10:24:43.983Z] INFO  [3861]  - [Application update app-869a-161228_182424@3/AppDeployStage0/EbExtensionPostBuild/Infra-EmbeddedPostBuild] : Starting activity...
+[2016-12-28T10:24:43.983Z] INFO  [3861]  - [Application update app-869a-161228_182424@3/AppDeployStage0/EbExtensionPostBuild/Infra-EmbeddedPostBuild] : Completed activity.
+[2016-12-28T10:24:43.998Z] INFO  [3861]  - [Application update app-869a-161228_182424@3/AppDeployStage0/EbExtensionPostBuild] : Completed activity.
+[2016-12-28T10:24:43.998Z] INFO  [3861]  - [Application update app-869a-161228_182424@3/AppDeployStage0/InfraCleanEbextension] : Starting activity...
+[2016-12-28T10:24:43.999Z] INFO  [3861]  - [Application update app-869a-161228_182424@3/AppDeployStage0/InfraCleanEbextension] : Completed activity. Result:
+  Cleaned ebextensions subdirectories from /opt/python/ondeck/app.
+[2016-12-28T10:24:43.999Z] INFO  [3861]  - [Application update app-869a-161228_182424@3/AppDeployStage0] : Completed activity. Result:
+  Application update - Command CMD-AppDeploy stage 0 completed
+[2016-12-28T10:24:44.000Z] INFO  [3861]  - [Application update app-869a-161228_182424@3/AppDeployStage1] : Starting activity...
+[2016-12-28T10:24:44.000Z] INFO  [3861]  - [Application update app-869a-161228_182424@3/AppDeployStage1/AppDeployEnactHook] : Starting activity...
+[2016-12-28T10:24:44.000Z] INFO  [3861]  - [Application update app-869a-161228_182424@3/AppDeployStage1/AppDeployEnactHook/01flip.py] : Starting activity...
+[2016-12-28T10:24:52.261Z] INFO  [3861]  - [Application update app-869a-161228_182424@3/AppDeployStage1/AppDeployEnactHook/01flip.py] : Completed activity. Result:
+  httpd: stopped
+  httpd: started
+  httpd                            RUNNING   pid 3997, uptime 0:00:03
+  2016-12-28 10:24:52,255 INFO     Apache is running, but root page is not responding in 3 seconds.
+[2016-12-28T10:24:52.261Z] INFO  [3861]  - [Application update app-869a-161228_182424@3/AppDeployStage1/AppDeployEnactHook/02create_pids_for_monitoring.sh] : Starting activity...
+[2016-12-28T10:24:52.354Z] INFO  [3861]  - [Application update app-869a-161228_182424@3/AppDeployStage1/AppDeployEnactHook/02create_pids_for_monitoring.sh] : Completed activity. Result:
+  + chmod 0755 /var/run/httpd
+  + /opt/elasticbeanstalk/bin/healthd-track-pidfile --proxy httpd
+  + /opt/elasticbeanstalk/bin/healthd-track-pidfile --name application --location /opt/python/run/supervisord.pid
+[2016-12-28T10:24:52.354Z] INFO  [3861]  - [Application update app-869a-161228_182424@3/AppDeployStage1/AppDeployEnactHook] : Completed activity. Result:
+  Successfully execute hooks in directory /opt/elasticbeanstalk/hooks/appdeploy/enact.
+[2016-12-28T10:24:52.354Z] INFO  [3861]  - [Application update app-869a-161228_182424@3/AppDeployStage1/AppDeployPostHook] : Starting activity...
+[2016-12-28T10:24:52.354Z] INFO  [3861]  - [Application update app-869a-161228_182424@3/AppDeployStage1/AppDeployPostHook] : Completed activity. Result:
+  Successfully execute hooks in directory /opt/elasticbeanstalk/hooks/appdeploy/post.
+[2016-12-28T10:24:52.355Z] INFO  [3861]  - [Application update app-869a-161228_182424@3/AppDeployStage1] : Completed activity. Result:
+  Application version switch - Command CMD-AppDeploy stage 1 completed
+[2016-12-28T10:24:52.355Z] INFO  [3861]  - [Application update app-869a-161228_182424@3/AddonsAfter] : Starting activity...
+[2016-12-28T10:24:52.355Z] INFO  [3861]  - [Application update app-869a-161228_182424@3/AddonsAfter/ConfigLogRotation] : Starting activity...
+[2016-12-28T10:24:52.355Z] INFO  [3861]  - [Application update app-869a-161228_182424@3/AddonsAfter/ConfigLogRotation/10-config.sh] : Starting activity...
+[2016-12-28T10:24:52.429Z] INFO  [3861]  - [Application update app-869a-161228_182424@3/AddonsAfter/ConfigLogRotation/10-config.sh] : Completed activity. Result:
+  Disabled forced hourly log rotation.
+[2016-12-28T10:24:52.429Z] INFO  [3861]  - [Application update app-869a-161228_182424@3/AddonsAfter/ConfigLogRotation] : Completed activity. Result:
+  Successfully execute hooks in directory /opt/elasticbeanstalk/addons/logpublish/hooks/config.
+[2016-12-28T10:24:52.429Z] INFO  [3861]  - [Application update app-869a-161228_182424@3/AddonsAfter/ConfigCWLAgent] : Starting activity...
+[2016-12-28T10:24:52.430Z] INFO  [3861]  - [Application update app-869a-161228_182424@3/AddonsAfter/ConfigCWLAgent/10-config.sh] : Starting activity...
+[2016-12-28T10:24:52.542Z] INFO  [3861]  - [Application update app-869a-161228_182424@3/AddonsAfter/ConfigCWLAgent/10-config.sh] : Completed activity. Result:
+  Log streaming option setting is not specified, ignore cloudwatch logs setup.
+  
+  Disabled log streaming.
+[2016-12-28T10:24:52.542Z] INFO  [3861]  - [Application update app-869a-161228_182424@3/AddonsAfter/ConfigCWLAgent] : Completed activity. Result:
+  Successfully execute hooks in directory /opt/elasticbeanstalk/addons/logstreaming/hooks/config.
+[2016-12-28T10:24:52.542Z] INFO  [3861]  - [Application update app-869a-161228_182424@3/AddonsAfter] : Completed activity.
+[2016-12-28T10:24:52.542Z] INFO  [3861]  - [Application update app-869a-161228_182424@3] : Completed activity. Result:
+  Application update - Command CMD-AppDeploy succeeded
+[2016-12-28T10:25:28.166Z] INFO  [4116]  - [CMD-TailLogs] : Starting activity...
+[2016-12-28T10:25:28.166Z] INFO  [4116]  - [CMD-TailLogs/AddonsBefore] : Starting activity...
+[2016-12-28T10:25:28.166Z] INFO  [4116]  - [CMD-TailLogs/AddonsBefore] : Completed activity.
+[2016-12-28T10:25:28.166Z] INFO  [4116]  - [CMD-TailLogs/TailLogs] : Starting activity...
+[2016-12-28T10:25:28.166Z] INFO  [4116]  - [CMD-TailLogs/TailLogs/TailLogs] : Starting activity...
+[2016-12-28T10:25:28.353Z] INFO  [4116]  - [CMD-TailLogs/TailLogs/TailLogs] : Completed activity.
+[2016-12-28T10:25:28.354Z] INFO  [4116]  - [CMD-TailLogs/TailLogs] : Completed activity. Result:
+  CMD-TailLogs - stage 0 - Command CMD-TailLogs stage 0 completed
+[2016-12-28T10:25:28.354Z] INFO  [4116]  - [CMD-TailLogs/AddonsAfter] : Starting activity...
+[2016-12-28T10:25:28.354Z] INFO  [4116]  - [CMD-TailLogs/AddonsAfter] : Completed activity.
+[2016-12-28T10:25:28.354Z] INFO  [4116]  - [CMD-TailLogs] : Completed activity. Result:
+  CMD-TailLogs - Command CMD-TailLogs succeeded
+[2016-12-28T10:27:27.338Z] INFO  [4205]  - [Application update app-4f09-161228_182710@4] : Starting activity...
+[2016-12-28T10:27:27.338Z] INFO  [4205]  - [Application update app-4f09-161228_182710@4/AddonsBefore] : Starting activity...
+[2016-12-28T10:27:27.338Z] INFO  [4205]  - [Application update app-4f09-161228_182710@4/AddonsBefore] : Completed activity.
+[2016-12-28T10:27:27.588Z] INFO  [4205]  - [Application update app-4f09-161228_182710@4/AppDeployStage0] : Starting activity...
+[2016-12-28T10:27:27.588Z] INFO  [4205]  - [Application update app-4f09-161228_182710@4/AppDeployStage0/InfraWriteConfig] : Starting activity...
+[2016-12-28T10:27:27.590Z] INFO  [4205]  - [Application update app-4f09-161228_182710@4/AppDeployStage0/InfraWriteConfig] : Completed activity. Result:
+  Recreated directory /opt/elasticbeanstalk/deploy/configuration/.
+  Generate appsource url file at /opt/elasticbeanstalk/deploy/configuration/appsourceurl.
+  Generate container config file at /opt/elasticbeanstalk/deploy/configuration/containerconfiguration.
+[2016-12-28T10:27:27.590Z] INFO  [4205]  - [Application update app-4f09-161228_182710@4/AppDeployStage0/DownloadSourceBundle] : Starting activity...
+[2016-12-28T10:27:27.871Z] INFO  [4205]  - [Application update app-4f09-161228_182710@4/AppDeployStage0/DownloadSourceBundle] : Completed activity. Result:
+  [2016-12-28T10:27:27.688Z] INFO  [4228]  : Application version will be saved to /opt/elasticbeanstalk/deploy/appsource.
+  [2016-12-28T10:27:27.688Z] INFO  [4228]  : Using manifest cache with deployment ID 4 and serial 4.
+  [2016-12-28T10:27:27.688Z] INFO  [4228]  : Attempting to download application source bundle to: '/opt/elasticbeanstalk/deploy/appsource/source_bundle'.
+  [2016-12-28T10:27:27.688Z] INFO  [4228]  : Using computed s3 key.
+  [2016-12-28T10:27:27.799Z] INFO  [4228]  : Downloading from bucket 'elasticbeanstalk-us-west-2-341826891138' with key 'resources/environments/e-rzpyvmyjqg/_runtime/_versions/flask-tutorial/app-4f09-161228_182710' and version '' to '/opt/elasticbeanstalk/deploy/appsource/source_bundle'.
+  [2016-12-28T10:27:27.849Z] INFO  [4228]  : Size: 3861, ETag: "346b1f7ecbb7c0c242cbaf0a038da8bf", Metadata: {"environmentid"=>"e-rzpyvmyjqg", "requestid"=>"365e56b7-cce8-11e6-910a-a90d3ad3205f"}.
+  [2016-12-28T10:27:27.859Z] INFO  [4228]  : Downloaded size: 3861.
+  [2016-12-28T10:27:27.859Z] INFO  [4228]  : Successfully downloaded to '/opt/elasticbeanstalk/deploy/appsource/source_bundle'.
+[2016-12-28T10:27:27.871Z] INFO  [4205]  - [Application update app-4f09-161228_182710@4/AppDeployStage0/EbExtensionPreBuild] : Starting activity...
+[2016-12-28T10:27:28.132Z] INFO  [4205]  - [Application update app-4f09-161228_182710@4/AppDeployStage0/EbExtensionPreBuild/Infra-EmbeddedPreBuild] : Starting activity...
+[2016-12-28T10:27:28.132Z] INFO  [4205]  - [Application update app-4f09-161228_182710@4/AppDeployStage0/EbExtensionPreBuild/Infra-EmbeddedPreBuild] : Completed activity.
+[2016-12-28T10:27:28.147Z] INFO  [4205]  - [Application update app-4f09-161228_182710@4/AppDeployStage0/EbExtensionPreBuild] : Completed activity.
+[2016-12-28T10:27:28.147Z] INFO  [4205]  - [Application update app-4f09-161228_182710@4/AppDeployStage0/AppDeployPreHook] : Starting activity...
+[2016-12-28T10:27:28.147Z] INFO  [4205]  - [Application update app-4f09-161228_182710@4/AppDeployStage0/AppDeployPreHook/01new.py] : Starting activity...
+[2016-12-28T10:27:28.443Z] INFO  [4205]  - [Application update app-4f09-161228_182710@4/AppDeployStage0/AppDeployPreHook/01new.py] : Completed activity.
+[2016-12-28T10:27:28.443Z] INFO  [4205]  - [Application update app-4f09-161228_182710@4/AppDeployStage0/AppDeployPreHook/02unzip.py] : Starting activity...
+[2016-12-28T10:27:28.744Z] INFO  [4205]  - [Application update app-4f09-161228_182710@4/AppDeployStage0/AppDeployPreHook/02unzip.py] : Completed activity. Result:
+  Archive:  /opt/elasticbeanstalk/deploy/appsource/source_bundle
+  4f0983e0e65cb6b1b5d372c419151b0ac37a6868
+    inflating: /opt/python/ondeck/app/.gitignore  
+    inflating: /opt/python/ondeck/app/application.py  
+   extracting: /opt/python/ondeck/app/config.py  
+    inflating: /opt/python/ondeck/app/forms.py  
+    inflating: /opt/python/ondeck/app/requirements.txt  
+    inflating: /opt/python/ondeck/app/storage.py  
+     creating: /opt/python/ondeck/app/templates/
+    inflating: /opt/python/ondeck/app/templates/base.html  
+    inflating: /opt/python/ondeck/app/templates/index.html  
+    inflating: /opt/python/ondeck/app/templates/story.html  
+[2016-12-28T10:27:28.744Z] INFO  [4205]  - [Application update app-4f09-161228_182710@4/AppDeployStage0/AppDeployPreHook/03deploy.py] : Starting activity...
+[2016-12-28T10:27:29.149Z] INFO  [4205]  - [Application update app-4f09-161228_182710@4/AppDeployStage0/AppDeployPreHook/03deploy.py] : Completed activity. Result:
+  Requirement already satisfied (use --upgrade to upgrade): Flask==0.11.1 in /opt/python/run/venv/lib/python2.7/site-packages (from -r /opt/python/ondeck/app/requirements.txt (line 1))
+  Requirement already satisfied (use --upgrade to upgrade): itsdangerous==0.24 in /opt/python/run/venv/lib/python2.7/site-packages (from -r /opt/python/ondeck/app/requirements.txt (line 2))
+  Requirement already satisfied (use --upgrade to upgrade): Jinja2==2.7.3 in /opt/python/run/venv/lib/python2.7/site-packages (from -r /opt/python/ondeck/app/requirements.txt (line 3))
+  Requirement already satisfied (use --upgrade to upgrade): MarkupSafe==0.23 in /opt/python/run/venv/lib64/python2.7/site-packages (from -r /opt/python/ondeck/app/requirements.txt (line 4))
+  Requirement already satisfied (use --upgrade to upgrade): Werkzeug==0.10.1 in /opt/python/run/venv/lib/python2.7/site-packages (from -r /opt/python/ondeck/app/requirements.txt (line 5))
+  Requirement already satisfied (use --upgrade to upgrade): WTForms==2.1 in /opt/python/run/venv/lib/python2.7/site-packages (from -r /opt/python/ondeck/app/requirements.txt (line 6))
+  Requirement already satisfied (use --upgrade to upgrade): Flask-WTF==0.13.1 in /opt/python/run/venv/lib/python2.7/site-packages (from -r /opt/python/ondeck/app/requirements.txt (line 7))
+  Requirement already satisfied (use --upgrade to upgrade): click>=2.0 in /opt/python/run/venv/lib/python2.7/site-packages (from Flask==0.11.1->-r /opt/python/ondeck/app/requirements.txt (line 1))
+  You are using pip version 7.1.2, however version 9.0.1 is available.
+  You should consider upgrading via the 'pip install --upgrade pip' command.
+[2016-12-28T10:27:29.149Z] INFO  [4205]  - [Application update app-4f09-161228_182710@4/AppDeployStage0/AppDeployPreHook/04configen.py] : Starting activity...
+[2016-12-28T10:27:30.474Z] INFO  [4205]  - [Application update app-4f09-161228_182710@4/AppDeployStage0/AppDeployPreHook/04configen.py] : Completed activity.
+[2016-12-28T10:27:30.474Z] INFO  [4205]  - [Application update app-4f09-161228_182710@4/AppDeployStage0/AppDeployPreHook] : Completed activity. Result:
+  Successfully execute hooks in directory /opt/elasticbeanstalk/hooks/appdeploy/pre.
+[2016-12-28T10:27:30.474Z] INFO  [4205]  - [Application update app-4f09-161228_182710@4/AppDeployStage0/EbExtensionPostBuild] : Starting activity...
+[2016-12-28T10:27:30.732Z] INFO  [4205]  - [Application update app-4f09-161228_182710@4/AppDeployStage0/EbExtensionPostBuild/Infra-EmbeddedPostBuild] : Starting activity...
+[2016-12-28T10:27:30.732Z] INFO  [4205]  - [Application update app-4f09-161228_182710@4/AppDeployStage0/EbExtensionPostBuild/Infra-EmbeddedPostBuild] : Completed activity.
+[2016-12-28T10:27:30.747Z] INFO  [4205]  - [Application update app-4f09-161228_182710@4/AppDeployStage0/EbExtensionPostBuild] : Completed activity.
+[2016-12-28T10:27:30.747Z] INFO  [4205]  - [Application update app-4f09-161228_182710@4/AppDeployStage0/InfraCleanEbextension] : Starting activity...
+[2016-12-28T10:27:30.749Z] INFO  [4205]  - [Application update app-4f09-161228_182710@4/AppDeployStage0/InfraCleanEbextension] : Completed activity. Result:
+  Cleaned ebextensions subdirectories from /opt/python/ondeck/app.
+[2016-12-28T10:27:30.749Z] INFO  [4205]  - [Application update app-4f09-161228_182710@4/AppDeployStage0] : Completed activity. Result:
+  Application update - Command CMD-AppDeploy stage 0 completed
+[2016-12-28T10:27:30.749Z] INFO  [4205]  - [Application update app-4f09-161228_182710@4/AppDeployStage1] : Starting activity...
+[2016-12-28T10:27:30.749Z] INFO  [4205]  - [Application update app-4f09-161228_182710@4/AppDeployStage1/AppDeployEnactHook] : Starting activity...
+[2016-12-28T10:27:30.749Z] INFO  [4205]  - [Application update app-4f09-161228_182710@4/AppDeployStage1/AppDeployEnactHook/01flip.py] : Starting activity...
+[2016-12-28T10:27:35.025Z] INFO  [4205]  - [Application update app-4f09-161228_182710@4/AppDeployStage1/AppDeployEnactHook/01flip.py] : Completed activity. Result:
+  httpd: stopped
+  httpd: started
+  httpd                            RUNNING   pid 4341, uptime 0:00:02
+[2016-12-28T10:27:35.025Z] INFO  [4205]  - [Application update app-4f09-161228_182710@4/AppDeployStage1/AppDeployEnactHook/02create_pids_for_monitoring.sh] : Starting activity...
+[2016-12-28T10:27:35.123Z] INFO  [4205]  - [Application update app-4f09-161228_182710@4/AppDeployStage1/AppDeployEnactHook/02create_pids_for_monitoring.sh] : Completed activity. Result:
+  + chmod 0755 /var/run/httpd
+  + /opt/elasticbeanstalk/bin/healthd-track-pidfile --proxy httpd
+  + /opt/elasticbeanstalk/bin/healthd-track-pidfile --name application --location /opt/python/run/supervisord.pid
+[2016-12-28T10:27:35.123Z] INFO  [4205]  - [Application update app-4f09-161228_182710@4/AppDeployStage1/AppDeployEnactHook] : Completed activity. Result:
+  Successfully execute hooks in directory /opt/elasticbeanstalk/hooks/appdeploy/enact.
+[2016-12-28T10:27:35.123Z] INFO  [4205]  - [Application update app-4f09-161228_182710@4/AppDeployStage1/AppDeployPostHook] : Starting activity...
+[2016-12-28T10:27:35.123Z] INFO  [4205]  - [Application update app-4f09-161228_182710@4/AppDeployStage1/AppDeployPostHook] : Completed activity. Result:
+  Successfully execute hooks in directory /opt/elasticbeanstalk/hooks/appdeploy/post.
+[2016-12-28T10:27:35.123Z] INFO  [4205]  - [Application update app-4f09-161228_182710@4/AppDeployStage1] : Completed activity. Result:
+  Application version switch - Command CMD-AppDeploy stage 1 completed
+[2016-12-28T10:27:35.123Z] INFO  [4205]  - [Application update app-4f09-161228_182710@4/AddonsAfter] : Starting activity...
+[2016-12-28T10:27:35.123Z] INFO  [4205]  - [Application update app-4f09-161228_182710@4/AddonsAfter/ConfigLogRotation] : Starting activity...
+[2016-12-28T10:27:35.124Z] INFO  [4205]  - [Application update app-4f09-161228_182710@4/AddonsAfter/ConfigLogRotation/10-config.sh] : Starting activity...
+[2016-12-28T10:27:35.201Z] INFO  [4205]  - [Application update app-4f09-161228_182710@4/AddonsAfter/ConfigLogRotation/10-config.sh] : Completed activity. Result:
+  Disabled forced hourly log rotation.
+[2016-12-28T10:27:35.202Z] INFO  [4205]  - [Application update app-4f09-161228_182710@4/AddonsAfter/ConfigLogRotation] : Completed activity. Result:
+  Successfully execute hooks in directory /opt/elasticbeanstalk/addons/logpublish/hooks/config.
+[2016-12-28T10:27:35.202Z] INFO  [4205]  - [Application update app-4f09-161228_182710@4/AddonsAfter/ConfigCWLAgent] : Starting activity...
+[2016-12-28T10:27:35.202Z] INFO  [4205]  - [Application update app-4f09-161228_182710@4/AddonsAfter/ConfigCWLAgent/10-config.sh] : Starting activity...
+[2016-12-28T10:27:35.314Z] INFO  [4205]  - [Application update app-4f09-161228_182710@4/AddonsAfter/ConfigCWLAgent/10-config.sh] : Completed activity. Result:
+  Log streaming option setting is not specified, ignore cloudwatch logs setup.
+  
+  Disabled log streaming.
+[2016-12-28T10:27:35.314Z] INFO  [4205]  - [Application update app-4f09-161228_182710@4/AddonsAfter/ConfigCWLAgent] : Completed activity. Result:
+  Successfully execute hooks in directory /opt/elasticbeanstalk/addons/logstreaming/hooks/config.
+[2016-12-28T10:27:35.314Z] INFO  [4205]  - [Application update app-4f09-161228_182710@4/AddonsAfter] : Completed activity.
+[2016-12-28T10:27:35.314Z] INFO  [4205]  - [Application update app-4f09-161228_182710@4] : Completed activity. Result:
+  Application update - Command CMD-AppDeploy succeeded
+[2016-12-28T10:29:09.981Z] INFO  [4502]  - [CMD-TailLogs] : Starting activity...
+[2016-12-28T10:29:09.981Z] INFO  [4502]  - [CMD-TailLogs/AddonsBefore] : Starting activity...
+[2016-12-28T10:29:09.981Z] INFO  [4502]  - [CMD-TailLogs/AddonsBefore] : Completed activity.
+[2016-12-28T10:29:09.981Z] INFO  [4502]  - [CMD-TailLogs/TailLogs] : Starting activity...
+[2016-12-28T10:29:09.981Z] INFO  [4502]  - [CMD-TailLogs/TailLogs/TailLogs] : Starting activity...
+[2016-12-28T10:29:10.170Z] INFO  [4502]  - [CMD-TailLogs/TailLogs/TailLogs] : Completed activity.
+[2016-12-28T10:29:10.171Z] INFO  [4502]  - [CMD-TailLogs/TailLogs] : Completed activity. Result:
+  CMD-TailLogs - stage 0 - Command CMD-TailLogs stage 0 completed
+[2016-12-28T10:29:10.171Z] INFO  [4502]  - [CMD-TailLogs/AddonsAfter] : Starting activity...
+[2016-12-28T10:29:10.171Z] INFO  [4502]  - [CMD-TailLogs/AddonsAfter] : Completed activity.
+[2016-12-28T10:29:10.171Z] INFO  [4502]  - [CMD-TailLogs] : Completed activity. Result:
+  CMD-TailLogs - Command CMD-TailLogs succeeded
+[2016-12-28T10:30:18.828Z] INFO  [4552]  - [Application update app-4f09-161228_182957@5] : Starting activity...
+[2016-12-28T10:30:18.828Z] INFO  [4552]  - [Application update app-4f09-161228_182957@5/AddonsBefore] : Starting activity...
+[2016-12-28T10:30:18.828Z] INFO  [4552]  - [Application update app-4f09-161228_182957@5/AddonsBefore] : Completed activity.
+[2016-12-28T10:30:19.080Z] INFO  [4552]  - [Application update app-4f09-161228_182957@5/AppDeployStage0] : Starting activity...
+[2016-12-28T10:30:19.080Z] INFO  [4552]  - [Application update app-4f09-161228_182957@5/AppDeployStage0/InfraWriteConfig] : Starting activity...
+[2016-12-28T10:30:19.082Z] INFO  [4552]  - [Application update app-4f09-161228_182957@5/AppDeployStage0/InfraWriteConfig] : Completed activity. Result:
+  Recreated directory /opt/elasticbeanstalk/deploy/configuration/.
+  Generate appsource url file at /opt/elasticbeanstalk/deploy/configuration/appsourceurl.
+  Generate container config file at /opt/elasticbeanstalk/deploy/configuration/containerconfiguration.
+[2016-12-28T10:30:19.083Z] INFO  [4552]  - [Application update app-4f09-161228_182957@5/AppDeployStage0/DownloadSourceBundle] : Starting activity...
+[2016-12-28T10:30:19.394Z] INFO  [4552]  - [Application update app-4f09-161228_182957@5/AppDeployStage0/DownloadSourceBundle] : Completed activity. Result:
+  [2016-12-28T10:30:19.184Z] INFO  [4575]  : Application version will be saved to /opt/elasticbeanstalk/deploy/appsource.
+  [2016-12-28T10:30:19.185Z] INFO  [4575]  : Using manifest cache with deployment ID 5 and serial 5.
+  [2016-12-28T10:30:19.185Z] INFO  [4575]  : Attempting to download application source bundle to: '/opt/elasticbeanstalk/deploy/appsource/source_bundle'.
+  [2016-12-28T10:30:19.185Z] INFO  [4575]  : Using computed s3 key.
+  [2016-12-28T10:30:19.305Z] INFO  [4575]  : Downloading from bucket 'elasticbeanstalk-us-west-2-341826891138' with key 'resources/environments/e-rzpyvmyjqg/_runtime/_versions/flask-tutorial/app-4f09-161228_182957' and version '' to '/opt/elasticbeanstalk/deploy/appsource/source_bundle'.
+  [2016-12-28T10:30:19.370Z] INFO  [4575]  : Size: 3861, ETag: "346b1f7ecbb7c0c242cbaf0a038da8bf", Metadata: {"environmentid"=>"e-rzpyvmyjqg", "requestid"=>"98ed82a5-cce8-11e6-b223-71a410dc87ee"}.
+  [2016-12-28T10:30:19.380Z] INFO  [4575]  : Downloaded size: 3861.
+  [2016-12-28T10:30:19.381Z] INFO  [4575]  : Successfully downloaded to '/opt/elasticbeanstalk/deploy/appsource/source_bundle'.
+[2016-12-28T10:30:19.395Z] INFO  [4552]  - [Application update app-4f09-161228_182957@5/AppDeployStage0/EbExtensionPreBuild] : Starting activity...
+[2016-12-28T10:30:19.671Z] INFO  [4552]  - [Application update app-4f09-161228_182957@5/AppDeployStage0/EbExtensionPreBuild/Infra-EmbeddedPreBuild] : Starting activity...
+[2016-12-28T10:30:19.671Z] INFO  [4552]  - [Application update app-4f09-161228_182957@5/AppDeployStage0/EbExtensionPreBuild/Infra-EmbeddedPreBuild] : Completed activity.
+[2016-12-28T10:30:19.686Z] INFO  [4552]  - [Application update app-4f09-161228_182957@5/AppDeployStage0/EbExtensionPreBuild] : Completed activity.
+[2016-12-28T10:30:19.686Z] INFO  [4552]  - [Application update app-4f09-161228_182957@5/AppDeployStage0/AppDeployPreHook] : Starting activity...
+[2016-12-28T10:30:19.687Z] INFO  [4552]  - [Application update app-4f09-161228_182957@5/AppDeployStage0/AppDeployPreHook/01new.py] : Starting activity...
+[2016-12-28T10:30:20.000Z] INFO  [4552]  - [Application update app-4f09-161228_182957@5/AppDeployStage0/AppDeployPreHook/01new.py] : Completed activity.
+[2016-12-28T10:30:20.000Z] INFO  [4552]  - [Application update app-4f09-161228_182957@5/AppDeployStage0/AppDeployPreHook/02unzip.py] : Starting activity...
+[2016-12-28T10:30:20.322Z] INFO  [4552]  - [Application update app-4f09-161228_182957@5/AppDeployStage0/AppDeployPreHook/02unzip.py] : Completed activity. Result:
+  Archive:  /opt/elasticbeanstalk/deploy/appsource/source_bundle
+  4f0983e0e65cb6b1b5d372c419151b0ac37a6868
+    inflating: /opt/python/ondeck/app/.gitignore  
+    inflating: /opt/python/ondeck/app/application.py  
+   extracting: /opt/python/ondeck/app/config.py  
+    inflating: /opt/python/ondeck/app/forms.py  
+    inflating: /opt/python/ondeck/app/requirements.txt  
+    inflating: /opt/python/ondeck/app/storage.py  
+     creating: /opt/python/ondeck/app/templates/
+    inflating: /opt/python/ondeck/app/templates/base.html  
+    inflating: /opt/python/ondeck/app/templates/index.html  
+    inflating: /opt/python/ondeck/app/templates/story.html  
+[2016-12-28T10:30:20.322Z] INFO  [4552]  - [Application update app-4f09-161228_182957@5/AppDeployStage0/AppDeployPreHook/03deploy.py] : Starting activity...
+[2016-12-28T10:30:20.745Z] INFO  [4552]  - [Application update app-4f09-161228_182957@5/AppDeployStage0/AppDeployPreHook/03deploy.py] : Completed activity. Result:
+  Requirement already satisfied (use --upgrade to upgrade): Flask==0.11.1 in /opt/python/run/venv/lib/python2.7/site-packages (from -r /opt/python/ondeck/app/requirements.txt (line 1))
+  Requirement already satisfied (use --upgrade to upgrade): itsdangerous==0.24 in /opt/python/run/venv/lib/python2.7/site-packages (from -r /opt/python/ondeck/app/requirements.txt (line 2))
+  Requirement already satisfied (use --upgrade to upgrade): Jinja2==2.7.3 in /opt/python/run/venv/lib/python2.7/site-packages (from -r /opt/python/ondeck/app/requirements.txt (line 3))
+  Requirement already satisfied (use --upgrade to upgrade): MarkupSafe==0.23 in /opt/python/run/venv/lib64/python2.7/site-packages (from -r /opt/python/ondeck/app/requirements.txt (line 4))
+  Requirement already satisfied (use --upgrade to upgrade): Werkzeug==0.10.1 in /opt/python/run/venv/lib/python2.7/site-packages (from -r /opt/python/ondeck/app/requirements.txt (line 5))
+  Requirement already satisfied (use --upgrade to upgrade): WTForms==2.1 in /opt/python/run/venv/lib/python2.7/site-packages (from -r /opt/python/ondeck/app/requirements.txt (line 6))
+  Requirement already satisfied (use --upgrade to upgrade): Flask-WTF==0.13.1 in /opt/python/run/venv/lib/python2.7/site-packages (from -r /opt/python/ondeck/app/requirements.txt (line 7))
+  Requirement already satisfied (use --upgrade to upgrade): click>=2.0 in /opt/python/run/venv/lib/python2.7/site-packages (from Flask==0.11.1->-r /opt/python/ondeck/app/requirements.txt (line 1))
+  You are using pip version 7.1.2, however version 9.0.1 is available.
+  You should consider upgrading via the 'pip install --upgrade pip' command.
+[2016-12-28T10:30:20.745Z] INFO  [4552]  - [Application update app-4f09-161228_182957@5/AppDeployStage0/AppDeployPreHook/04configen.py] : Starting activity...
+[2016-12-28T10:30:22.140Z] INFO  [4552]  - [Application update app-4f09-161228_182957@5/AppDeployStage0/AppDeployPreHook/04configen.py] : Completed activity.
+[2016-12-28T10:30:22.140Z] INFO  [4552]  - [Application update app-4f09-161228_182957@5/AppDeployStage0/AppDeployPreHook] : Completed activity. Result:
+  Successfully execute hooks in directory /opt/elasticbeanstalk/hooks/appdeploy/pre.
+[2016-12-28T10:30:22.140Z] INFO  [4552]  - [Application update app-4f09-161228_182957@5/AppDeployStage0/EbExtensionPostBuild] : Starting activity...
+[2016-12-28T10:30:22.406Z] INFO  [4552]  - [Application update app-4f09-161228_182957@5/AppDeployStage0/EbExtensionPostBuild/Infra-EmbeddedPostBuild] : Starting activity...
+[2016-12-28T10:30:22.406Z] INFO  [4552]  - [Application update app-4f09-161228_182957@5/AppDeployStage0/EbExtensionPostBuild/Infra-EmbeddedPostBuild] : Completed activity.
+[2016-12-28T10:30:22.421Z] INFO  [4552]  - [Application update app-4f09-161228_182957@5/AppDeployStage0/EbExtensionPostBuild] : Completed activity.
+[2016-12-28T10:30:22.421Z] INFO  [4552]  - [Application update app-4f09-161228_182957@5/AppDeployStage0/InfraCleanEbextension] : Starting activity...
+[2016-12-28T10:30:22.422Z] INFO  [4552]  - [Application update app-4f09-161228_182957@5/AppDeployStage0/InfraCleanEbextension] : Completed activity. Result:
+  Cleaned ebextensions subdirectories from /opt/python/ondeck/app.
+[2016-12-28T10:30:22.422Z] INFO  [4552]  - [Application update app-4f09-161228_182957@5/AppDeployStage0] : Completed activity. Result:
+  Application update - Command CMD-AppDeploy stage 0 completed
+[2016-12-28T10:30:22.422Z] INFO  [4552]  - [Application update app-4f09-161228_182957@5/AppDeployStage1] : Starting activity...
+[2016-12-28T10:30:22.422Z] INFO  [4552]  - [Application update app-4f09-161228_182957@5/AppDeployStage1/AppDeployEnactHook] : Starting activity...
+[2016-12-28T10:30:22.423Z] INFO  [4552]  - [Application update app-4f09-161228_182957@5/AppDeployStage1/AppDeployEnactHook/01flip.py] : Starting activity...
+[2016-12-28T10:30:26.762Z] INFO  [4552]  - [Application update app-4f09-161228_182957@5/AppDeployStage1/AppDeployEnactHook/01flip.py] : Completed activity. Result:
+  httpd: stopped
+  httpd: started
+  httpd                            RUNNING   pid 4688, uptime 0:00:03
+[2016-12-28T10:30:26.763Z] INFO  [4552]  - [Application update app-4f09-161228_182957@5/AppDeployStage1/AppDeployEnactHook/02create_pids_for_monitoring.sh] : Starting activity...
+[2016-12-28T10:30:26.865Z] INFO  [4552]  - [Application update app-4f09-161228_182957@5/AppDeployStage1/AppDeployEnactHook/02create_pids_for_monitoring.sh] : Completed activity. Result:
+  + chmod 0755 /var/run/httpd
+  + /opt/elasticbeanstalk/bin/healthd-track-pidfile --proxy httpd
+  + /opt/elasticbeanstalk/bin/healthd-track-pidfile --name application --location /opt/python/run/supervisord.pid
+[2016-12-28T10:30:26.865Z] INFO  [4552]  - [Application update app-4f09-161228_182957@5/AppDeployStage1/AppDeployEnactHook] : Completed activity. Result:
+  Successfully execute hooks in directory /opt/elasticbeanstalk/hooks/appdeploy/enact.
+[2016-12-28T10:30:26.865Z] INFO  [4552]  - [Application update app-4f09-161228_182957@5/AppDeployStage1/AppDeployPostHook] : Starting activity...
+[2016-12-28T10:30:26.865Z] INFO  [4552]  - [Application update app-4f09-161228_182957@5/AppDeployStage1/AppDeployPostHook] : Completed activity. Result:
+  Successfully execute hooks in directory /opt/elasticbeanstalk/hooks/appdeploy/post.
+[2016-12-28T10:30:26.866Z] INFO  [4552]  - [Application update app-4f09-161228_182957@5/AppDeployStage1] : Completed activity. Result:
+  Application version switch - Command CMD-AppDeploy stage 1 completed
+[2016-12-28T10:30:26.866Z] INFO  [4552]  - [Application update app-4f09-161228_182957@5/AddonsAfter] : Starting activity...
+[2016-12-28T10:30:26.866Z] INFO  [4552]  - [Application update app-4f09-161228_182957@5/AddonsAfter/ConfigLogRotation] : Starting activity...
+[2016-12-28T10:30:26.866Z] INFO  [4552]  - [Application update app-4f09-161228_182957@5/AddonsAfter/ConfigLogRotation/10-config.sh] : Starting activity...
+[2016-12-28T10:30:26.942Z] INFO  [4552]  - [Application update app-4f09-161228_182957@5/AddonsAfter/ConfigLogRotation/10-config.sh] : Completed activity. Result:
+  Disabled forced hourly log rotation.
+[2016-12-28T10:30:26.942Z] INFO  [4552]  - [Application update app-4f09-161228_182957@5/AddonsAfter/ConfigLogRotation] : Completed activity. Result:
+  Successfully execute hooks in directory /opt/elasticbeanstalk/addons/logpublish/hooks/config.
+[2016-12-28T10:30:26.942Z] INFO  [4552]  - [Application update app-4f09-161228_182957@5/AddonsAfter/ConfigCWLAgent] : Starting activity...
+[2016-12-28T10:30:26.942Z] INFO  [4552]  - [Application update app-4f09-161228_182957@5/AddonsAfter/ConfigCWLAgent/10-config.sh] : Starting activity...
+[2016-12-28T10:30:27.058Z] INFO  [4552]  - [Application update app-4f09-161228_182957@5/AddonsAfter/ConfigCWLAgent/10-config.sh] : Completed activity. Result:
+  Log streaming option setting is not specified, ignore cloudwatch logs setup.
+  
+  Disabled log streaming.
+[2016-12-28T10:30:27.058Z] INFO  [4552]  - [Application update app-4f09-161228_182957@5/AddonsAfter/ConfigCWLAgent] : Completed activity. Result:
+  Successfully execute hooks in directory /opt/elasticbeanstalk/addons/logstreaming/hooks/config.
+[2016-12-28T10:30:27.058Z] INFO  [4552]  - [Application update app-4f09-161228_182957@5/AddonsAfter] : Completed activity.
+[2016-12-28T10:30:27.058Z] INFO  [4552]  - [Application update app-4f09-161228_182957@5] : Completed activity. Result:
+  Application update - Command CMD-AppDeploy succeeded
+[2016-12-28T10:35:49.949Z] INFO  [4932]  - [CMD-TailLogs] : Starting activity...
+[2016-12-28T10:35:49.949Z] INFO  [4932]  - [CMD-TailLogs/AddonsBefore] : Starting activity...
+[2016-12-28T10:35:49.949Z] INFO  [4932]  - [CMD-TailLogs/AddonsBefore] : Completed activity.
+[2016-12-28T10:35:49.950Z] INFO  [4932]  - [CMD-TailLogs/TailLogs] : Starting activity...
+[2016-12-28T10:35:49.950Z] INFO  [4932]  - [CMD-TailLogs/TailLogs/TailLogs] : Starting activity...
+[2016-12-28T10:35:50.191Z] INFO  [4932]  - [CMD-TailLogs/TailLogs/TailLogs] : Completed activity.
+[2016-12-28T10:35:50.191Z] INFO  [4932]  - [CMD-TailLogs/TailLogs] : Completed activity. Result:
+  CMD-TailLogs - stage 0 - Command CMD-TailLogs stage 0 completed
+[2016-12-28T10:35:50.191Z] INFO  [4932]  - [CMD-TailLogs/AddonsAfter] : Starting activity...
+[2016-12-28T10:35:50.191Z] INFO  [4932]  - [CMD-TailLogs/AddonsAfter] : Completed activity.
+[2016-12-28T10:35:50.191Z] INFO  [4932]  - [CMD-TailLogs] : Completed activity. Result:
+  CMD-TailLogs - Command CMD-TailLogs succeeded
+[2016-12-28T10:37:14.981Z] INFO  [5038]  - [Application update app-8e33-161228_183658@6] : Starting activity...
+[2016-12-28T10:37:14.982Z] INFO  [5038]  - [Application update app-8e33-161228_183658@6/AddonsBefore] : Starting activity...
+[2016-12-28T10:37:14.982Z] INFO  [5038]  - [Application update app-8e33-161228_183658@6/AddonsBefore] : Completed activity.
+[2016-12-28T10:37:15.237Z] INFO  [5038]  - [Application update app-8e33-161228_183658@6/AppDeployStage0] : Starting activity...
+[2016-12-28T10:37:15.237Z] INFO  [5038]  - [Application update app-8e33-161228_183658@6/AppDeployStage0/InfraWriteConfig] : Starting activity...
+[2016-12-28T10:37:15.240Z] INFO  [5038]  - [Application update app-8e33-161228_183658@6/AppDeployStage0/InfraWriteConfig] : Completed activity. Result:
+  Recreated directory /opt/elasticbeanstalk/deploy/configuration/.
+  Generate appsource url file at /opt/elasticbeanstalk/deploy/configuration/appsourceurl.
+  Generate container config file at /opt/elasticbeanstalk/deploy/configuration/containerconfiguration.
+[2016-12-28T10:37:15.240Z] INFO  [5038]  - [Application update app-8e33-161228_183658@6/AppDeployStage0/DownloadSourceBundle] : Starting activity...
+[2016-12-28T10:37:15.546Z] INFO  [5038]  - [Application update app-8e33-161228_183658@6/AppDeployStage0/DownloadSourceBundle] : Completed activity. Result:
+  [2016-12-28T10:37:15.345Z] INFO  [5061]  : Application version will be saved to /opt/elasticbeanstalk/deploy/appsource.
+  [2016-12-28T10:37:15.345Z] INFO  [5061]  : Using manifest cache with deployment ID 6 and serial 6.
+  [2016-12-28T10:37:15.345Z] INFO  [5061]  : Attempting to download application source bundle to: '/opt/elasticbeanstalk/deploy/appsource/source_bundle'.
+  [2016-12-28T10:37:15.345Z] INFO  [5061]  : Using computed s3 key.
+  [2016-12-28T10:37:15.467Z] INFO  [5061]  : Downloading from bucket 'elasticbeanstalk-us-west-2-341826891138' with key 'resources/environments/e-rzpyvmyjqg/_runtime/_versions/flask-tutorial/app-8e33-161228_183658' and version '' to '/opt/elasticbeanstalk/deploy/appsource/source_bundle'.
+  [2016-12-28T10:37:15.519Z] INFO  [5061]  : Size: 4835, ETag: "3f22bf7b4fb995ede629a6869b2691f6", Metadata: {"environmentid"=>"e-rzpyvmyjqg", "requestid"=>"9462873f-cce9-11e6-b6b8-4fbb5c4e7d2c"}.
+  [2016-12-28T10:37:15.530Z] INFO  [5061]  : Downloaded size: 4835.
+  [2016-12-28T10:37:15.530Z] INFO  [5061]  : Successfully downloaded to '/opt/elasticbeanstalk/deploy/appsource/source_bundle'.
+[2016-12-28T10:37:15.546Z] INFO  [5038]  - [Application update app-8e33-161228_183658@6/AppDeployStage0/EbExtensionPreBuild] : Starting activity...
+[2016-12-28T10:37:15.821Z] INFO  [5038]  - [Application update app-8e33-161228_183658@6/AppDeployStage0/EbExtensionPreBuild/Infra-EmbeddedPreBuild] : Starting activity...
+[2016-12-28T10:37:15.821Z] INFO  [5038]  - [Application update app-8e33-161228_183658@6/AppDeployStage0/EbExtensionPreBuild/Infra-EmbeddedPreBuild] : Completed activity.
+[2016-12-28T10:37:15.839Z] INFO  [5038]  - [Application update app-8e33-161228_183658@6/AppDeployStage0/EbExtensionPreBuild] : Completed activity.
+[2016-12-28T10:37:15.839Z] INFO  [5038]  - [Application update app-8e33-161228_183658@6/AppDeployStage0/AppDeployPreHook] : Starting activity...
+[2016-12-28T10:37:15.839Z] INFO  [5038]  - [Application update app-8e33-161228_183658@6/AppDeployStage0/AppDeployPreHook/01new.py] : Starting activity...
+[2016-12-28T10:37:16.158Z] INFO  [5038]  - [Application update app-8e33-161228_183658@6/AppDeployStage0/AppDeployPreHook/01new.py] : Completed activity.
+[2016-12-28T10:37:16.158Z] INFO  [5038]  - [Application update app-8e33-161228_183658@6/AppDeployStage0/AppDeployPreHook/02unzip.py] : Starting activity...
+[2016-12-28T10:37:16.482Z] INFO  [5038]  - [Application update app-8e33-161228_183658@6/AppDeployStage0/AppDeployPreHook/02unzip.py] : Completed activity. Result:
+  Archive:  /opt/elasticbeanstalk/deploy/appsource/source_bundle
+  8e335d76bc761e064da652b38581aeb9619cd798
+    inflating: /opt/python/ondeck/app/.gitignore  
+    inflating: /opt/python/ondeck/app/application.py  
+    inflating: /opt/python/ondeck/app/archive.json  
+   extracting: /opt/python/ondeck/app/config.py  
+    inflating: /opt/python/ondeck/app/forms.py  
+    inflating: /opt/python/ondeck/app/requirements.txt  
+    inflating: /opt/python/ondeck/app/storage.py  
+     creating: /opt/python/ondeck/app/templates/
+    inflating: /opt/python/ondeck/app/templates/base.html  
+    inflating: /opt/python/ondeck/app/templates/index.html  
+    inflating: /opt/python/ondeck/app/templates/story.html  
+[2016-12-28T10:37:16.482Z] INFO  [5038]  - [Application update app-8e33-161228_183658@6/AppDeployStage0/AppDeployPreHook/03deploy.py] : Starting activity...
+[2016-12-28T10:37:16.905Z] INFO  [5038]  - [Application update app-8e33-161228_183658@6/AppDeployStage0/AppDeployPreHook/03deploy.py] : Completed activity. Result:
+  Requirement already satisfied (use --upgrade to upgrade): Flask==0.11.1 in /opt/python/run/venv/lib/python2.7/site-packages (from -r /opt/python/ondeck/app/requirements.txt (line 1))
+  Requirement already satisfied (use --upgrade to upgrade): itsdangerous==0.24 in /opt/python/run/venv/lib/python2.7/site-packages (from -r /opt/python/ondeck/app/requirements.txt (line 2))
+  Requirement already satisfied (use --upgrade to upgrade): Jinja2==2.7.3 in /opt/python/run/venv/lib/python2.7/site-packages (from -r /opt/python/ondeck/app/requirements.txt (line 3))
+  Requirement already satisfied (use --upgrade to upgrade): MarkupSafe==0.23 in /opt/python/run/venv/lib64/python2.7/site-packages (from -r /opt/python/ondeck/app/requirements.txt (line 4))
+  Requirement already satisfied (use --upgrade to upgrade): Werkzeug==0.10.1 in /opt/python/run/venv/lib/python2.7/site-packages (from -r /opt/python/ondeck/app/requirements.txt (line 5))
+  Requirement already satisfied (use --upgrade to upgrade): WTForms==2.1 in /opt/python/run/venv/lib/python2.7/site-packages (from -r /opt/python/ondeck/app/requirements.txt (line 6))
+  Requirement already satisfied (use --upgrade to upgrade): Flask-WTF==0.13.1 in /opt/python/run/venv/lib/python2.7/site-packages (from -r /opt/python/ondeck/app/requirements.txt (line 7))
+  Requirement already satisfied (use --upgrade to upgrade): click>=2.0 in /opt/python/run/venv/lib/python2.7/site-packages (from Flask==0.11.1->-r /opt/python/ondeck/app/requirements.txt (line 1))
+  You are using pip version 7.1.2, however version 9.0.1 is available.
+  You should consider upgrading via the 'pip install --upgrade pip' command.
+[2016-12-28T10:37:16.905Z] INFO  [5038]  - [Application update app-8e33-161228_183658@6/AppDeployStage0/AppDeployPreHook/04configen.py] : Starting activity...
+[2016-12-28T10:37:18.307Z] INFO  [5038]  - [Application update app-8e33-161228_183658@6/AppDeployStage0/AppDeployPreHook/04configen.py] : Completed activity.
+[2016-12-28T10:37:18.308Z] INFO  [5038]  - [Application update app-8e33-161228_183658@6/AppDeployStage0/AppDeployPreHook] : Completed activity. Result:
+  Successfully execute hooks in directory /opt/elasticbeanstalk/hooks/appdeploy/pre.
+[2016-12-28T10:37:18.308Z] INFO  [5038]  - [Application update app-8e33-161228_183658@6/AppDeployStage0/EbExtensionPostBuild] : Starting activity...
+[2016-12-28T10:37:18.531Z] INFO  [5038]  - [Application update app-8e33-161228_183658@6/AppDeployStage0/EbExtensionPostBuild/Infra-EmbeddedPostBuild] : Starting activity...
+[2016-12-28T10:37:18.531Z] INFO  [5038]  - [Application update app-8e33-161228_183658@6/AppDeployStage0/EbExtensionPostBuild/Infra-EmbeddedPostBuild] : Completed activity.
+[2016-12-28T10:37:18.547Z] INFO  [5038]  - [Application update app-8e33-161228_183658@6/AppDeployStage0/EbExtensionPostBuild] : Completed activity.
+[2016-12-28T10:37:18.547Z] INFO  [5038]  - [Application update app-8e33-161228_183658@6/AppDeployStage0/InfraCleanEbextension] : Starting activity...
+[2016-12-28T10:37:18.548Z] INFO  [5038]  - [Application update app-8e33-161228_183658@6/AppDeployStage0/InfraCleanEbextension] : Completed activity. Result:
+  Cleaned ebextensions subdirectories from /opt/python/ondeck/app.
+[2016-12-28T10:37:18.548Z] INFO  [5038]  - [Application update app-8e33-161228_183658@6/AppDeployStage0] : Completed activity. Result:
+  Application update - Command CMD-AppDeploy stage 0 completed
+[2016-12-28T10:37:18.548Z] INFO  [5038]  - [Application update app-8e33-161228_183658@6/AppDeployStage1] : Starting activity...
+[2016-12-28T10:37:18.548Z] INFO  [5038]  - [Application update app-8e33-161228_183658@6/AppDeployStage1/AppDeployEnactHook] : Starting activity...
+[2016-12-28T10:37:18.549Z] INFO  [5038]  - [Application update app-8e33-161228_183658@6/AppDeployStage1/AppDeployEnactHook/01flip.py] : Starting activity...
+[2016-12-28T10:37:22.896Z] INFO  [5038]  - [Application update app-8e33-161228_183658@6/AppDeployStage1/AppDeployEnactHook/01flip.py] : Completed activity. Result:
+  httpd: stopped
+  httpd: started
+  httpd                            RUNNING   pid 5175, uptime 0:00:02
+[2016-12-28T10:37:22.896Z] INFO  [5038]  - [Application update app-8e33-161228_183658@6/AppDeployStage1/AppDeployEnactHook/02create_pids_for_monitoring.sh] : Starting activity...
+[2016-12-28T10:37:22.999Z] INFO  [5038]  - [Application update app-8e33-161228_183658@6/AppDeployStage1/AppDeployEnactHook/02create_pids_for_monitoring.sh] : Completed activity. Result:
+  + chmod 0755 /var/run/httpd
+  + /opt/elasticbeanstalk/bin/healthd-track-pidfile --proxy httpd
+  + /opt/elasticbeanstalk/bin/healthd-track-pidfile --name application --location /opt/python/run/supervisord.pid
+[2016-12-28T10:37:22.999Z] INFO  [5038]  - [Application update app-8e33-161228_183658@6/AppDeployStage1/AppDeployEnactHook] : Completed activity. Result:
+  Successfully execute hooks in directory /opt/elasticbeanstalk/hooks/appdeploy/enact.
+[2016-12-28T10:37:23.000Z] INFO  [5038]  - [Application update app-8e33-161228_183658@6/AppDeployStage1/AppDeployPostHook] : Starting activity...
+[2016-12-28T10:37:23.000Z] INFO  [5038]  - [Application update app-8e33-161228_183658@6/AppDeployStage1/AppDeployPostHook] : Completed activity. Result:
+  Successfully execute hooks in directory /opt/elasticbeanstalk/hooks/appdeploy/post.
+[2016-12-28T10:37:23.000Z] INFO  [5038]  - [Application update app-8e33-161228_183658@6/AppDeployStage1] : Completed activity. Result:
+  Application version switch - Command CMD-AppDeploy stage 1 completed
+[2016-12-28T10:37:23.000Z] INFO  [5038]  - [Application update app-8e33-161228_183658@6/AddonsAfter] : Starting activity...
+[2016-12-28T10:37:23.000Z] INFO  [5038]  - [Application update app-8e33-161228_183658@6/AddonsAfter/ConfigLogRotation] : Starting activity...
+[2016-12-28T10:37:23.000Z] INFO  [5038]  - [Application update app-8e33-161228_183658@6/AddonsAfter/ConfigLogRotation/10-config.sh] : Starting activity...
+[2016-12-28T10:37:23.078Z] INFO  [5038]  - [Application update app-8e33-161228_183658@6/AddonsAfter/ConfigLogRotation/10-config.sh] : Completed activity. Result:
+  Disabled forced hourly log rotation.
+[2016-12-28T10:37:23.078Z] INFO  [5038]  - [Application update app-8e33-161228_183658@6/AddonsAfter/ConfigLogRotation] : Completed activity. Result:
+  Successfully execute hooks in directory /opt/elasticbeanstalk/addons/logpublish/hooks/config.
+[2016-12-28T10:37:23.078Z] INFO  [5038]  - [Application update app-8e33-161228_183658@6/AddonsAfter/ConfigCWLAgent] : Starting activity...
+[2016-12-28T10:37:23.078Z] INFO  [5038]  - [Application update app-8e33-161228_183658@6/AddonsAfter/ConfigCWLAgent/10-config.sh] : Starting activity...
+[2016-12-28T10:37:23.194Z] INFO  [5038]  - [Application update app-8e33-161228_183658@6/AddonsAfter/ConfigCWLAgent/10-config.sh] : Completed activity. Result:
+  Log streaming option setting is not specified, ignore cloudwatch logs setup.
+  
+  Disabled log streaming.
+[2016-12-28T10:37:23.194Z] INFO  [5038]  - [Application update app-8e33-161228_183658@6/AddonsAfter/ConfigCWLAgent] : Completed activity. Result:
+  Successfully execute hooks in directory /opt/elasticbeanstalk/addons/logstreaming/hooks/config.
+[2016-12-28T10:37:23.194Z] INFO  [5038]  - [Application update app-8e33-161228_183658@6/AddonsAfter] : Completed activity.
+[2016-12-28T10:37:23.195Z] INFO  [5038]  - [Application update app-8e33-161228_183658@6] : Completed activity. Result:
+  Application update - Command CMD-AppDeploy succeeded
+[2016-12-30T11:47:51.044Z] INFO  [23319] - [Application update app-3111-161230_194736@7] : Starting activity...
+[2016-12-30T11:47:51.045Z] INFO  [23319] - [Application update app-3111-161230_194736@7/AddonsBefore] : Starting activity...
+[2016-12-30T11:47:51.045Z] INFO  [23319] - [Application update app-3111-161230_194736@7/AddonsBefore] : Completed activity.
+[2016-12-30T11:47:51.342Z] INFO  [23319] - [Application update app-3111-161230_194736@7/AppDeployStage0] : Starting activity...
+[2016-12-30T11:47:51.342Z] INFO  [23319] - [Application update app-3111-161230_194736@7/AppDeployStage0/InfraWriteConfig] : Starting activity...
+[2016-12-30T11:47:51.344Z] INFO  [23319] - [Application update app-3111-161230_194736@7/AppDeployStage0/InfraWriteConfig] : Completed activity. Result:
+  Recreated directory /opt/elasticbeanstalk/deploy/configuration/.
+  Generate appsource url file at /opt/elasticbeanstalk/deploy/configuration/appsourceurl.
+  Generate container config file at /opt/elasticbeanstalk/deploy/configuration/containerconfiguration.
+[2016-12-30T11:47:51.344Z] INFO  [23319] - [Application update app-3111-161230_194736@7/AppDeployStage0/DownloadSourceBundle] : Starting activity...
+[2016-12-30T11:47:51.645Z] INFO  [23319] - [Application update app-3111-161230_194736@7/AppDeployStage0/DownloadSourceBundle] : Completed activity. Result:
+  [2016-12-30T11:47:51.444Z] INFO  [23342] : Application version will be saved to /opt/elasticbeanstalk/deploy/appsource.
+  [2016-12-30T11:47:51.444Z] INFO  [23342] : Using manifest cache with deployment ID 7 and serial 7.
+  [2016-12-30T11:47:51.444Z] INFO  [23342] : Attempting to download application source bundle to: '/opt/elasticbeanstalk/deploy/appsource/source_bundle'.
+  [2016-12-30T11:47:51.444Z] INFO  [23342] : Using computed s3 key.
+  [2016-12-30T11:47:51.558Z] INFO  [23342] : Downloading from bucket 'elasticbeanstalk-us-west-2-341826891138' with key 'resources/environments/e-rzpyvmyjqg/_runtime/_versions/flask-tutorial/app-3111-161230_194736' and version '' to '/opt/elasticbeanstalk/deploy/appsource/source_bundle'.
+  [2016-12-30T11:47:51.622Z] INFO  [23342] : Size: 14637, ETag: "a6b60425b26af91a0f4f0756f95686f6", Metadata: {"environmentid"=>"e-rzpyvmyjqg", "requestid"=>"c60fb8ca-ce85-11e6-8a76-6d330041cf66"}.
+  [2016-12-30T11:47:51.632Z] INFO  [23342] : Downloaded size: 14637.
+  [2016-12-30T11:47:51.632Z] INFO  [23342] : Successfully downloaded to '/opt/elasticbeanstalk/deploy/appsource/source_bundle'.
+[2016-12-30T11:47:51.645Z] INFO  [23319] - [Application update app-3111-161230_194736@7/AppDeployStage0/EbExtensionPreBuild] : Starting activity...
+[2016-12-30T11:47:51.906Z] INFO  [23319] - [Application update app-3111-161230_194736@7/AppDeployStage0/EbExtensionPreBuild/Infra-EmbeddedPreBuild] : Starting activity...
+[2016-12-30T11:47:51.906Z] INFO  [23319] - [Application update app-3111-161230_194736@7/AppDeployStage0/EbExtensionPreBuild/Infra-EmbeddedPreBuild] : Completed activity.
+[2016-12-30T11:47:51.920Z] INFO  [23319] - [Application update app-3111-161230_194736@7/AppDeployStage0/EbExtensionPreBuild] : Completed activity.
+[2016-12-30T11:47:51.920Z] INFO  [23319] - [Application update app-3111-161230_194736@7/AppDeployStage0/AppDeployPreHook] : Starting activity...
+[2016-12-30T11:47:51.921Z] INFO  [23319] - [Application update app-3111-161230_194736@7/AppDeployStage0/AppDeployPreHook/01new.py] : Starting activity...
+[2016-12-30T11:47:52.219Z] INFO  [23319] - [Application update app-3111-161230_194736@7/AppDeployStage0/AppDeployPreHook/01new.py] : Completed activity.
+[2016-12-30T11:47:52.219Z] INFO  [23319] - [Application update app-3111-161230_194736@7/AppDeployStage0/AppDeployPreHook/02unzip.py] : Starting activity...
+[2016-12-30T11:47:52.525Z] INFO  [23319] - [Application update app-3111-161230_194736@7/AppDeployStage0/AppDeployPreHook/02unzip.py] : Completed activity. Result:
+  Archive:  /opt/elasticbeanstalk/deploy/appsource/source_bundle
+  311197e9d9966f977bd07711cfa80116461172fc
+    inflating: /opt/python/ondeck/app/.DS_Store  
+    inflating: /opt/python/ondeck/app/.gitignore  
+    inflating: /opt/python/ondeck/app/application.py  
+    inflating: /opt/python/ondeck/app/archive.json  
+   extracting: /opt/python/ondeck/app/config.py  
+    inflating: /opt/python/ondeck/app/forms.py  
+    inflating: /opt/python/ondeck/app/requirements.txt  
+     creating: /opt/python/ondeck/app/static/
+   extracting: /opt/python/ondeck/app/static/globe-report-news.png  
+    inflating: /opt/python/ondeck/app/storage.py  
+     creating: /opt/python/ondeck/app/templates/
+    inflating: /opt/python/ondeck/app/templates/base.html  
+    inflating: /opt/python/ondeck/app/templates/index.html  
+    inflating: /opt/python/ondeck/app/templates/story.html  
+[2016-12-30T11:47:52.525Z] INFO  [23319] - [Application update app-3111-161230_194736@7/AppDeployStage0/AppDeployPreHook/03deploy.py] : Starting activity...
+[2016-12-30T11:47:52.923Z] INFO  [23319] - [Application update app-3111-161230_194736@7/AppDeployStage0/AppDeployPreHook/03deploy.py] : Completed activity. Result:
+  Requirement already satisfied (use --upgrade to upgrade): Flask==0.11.1 in /opt/python/run/venv/lib/python2.7/site-packages (from -r /opt/python/ondeck/app/requirements.txt (line 1))
+  Requirement already satisfied (use --upgrade to upgrade): itsdangerous==0.24 in /opt/python/run/venv/lib/python2.7/site-packages (from -r /opt/python/ondeck/app/requirements.txt (line 2))
+  Requirement already satisfied (use --upgrade to upgrade): Jinja2==2.7.3 in /opt/python/run/venv/lib/python2.7/site-packages (from -r /opt/python/ondeck/app/requirements.txt (line 3))
+  Requirement already satisfied (use --upgrade to upgrade): MarkupSafe==0.23 in /opt/python/run/venv/lib64/python2.7/site-packages (from -r /opt/python/ondeck/app/requirements.txt (line 4))
+  Requirement already satisfied (use --upgrade to upgrade): Werkzeug==0.10.1 in /opt/python/run/venv/lib/python2.7/site-packages (from -r /opt/python/ondeck/app/requirements.txt (line 5))
+  Requirement already satisfied (use --upgrade to upgrade): WTForms==2.1 in /opt/python/run/venv/lib/python2.7/site-packages (from -r /opt/python/ondeck/app/requirements.txt (line 6))
+  Requirement already satisfied (use --upgrade to upgrade): Flask-WTF==0.13.1 in /opt/python/run/venv/lib/python2.7/site-packages (from -r /opt/python/ondeck/app/requirements.txt (line 7))
+  Requirement already satisfied (use --upgrade to upgrade): click>=2.0 in /opt/python/run/venv/lib/python2.7/site-packages (from Flask==0.11.1->-r /opt/python/ondeck/app/requirements.txt (line 1))
+  You are using pip version 7.1.2, however version 9.0.1 is available.
+  You should consider upgrading via the 'pip install --upgrade pip' command.
+[2016-12-30T11:47:52.923Z] INFO  [23319] - [Application update app-3111-161230_194736@7/AppDeployStage0/AppDeployPreHook/04configen.py] : Starting activity...
+[2016-12-30T11:47:54.244Z] INFO  [23319] - [Application update app-3111-161230_194736@7/AppDeployStage0/AppDeployPreHook/04configen.py] : Completed activity.
+[2016-12-30T11:47:54.244Z] INFO  [23319] - [Application update app-3111-161230_194736@7/AppDeployStage0/AppDeployPreHook] : Completed activity. Result:
+  Successfully execute hooks in directory /opt/elasticbeanstalk/hooks/appdeploy/pre.
+[2016-12-30T11:47:54.244Z] INFO  [23319] - [Application update app-3111-161230_194736@7/AppDeployStage0/EbExtensionPostBuild] : Starting activity...
+[2016-12-30T11:47:54.503Z] INFO  [23319] - [Application update app-3111-161230_194736@7/AppDeployStage0/EbExtensionPostBuild/Infra-EmbeddedPostBuild] : Starting activity...
+[2016-12-30T11:47:54.503Z] INFO  [23319] - [Application update app-3111-161230_194736@7/AppDeployStage0/EbExtensionPostBuild/Infra-EmbeddedPostBuild] : Completed activity.
+[2016-12-30T11:47:54.519Z] INFO  [23319] - [Application update app-3111-161230_194736@7/AppDeployStage0/EbExtensionPostBuild] : Completed activity.
+[2016-12-30T11:47:54.519Z] INFO  [23319] - [Application update app-3111-161230_194736@7/AppDeployStage0/InfraCleanEbextension] : Starting activity...
+[2016-12-30T11:47:54.520Z] INFO  [23319] - [Application update app-3111-161230_194736@7/AppDeployStage0/InfraCleanEbextension] : Completed activity. Result:
+  Cleaned ebextensions subdirectories from /opt/python/ondeck/app.
+[2016-12-30T11:47:54.520Z] INFO  [23319] - [Application update app-3111-161230_194736@7/AppDeployStage0] : Completed activity. Result:
+  Application update - Command CMD-AppDeploy stage 0 completed
+[2016-12-30T11:47:54.521Z] INFO  [23319] - [Application update app-3111-161230_194736@7/AppDeployStage1] : Starting activity...
+[2016-12-30T11:47:54.521Z] INFO  [23319] - [Application update app-3111-161230_194736@7/AppDeployStage1/AppDeployEnactHook] : Starting activity...
+[2016-12-30T11:47:54.521Z] INFO  [23319] - [Application update app-3111-161230_194736@7/AppDeployStage1/AppDeployEnactHook/01flip.py] : Starting activity...
+[2016-12-30T11:47:58.797Z] INFO  [23319] - [Application update app-3111-161230_194736@7/AppDeployStage1/AppDeployEnactHook/01flip.py] : Completed activity. Result:
+  httpd: stopped
+  httpd: started
+  httpd                            RUNNING   pid 23455, uptime 0:00:02
+[2016-12-30T11:47:58.797Z] INFO  [23319] - [Application update app-3111-161230_194736@7/AppDeployStage1/AppDeployEnactHook/02create_pids_for_monitoring.sh] : Starting activity...
+[2016-12-30T11:47:58.898Z] INFO  [23319] - [Application update app-3111-161230_194736@7/AppDeployStage1/AppDeployEnactHook/02create_pids_for_monitoring.sh] : Completed activity. Result:
+  + chmod 0755 /var/run/httpd
+  + /opt/elasticbeanstalk/bin/healthd-track-pidfile --proxy httpd
+  + /opt/elasticbeanstalk/bin/healthd-track-pidfile --name application --location /opt/python/run/supervisord.pid
+[2016-12-30T11:47:58.898Z] INFO  [23319] - [Application update app-3111-161230_194736@7/AppDeployStage1/AppDeployEnactHook] : Completed activity. Result:
+  Successfully execute hooks in directory /opt/elasticbeanstalk/hooks/appdeploy/enact.
+[2016-12-30T11:47:58.898Z] INFO  [23319] - [Application update app-3111-161230_194736@7/AppDeployStage1/AppDeployPostHook] : Starting activity...
+[2016-12-30T11:47:58.899Z] INFO  [23319] - [Application update app-3111-161230_194736@7/AppDeployStage1/AppDeployPostHook] : Completed activity. Result:
+  Successfully execute hooks in directory /opt/elasticbeanstalk/hooks/appdeploy/post.
+[2016-12-30T11:47:58.899Z] INFO  [23319] - [Application update app-3111-161230_194736@7/AppDeployStage1] : Completed activity. Result:
+  Application version switch - Command CMD-AppDeploy stage 1 completed
+[2016-12-30T11:47:58.899Z] INFO  [23319] - [Application update app-3111-161230_194736@7/AddonsAfter] : Starting activity...
+[2016-12-30T11:47:58.899Z] INFO  [23319] - [Application update app-3111-161230_194736@7/AddonsAfter/ConfigLogRotation] : Starting activity...
+[2016-12-30T11:47:58.899Z] INFO  [23319] - [Application update app-3111-161230_194736@7/AddonsAfter/ConfigLogRotation/10-config.sh] : Starting activity...
+[2016-12-30T11:47:58.976Z] INFO  [23319] - [Application update app-3111-161230_194736@7/AddonsAfter/ConfigLogRotation/10-config.sh] : Completed activity. Result:
+  Disabled forced hourly log rotation.
+[2016-12-30T11:47:58.977Z] INFO  [23319] - [Application update app-3111-161230_194736@7/AddonsAfter/ConfigLogRotation] : Completed activity. Result:
+  Successfully execute hooks in directory /opt/elasticbeanstalk/addons/logpublish/hooks/config.
+[2016-12-30T11:47:58.977Z] INFO  [23319] - [Application update app-3111-161230_194736@7/AddonsAfter/ConfigCWLAgent] : Starting activity...
+[2016-12-30T11:47:58.977Z] INFO  [23319] - [Application update app-3111-161230_194736@7/AddonsAfter/ConfigCWLAgent/10-config.sh] : Starting activity...
+[2016-12-30T11:47:59.094Z] INFO  [23319] - [Application update app-3111-161230_194736@7/AddonsAfter/ConfigCWLAgent/10-config.sh] : Completed activity. Result:
+  Log streaming option setting is not specified, ignore cloudwatch logs setup.
+  
+  Disabled log streaming.
+[2016-12-30T11:47:59.094Z] INFO  [23319] - [Application update app-3111-161230_194736@7/AddonsAfter/ConfigCWLAgent] : Completed activity. Result:
+  Successfully execute hooks in directory /opt/elasticbeanstalk/addons/logstreaming/hooks/config.
+[2016-12-30T11:47:59.094Z] INFO  [23319] - [Application update app-3111-161230_194736@7/AddonsAfter] : Completed activity.
+[2016-12-30T11:47:59.094Z] INFO  [23319] - [Application update app-3111-161230_194736@7] : Completed activity. Result:
+  Application update - Command CMD-AppDeploy succeeded
+[2016-12-30T12:52:33.768Z] INFO  [25622] - [Application update app-c6ad-161230_205217@8] : Starting activity...
+[2016-12-30T12:52:33.768Z] INFO  [25622] - [Application update app-c6ad-161230_205217@8/AddonsBefore] : Starting activity...
+[2016-12-30T12:52:33.768Z] INFO  [25622] - [Application update app-c6ad-161230_205217@8/AddonsBefore] : Completed activity.
+[2016-12-30T12:52:34.020Z] INFO  [25622] - [Application update app-c6ad-161230_205217@8/AppDeployStage0] : Starting activity...
+[2016-12-30T12:52:34.020Z] INFO  [25622] - [Application update app-c6ad-161230_205217@8/AppDeployStage0/InfraWriteConfig] : Starting activity...
+[2016-12-30T12:52:34.023Z] INFO  [25622] - [Application update app-c6ad-161230_205217@8/AppDeployStage0/InfraWriteConfig] : Completed activity. Result:
+  Recreated directory /opt/elasticbeanstalk/deploy/configuration/.
+  Generate appsource url file at /opt/elasticbeanstalk/deploy/configuration/appsourceurl.
+  Generate container config file at /opt/elasticbeanstalk/deploy/configuration/containerconfiguration.
+[2016-12-30T12:52:34.023Z] INFO  [25622] - [Application update app-c6ad-161230_205217@8/AppDeployStage0/DownloadSourceBundle] : Starting activity...
+[2016-12-30T12:52:34.323Z] INFO  [25622] - [Application update app-c6ad-161230_205217@8/AppDeployStage0/DownloadSourceBundle] : Completed activity. Result:
+  [2016-12-30T12:52:34.126Z] INFO  [25645] : Application version will be saved to /opt/elasticbeanstalk/deploy/appsource.
+  [2016-12-30T12:52:34.126Z] INFO  [25645] : Using manifest cache with deployment ID 8 and serial 8.
+  [2016-12-30T12:52:34.126Z] INFO  [25645] : Attempting to download application source bundle to: '/opt/elasticbeanstalk/deploy/appsource/source_bundle'.
+  [2016-12-30T12:52:34.126Z] INFO  [25645] : Using computed s3 key.
+  [2016-12-30T12:52:34.245Z] INFO  [25645] : Downloading from bucket 'elasticbeanstalk-us-west-2-341826891138' with key 'resources/environments/e-rzpyvmyjqg/_runtime/_versions/flask-tutorial/app-c6ad-161230_205217' and version '' to '/opt/elasticbeanstalk/deploy/appsource/source_bundle'.
+  [2016-12-30T12:52:34.298Z] INFO  [25645] : Size: 14741, ETag: "b89dca94582fa578a7257aac56dfa18b", Metadata: {"environmentid"=>"e-rzpyvmyjqg", "requestid"=>"cfa650e3-ce8e-11e6-b23f-0572ebc520a1"}.
+  [2016-12-30T12:52:34.310Z] INFO  [25645] : Downloaded size: 14741.
+  [2016-12-30T12:52:34.310Z] INFO  [25645] : Successfully downloaded to '/opt/elasticbeanstalk/deploy/appsource/source_bundle'.
+[2016-12-30T12:52:34.323Z] INFO  [25622] - [Application update app-c6ad-161230_205217@8/AppDeployStage0/EbExtensionPreBuild] : Starting activity...
+[2016-12-30T12:52:34.638Z] INFO  [25622] - [Application update app-c6ad-161230_205217@8/AppDeployStage0/EbExtensionPreBuild/Infra-EmbeddedPreBuild] : Starting activity...
+[2016-12-30T12:52:34.638Z] INFO  [25622] - [Application update app-c6ad-161230_205217@8/AppDeployStage0/EbExtensionPreBuild/Infra-EmbeddedPreBuild] : Completed activity.
+[2016-12-30T12:52:34.654Z] INFO  [25622] - [Application update app-c6ad-161230_205217@8/AppDeployStage0/EbExtensionPreBuild] : Completed activity.
+[2016-12-30T12:52:34.654Z] INFO  [25622] - [Application update app-c6ad-161230_205217@8/AppDeployStage0/AppDeployPreHook] : Starting activity...
+[2016-12-30T12:52:34.654Z] INFO  [25622] - [Application update app-c6ad-161230_205217@8/AppDeployStage0/AppDeployPreHook/01new.py] : Starting activity...
+[2016-12-30T12:52:34.966Z] INFO  [25622] - [Application update app-c6ad-161230_205217@8/AppDeployStage0/AppDeployPreHook/01new.py] : Completed activity.
+[2016-12-30T12:52:34.966Z] INFO  [25622] - [Application update app-c6ad-161230_205217@8/AppDeployStage0/AppDeployPreHook/02unzip.py] : Starting activity...
+[2016-12-30T12:52:35.287Z] INFO  [25622] - [Application update app-c6ad-161230_205217@8/AppDeployStage0/AppDeployPreHook/02unzip.py] : Completed activity. Result:
+  Archive:  /opt/elasticbeanstalk/deploy/appsource/source_bundle
+  c6ad2a6aa45bd39dbdff5c6f8d0a7fe8554e14e5
+    inflating: /opt/python/ondeck/app/.DS_Store  
+    inflating: /opt/python/ondeck/app/.gitignore  
+    inflating: /opt/python/ondeck/app/application.py  
+    inflating: /opt/python/ondeck/app/archive.json  
+   extracting: /opt/python/ondeck/app/config.py  
+    inflating: /opt/python/ondeck/app/forms.py  
+    inflating: /opt/python/ondeck/app/requirements.txt  
+     creating: /opt/python/ondeck/app/static/
+   extracting: /opt/python/ondeck/app/static/globe-report-news.png  
+    inflating: /opt/python/ondeck/app/storage.py  
+     creating: /opt/python/ondeck/app/templates/
+    inflating: /opt/python/ondeck/app/templates/base.html  
+    inflating: /opt/python/ondeck/app/templates/index.html  
+    inflating: /opt/python/ondeck/app/templates/story.html  
+[2016-12-30T12:52:35.287Z] INFO  [25622] - [Application update app-c6ad-161230_205217@8/AppDeployStage0/AppDeployPreHook/03deploy.py] : Starting activity...
+[2016-12-30T12:52:35.704Z] INFO  [25622] - [Application update app-c6ad-161230_205217@8/AppDeployStage0/AppDeployPreHook/03deploy.py] : Completed activity. Result:
+  Requirement already satisfied (use --upgrade to upgrade): Flask==0.11.1 in /opt/python/run/venv/lib/python2.7/site-packages (from -r /opt/python/ondeck/app/requirements.txt (line 1))
+  Requirement already satisfied (use --upgrade to upgrade): itsdangerous==0.24 in /opt/python/run/venv/lib/python2.7/site-packages (from -r /opt/python/ondeck/app/requirements.txt (line 2))
+  Requirement already satisfied (use --upgrade to upgrade): Jinja2==2.7.3 in /opt/python/run/venv/lib/python2.7/site-packages (from -r /opt/python/ondeck/app/requirements.txt (line 3))
+  Requirement already satisfied (use --upgrade to upgrade): MarkupSafe==0.23 in /opt/python/run/venv/lib64/python2.7/site-packages (from -r /opt/python/ondeck/app/requirements.txt (line 4))
+  Requirement already satisfied (use --upgrade to upgrade): Werkzeug==0.10.1 in /opt/python/run/venv/lib/python2.7/site-packages (from -r /opt/python/ondeck/app/requirements.txt (line 5))
+  Requirement already satisfied (use --upgrade to upgrade): WTForms==2.1 in /opt/python/run/venv/lib/python2.7/site-packages (from -r /opt/python/ondeck/app/requirements.txt (line 6))
+  Requirement already satisfied (use --upgrade to upgrade): Flask-WTF==0.13.1 in /opt/python/run/venv/lib/python2.7/site-packages (from -r /opt/python/ondeck/app/requirements.txt (line 7))
+  Requirement already satisfied (use --upgrade to upgrade): click>=2.0 in /opt/python/run/venv/lib/python2.7/site-packages (from Flask==0.11.1->-r /opt/python/ondeck/app/requirements.txt (line 1))
+  You are using pip version 7.1.2, however version 9.0.1 is available.
+  You should consider upgrading via the 'pip install --upgrade pip' command.
+[2016-12-30T12:52:35.704Z] INFO  [25622] - [Application update app-c6ad-161230_205217@8/AppDeployStage0/AppDeployPreHook/04configen.py] : Starting activity...
+[2016-12-30T12:52:37.112Z] INFO  [25622] - [Application update app-c6ad-161230_205217@8/AppDeployStage0/AppDeployPreHook/04configen.py] : Completed activity.
+[2016-12-30T12:52:37.112Z] INFO  [25622] - [Application update app-c6ad-161230_205217@8/AppDeployStage0/AppDeployPreHook] : Completed activity. Result:
+  Successfully execute hooks in directory /opt/elasticbeanstalk/hooks/appdeploy/pre.
+[2016-12-30T12:52:37.112Z] INFO  [25622] - [Application update app-c6ad-161230_205217@8/AppDeployStage0/EbExtensionPostBuild] : Starting activity...
+[2016-12-30T12:52:37.377Z] INFO  [25622] - [Application update app-c6ad-161230_205217@8/AppDeployStage0/EbExtensionPostBuild/Infra-EmbeddedPostBuild] : Starting activity...
+[2016-12-30T12:52:37.377Z] INFO  [25622] - [Application update app-c6ad-161230_205217@8/AppDeployStage0/EbExtensionPostBuild/Infra-EmbeddedPostBuild] : Completed activity.
+[2016-12-30T12:52:37.401Z] INFO  [25622] - [Application update app-c6ad-161230_205217@8/AppDeployStage0/EbExtensionPostBuild] : Completed activity.
+[2016-12-30T12:52:37.401Z] INFO  [25622] - [Application update app-c6ad-161230_205217@8/AppDeployStage0/InfraCleanEbextension] : Starting activity...
+[2016-12-30T12:52:37.403Z] INFO  [25622] - [Application update app-c6ad-161230_205217@8/AppDeployStage0/InfraCleanEbextension] : Completed activity. Result:
+  Cleaned ebextensions subdirectories from /opt/python/ondeck/app.
+[2016-12-30T12:52:37.403Z] INFO  [25622] - [Application update app-c6ad-161230_205217@8/AppDeployStage0] : Completed activity. Result:
+  Application update - Command CMD-AppDeploy stage 0 completed
+[2016-12-30T12:52:37.403Z] INFO  [25622] - [Application update app-c6ad-161230_205217@8/AppDeployStage1] : Starting activity...
+[2016-12-30T12:52:37.403Z] INFO  [25622] - [Application update app-c6ad-161230_205217@8/AppDeployStage1/AppDeployEnactHook] : Starting activity...
+[2016-12-30T12:52:37.403Z] INFO  [25622] - [Application update app-c6ad-161230_205217@8/AppDeployStage1/AppDeployEnactHook/01flip.py] : Starting activity...
+[2016-12-30T12:52:41.754Z] INFO  [25622] - [Application update app-c6ad-161230_205217@8/AppDeployStage1/AppDeployEnactHook/01flip.py] : Completed activity. Result:
+  httpd: stopped
+  httpd: started
+  httpd                            RUNNING   pid 25759, uptime 0:00:03
+[2016-12-30T12:52:41.754Z] INFO  [25622] - [Application update app-c6ad-161230_205217@8/AppDeployStage1/AppDeployEnactHook/02create_pids_for_monitoring.sh] : Starting activity...
+[2016-12-30T12:52:41.858Z] INFO  [25622] - [Application update app-c6ad-161230_205217@8/AppDeployStage1/AppDeployEnactHook/02create_pids_for_monitoring.sh] : Completed activity. Result:
+  + chmod 0755 /var/run/httpd
+  + /opt/elasticbeanstalk/bin/healthd-track-pidfile --proxy httpd
+  + /opt/elasticbeanstalk/bin/healthd-track-pidfile --name application --location /opt/python/run/supervisord.pid
+[2016-12-30T12:52:41.858Z] INFO  [25622] - [Application update app-c6ad-161230_205217@8/AppDeployStage1/AppDeployEnactHook] : Completed activity. Result:
+  Successfully execute hooks in directory /opt/elasticbeanstalk/hooks/appdeploy/enact.
+[2016-12-30T12:52:41.858Z] INFO  [25622] - [Application update app-c6ad-161230_205217@8/AppDeployStage1/AppDeployPostHook] : Starting activity...
+[2016-12-30T12:52:41.858Z] INFO  [25622] - [Application update app-c6ad-161230_205217@8/AppDeployStage1/AppDeployPostHook] : Completed activity. Result:
+  Successfully execute hooks in directory /opt/elasticbeanstalk/hooks/appdeploy/post.
+[2016-12-30T12:52:41.858Z] INFO  [25622] - [Application update app-c6ad-161230_205217@8/AppDeployStage1] : Completed activity. Result:
+  Application version switch - Command CMD-AppDeploy stage 1 completed
+[2016-12-30T12:52:41.858Z] INFO  [25622] - [Application update app-c6ad-161230_205217@8/AddonsAfter] : Starting activity...
+[2016-12-30T12:52:41.858Z] INFO  [25622] - [Application update app-c6ad-161230_205217@8/AddonsAfter/ConfigLogRotation] : Starting activity...
+[2016-12-30T12:52:41.858Z] INFO  [25622] - [Application update app-c6ad-161230_205217@8/AddonsAfter/ConfigLogRotation/10-config.sh] : Starting activity...
+[2016-12-30T12:52:41.936Z] INFO  [25622] - [Application update app-c6ad-161230_205217@8/AddonsAfter/ConfigLogRotation/10-config.sh] : Completed activity. Result:
+  Disabled forced hourly log rotation.
+[2016-12-30T12:52:41.936Z] INFO  [25622] - [Application update app-c6ad-161230_205217@8/AddonsAfter/ConfigLogRotation] : Completed activity. Result:
+  Successfully execute hooks in directory /opt/elasticbeanstalk/addons/logpublish/hooks/config.
+[2016-12-30T12:52:41.936Z] INFO  [25622] - [Application update app-c6ad-161230_205217@8/AddonsAfter/ConfigCWLAgent] : Starting activity...
+[2016-12-30T12:52:41.936Z] INFO  [25622] - [Application update app-c6ad-161230_205217@8/AddonsAfter/ConfigCWLAgent/10-config.sh] : Starting activity...
+[2016-12-30T12:52:42.054Z] INFO  [25622] - [Application update app-c6ad-161230_205217@8/AddonsAfter/ConfigCWLAgent/10-config.sh] : Completed activity. Result:
+  Log streaming option setting is not specified, ignore cloudwatch logs setup.
+  
+  Disabled log streaming.
+[2016-12-30T12:52:42.054Z] INFO  [25622] - [Application update app-c6ad-161230_205217@8/AddonsAfter/ConfigCWLAgent] : Completed activity. Result:
+  Successfully execute hooks in directory /opt/elasticbeanstalk/addons/logstreaming/hooks/config.
+[2016-12-30T12:52:42.054Z] INFO  [25622] - [Application update app-c6ad-161230_205217@8/AddonsAfter] : Completed activity.
+[2016-12-30T12:52:42.054Z] INFO  [25622] - [Application update app-c6ad-161230_205217@8] : Completed activity. Result:
+  Application update - Command CMD-AppDeploy succeeded
+[2016-12-30T13:03:07.929Z] INFO  [26255] - [Application update app-6d2c-161230_210255@9] : Starting activity...
+[2016-12-30T13:03:07.929Z] INFO  [26255] - [Application update app-6d2c-161230_210255@9/AddonsBefore] : Starting activity...
+[2016-12-30T13:03:07.929Z] INFO  [26255] - [Application update app-6d2c-161230_210255@9/AddonsBefore] : Completed activity.
+[2016-12-30T13:03:08.180Z] INFO  [26255] - [Application update app-6d2c-161230_210255@9/AppDeployStage0] : Starting activity...
+[2016-12-30T13:03:08.180Z] INFO  [26255] - [Application update app-6d2c-161230_210255@9/AppDeployStage0/InfraWriteConfig] : Starting activity...
+[2016-12-30T13:03:08.182Z] INFO  [26255] - [Application update app-6d2c-161230_210255@9/AppDeployStage0/InfraWriteConfig] : Completed activity. Result:
+  Recreated directory /opt/elasticbeanstalk/deploy/configuration/.
+  Generate appsource url file at /opt/elasticbeanstalk/deploy/configuration/appsourceurl.
+  Generate container config file at /opt/elasticbeanstalk/deploy/configuration/containerconfiguration.
+[2016-12-30T13:03:08.182Z] INFO  [26255] - [Application update app-6d2c-161230_210255@9/AppDeployStage0/DownloadSourceBundle] : Starting activity...
+[2016-12-30T13:03:08.485Z] INFO  [26255] - [Application update app-6d2c-161230_210255@9/AppDeployStage0/DownloadSourceBundle] : Completed activity. Result:
+  [2016-12-30T13:03:08.282Z] INFO  [26278] : Application version will be saved to /opt/elasticbeanstalk/deploy/appsource.
+  [2016-12-30T13:03:08.282Z] INFO  [26278] : Using manifest cache with deployment ID 9 and serial 9.
+  [2016-12-30T13:03:08.282Z] INFO  [26278] : Attempting to download application source bundle to: '/opt/elasticbeanstalk/deploy/appsource/source_bundle'.
+  [2016-12-30T13:03:08.282Z] INFO  [26278] : Using computed s3 key.
+  [2016-12-30T13:03:08.397Z] INFO  [26278] : Downloading from bucket 'elasticbeanstalk-us-west-2-341826891138' with key 'resources/environments/e-rzpyvmyjqg/_runtime/_versions/flask-tutorial/app-6d2c-161230_210255' and version '' to '/opt/elasticbeanstalk/deploy/appsource/source_bundle'.
+  [2016-12-30T13:03:08.457Z] INFO  [26278] : Size: 14753, ETag: "2ded4c7e80ac387d5ca4c95334c735fa", Metadata: {"environmentid"=>"e-rzpyvmyjqg", "requestid"=>"4ab9c670-ce90-11e6-a81a-21b40acb26ef"}.
+  [2016-12-30T13:03:08.472Z] INFO  [26278] : Downloaded size: 14753.
+  [2016-12-30T13:03:08.472Z] INFO  [26278] : Successfully downloaded to '/opt/elasticbeanstalk/deploy/appsource/source_bundle'.
+[2016-12-30T13:03:08.485Z] INFO  [26255] - [Application update app-6d2c-161230_210255@9/AppDeployStage0/EbExtensionPreBuild] : Starting activity...
+[2016-12-30T13:03:08.749Z] INFO  [26255] - [Application update app-6d2c-161230_210255@9/AppDeployStage0/EbExtensionPreBuild/Infra-EmbeddedPreBuild] : Starting activity...
+[2016-12-30T13:03:08.749Z] INFO  [26255] - [Application update app-6d2c-161230_210255@9/AppDeployStage0/EbExtensionPreBuild/Infra-EmbeddedPreBuild] : Completed activity.
+[2016-12-30T13:03:08.764Z] INFO  [26255] - [Application update app-6d2c-161230_210255@9/AppDeployStage0/EbExtensionPreBuild] : Completed activity.
+[2016-12-30T13:03:08.764Z] INFO  [26255] - [Application update app-6d2c-161230_210255@9/AppDeployStage0/AppDeployPreHook] : Starting activity...
+[2016-12-30T13:03:08.764Z] INFO  [26255] - [Application update app-6d2c-161230_210255@9/AppDeployStage0/AppDeployPreHook/01new.py] : Starting activity...
+[2016-12-30T13:03:09.072Z] INFO  [26255] - [Application update app-6d2c-161230_210255@9/AppDeployStage0/AppDeployPreHook/01new.py] : Completed activity.
+[2016-12-30T13:03:09.072Z] INFO  [26255] - [Application update app-6d2c-161230_210255@9/AppDeployStage0/AppDeployPreHook/02unzip.py] : Starting activity...
+[2016-12-30T13:03:09.382Z] INFO  [26255] - [Application update app-6d2c-161230_210255@9/AppDeployStage0/AppDeployPreHook/02unzip.py] : Completed activity. Result:
+  Archive:  /opt/elasticbeanstalk/deploy/appsource/source_bundle
+  6d2c81660d50cf0d81da7fe4745d2a9e67545bc2
+    inflating: /opt/python/ondeck/app/.DS_Store  
+    inflating: /opt/python/ondeck/app/.gitignore  
+    inflating: /opt/python/ondeck/app/application.py  
+    inflating: /opt/python/ondeck/app/archive.json  
+   extracting: /opt/python/ondeck/app/config.py  
+    inflating: /opt/python/ondeck/app/forms.py  
+    inflating: /opt/python/ondeck/app/requirements.txt  
+     creating: /opt/python/ondeck/app/static/
+   extracting: /opt/python/ondeck/app/static/globe-report-news.png  
+    inflating: /opt/python/ondeck/app/storage.py  
+     creating: /opt/python/ondeck/app/templates/
+    inflating: /opt/python/ondeck/app/templates/base.html  
+    inflating: /opt/python/ondeck/app/templates/index.html  
+    inflating: /opt/python/ondeck/app/templates/story.html  
+[2016-12-30T13:03:09.382Z] INFO  [26255] - [Application update app-6d2c-161230_210255@9/AppDeployStage0/AppDeployPreHook/03deploy.py] : Starting activity...
+[2016-12-30T13:03:09.791Z] INFO  [26255] - [Application update app-6d2c-161230_210255@9/AppDeployStage0/AppDeployPreHook/03deploy.py] : Completed activity. Result:
+  Requirement already satisfied (use --upgrade to upgrade): Flask==0.11.1 in /opt/python/run/venv/lib/python2.7/site-packages (from -r /opt/python/ondeck/app/requirements.txt (line 1))
+  Requirement already satisfied (use --upgrade to upgrade): itsdangerous==0.24 in /opt/python/run/venv/lib/python2.7/site-packages (from -r /opt/python/ondeck/app/requirements.txt (line 2))
+  Requirement already satisfied (use --upgrade to upgrade): Jinja2==2.7.3 in /opt/python/run/venv/lib/python2.7/site-packages (from -r /opt/python/ondeck/app/requirements.txt (line 3))
+  Requirement already satisfied (use --upgrade to upgrade): MarkupSafe==0.23 in /opt/python/run/venv/lib64/python2.7/site-packages (from -r /opt/python/ondeck/app/requirements.txt (line 4))
+  Requirement already satisfied (use --upgrade to upgrade): Werkzeug==0.10.1 in /opt/python/run/venv/lib/python2.7/site-packages (from -r /opt/python/ondeck/app/requirements.txt (line 5))
+  Requirement already satisfied (use --upgrade to upgrade): WTForms==2.1 in /opt/python/run/venv/lib/python2.7/site-packages (from -r /opt/python/ondeck/app/requirements.txt (line 6))
+  Requirement already satisfied (use --upgrade to upgrade): Flask-WTF==0.13.1 in /opt/python/run/venv/lib/python2.7/site-packages (from -r /opt/python/ondeck/app/requirements.txt (line 7))
+  Requirement already satisfied (use --upgrade to upgrade): click>=2.0 in /opt/python/run/venv/lib/python2.7/site-packages (from Flask==0.11.1->-r /opt/python/ondeck/app/requirements.txt (line 1))
+  You are using pip version 7.1.2, however version 9.0.1 is available.
+  You should consider upgrading via the 'pip install --upgrade pip' command.
+[2016-12-30T13:03:09.791Z] INFO  [26255] - [Application update app-6d2c-161230_210255@9/AppDeployStage0/AppDeployPreHook/04configen.py] : Starting activity...
+[2016-12-30T13:03:11.153Z] INFO  [26255] - [Application update app-6d2c-161230_210255@9/AppDeployStage0/AppDeployPreHook/04configen.py] : Completed activity.
+[2016-12-30T13:03:11.154Z] INFO  [26255] - [Application update app-6d2c-161230_210255@9/AppDeployStage0/AppDeployPreHook] : Completed activity. Result:
+  Successfully execute hooks in directory /opt/elasticbeanstalk/hooks/appdeploy/pre.
+[2016-12-30T13:03:11.154Z] INFO  [26255] - [Application update app-6d2c-161230_210255@9/AppDeployStage0/EbExtensionPostBuild] : Starting activity...
+[2016-12-30T13:03:11.418Z] INFO  [26255] - [Application update app-6d2c-161230_210255@9/AppDeployStage0/EbExtensionPostBuild/Infra-EmbeddedPostBuild] : Starting activity...
+[2016-12-30T13:03:11.418Z] INFO  [26255] - [Application update app-6d2c-161230_210255@9/AppDeployStage0/EbExtensionPostBuild/Infra-EmbeddedPostBuild] : Completed activity.
+[2016-12-30T13:03:11.432Z] INFO  [26255] - [Application update app-6d2c-161230_210255@9/AppDeployStage0/EbExtensionPostBuild] : Completed activity.
+[2016-12-30T13:03:11.432Z] INFO  [26255] - [Application update app-6d2c-161230_210255@9/AppDeployStage0/InfraCleanEbextension] : Starting activity...
+[2016-12-30T13:03:11.434Z] INFO  [26255] - [Application update app-6d2c-161230_210255@9/AppDeployStage0/InfraCleanEbextension] : Completed activity. Result:
+  Cleaned ebextensions subdirectories from /opt/python/ondeck/app.
+[2016-12-30T13:03:11.434Z] INFO  [26255] - [Application update app-6d2c-161230_210255@9/AppDeployStage0] : Completed activity. Result:
+  Application update - Command CMD-AppDeploy stage 0 completed
+[2016-12-30T13:03:11.434Z] INFO  [26255] - [Application update app-6d2c-161230_210255@9/AppDeployStage1] : Starting activity...
+[2016-12-30T13:03:11.434Z] INFO  [26255] - [Application update app-6d2c-161230_210255@9/AppDeployStage1/AppDeployEnactHook] : Starting activity...
+[2016-12-30T13:03:11.434Z] INFO  [26255] - [Application update app-6d2c-161230_210255@9/AppDeployStage1/AppDeployEnactHook/01flip.py] : Starting activity...
+[2016-12-30T13:03:15.714Z] INFO  [26255] - [Application update app-6d2c-161230_210255@9/AppDeployStage1/AppDeployEnactHook/01flip.py] : Completed activity. Result:
+  httpd: stopped
+  httpd: started
+  httpd                            RUNNING   pid 26391, uptime 0:00:03
+[2016-12-30T13:03:15.714Z] INFO  [26255] - [Application update app-6d2c-161230_210255@9/AppDeployStage1/AppDeployEnactHook/02create_pids_for_monitoring.sh] : Starting activity...
+[2016-12-30T13:03:15.813Z] INFO  [26255] - [Application update app-6d2c-161230_210255@9/AppDeployStage1/AppDeployEnactHook/02create_pids_for_monitoring.sh] : Completed activity. Result:
+  + chmod 0755 /var/run/httpd
+  + /opt/elasticbeanstalk/bin/healthd-track-pidfile --proxy httpd
+  + /opt/elasticbeanstalk/bin/healthd-track-pidfile --name application --location /opt/python/run/supervisord.pid
+[2016-12-30T13:03:15.813Z] INFO  [26255] - [Application update app-6d2c-161230_210255@9/AppDeployStage1/AppDeployEnactHook] : Completed activity. Result:
+  Successfully execute hooks in directory /opt/elasticbeanstalk/hooks/appdeploy/enact.
+[2016-12-30T13:03:15.813Z] INFO  [26255] - [Application update app-6d2c-161230_210255@9/AppDeployStage1/AppDeployPostHook] : Starting activity...
+[2016-12-30T13:03:15.813Z] INFO  [26255] - [Application update app-6d2c-161230_210255@9/AppDeployStage1/AppDeployPostHook] : Completed activity. Result:
+  Successfully execute hooks in directory /opt/elasticbeanstalk/hooks/appdeploy/post.
+[2016-12-30T13:03:15.813Z] INFO  [26255] - [Application update app-6d2c-161230_210255@9/AppDeployStage1] : Completed activity. Result:
+  Application version switch - Command CMD-AppDeploy stage 1 completed
+[2016-12-30T13:03:15.813Z] INFO  [26255] - [Application update app-6d2c-161230_210255@9/AddonsAfter] : Starting activity...
+[2016-12-30T13:03:15.813Z] INFO  [26255] - [Application update app-6d2c-161230_210255@9/AddonsAfter/ConfigLogRotation] : Starting activity...
+[2016-12-30T13:03:15.814Z] INFO  [26255] - [Application update app-6d2c-161230_210255@9/AddonsAfter/ConfigLogRotation/10-config.sh] : Starting activity...
+[2016-12-30T13:03:15.887Z] INFO  [26255] - [Application update app-6d2c-161230_210255@9/AddonsAfter/ConfigLogRotation/10-config.sh] : Completed activity. Result:
+  Disabled forced hourly log rotation.
+[2016-12-30T13:03:15.887Z] INFO  [26255] - [Application update app-6d2c-161230_210255@9/AddonsAfter/ConfigLogRotation] : Completed activity. Result:
+  Successfully execute hooks in directory /opt/elasticbeanstalk/addons/logpublish/hooks/config.
+[2016-12-30T13:03:15.887Z] INFO  [26255] - [Application update app-6d2c-161230_210255@9/AddonsAfter/ConfigCWLAgent] : Starting activity...
+[2016-12-30T13:03:15.887Z] INFO  [26255] - [Application update app-6d2c-161230_210255@9/AddonsAfter/ConfigCWLAgent/10-config.sh] : Starting activity...
+[2016-12-30T13:03:16.000Z] INFO  [26255] - [Application update app-6d2c-161230_210255@9/AddonsAfter/ConfigCWLAgent/10-config.sh] : Completed activity. Result:
+  Log streaming option setting is not specified, ignore cloudwatch logs setup.
+  
+  Disabled log streaming.
+[2016-12-30T13:03:16.000Z] INFO  [26255] - [Application update app-6d2c-161230_210255@9/AddonsAfter/ConfigCWLAgent] : Completed activity. Result:
+  Successfully execute hooks in directory /opt/elasticbeanstalk/addons/logstreaming/hooks/config.
+[2016-12-30T13:03:16.000Z] INFO  [26255] - [Application update app-6d2c-161230_210255@9/AddonsAfter] : Completed activity.
+[2016-12-30T13:03:16.000Z] INFO  [26255] - [Application update app-6d2c-161230_210255@9] : Completed activity. Result:
+  Application update - Command CMD-AppDeploy succeeded
+[2016-12-30T13:17:55.146Z] INFO  [26983] - [Application update app-6d2c-161230_211741@10] : Starting activity...
+[2016-12-30T13:17:55.146Z] INFO  [26983] - [Application update app-6d2c-161230_211741@10/AddonsBefore] : Starting activity...
+[2016-12-30T13:17:55.146Z] INFO  [26983] - [Application update app-6d2c-161230_211741@10/AddonsBefore] : Completed activity.
+[2016-12-30T13:17:55.394Z] INFO  [26983] - [Application update app-6d2c-161230_211741@10/AppDeployStage0] : Starting activity...
+[2016-12-30T13:17:55.394Z] INFO  [26983] - [Application update app-6d2c-161230_211741@10/AppDeployStage0/InfraWriteConfig] : Starting activity...
+[2016-12-30T13:17:55.397Z] INFO  [26983] - [Application update app-6d2c-161230_211741@10/AppDeployStage0/InfraWriteConfig] : Completed activity. Result:
+  Recreated directory /opt/elasticbeanstalk/deploy/configuration/.
+  Generate appsource url file at /opt/elasticbeanstalk/deploy/configuration/appsourceurl.
+  Generate container config file at /opt/elasticbeanstalk/deploy/configuration/containerconfiguration.
+[2016-12-30T13:17:55.397Z] INFO  [26983] - [Application update app-6d2c-161230_211741@10/AppDeployStage0/DownloadSourceBundle] : Starting activity...
+[2016-12-30T13:17:55.712Z] INFO  [26983] - [Application update app-6d2c-161230_211741@10/AppDeployStage0/DownloadSourceBundle] : Completed activity. Result:
+  [2016-12-30T13:17:55.497Z] INFO  [27006] : Application version will be saved to /opt/elasticbeanstalk/deploy/appsource.
+  [2016-12-30T13:17:55.497Z] INFO  [27006] : Using manifest cache with deployment ID 10 and serial 10.
+  [2016-12-30T13:17:55.497Z] INFO  [27006] : Attempting to download application source bundle to: '/opt/elasticbeanstalk/deploy/appsource/source_bundle'.
+  [2016-12-30T13:17:55.497Z] INFO  [27006] : Using computed s3 key.
+  [2016-12-30T13:17:55.612Z] INFO  [27006] : Downloading from bucket 'elasticbeanstalk-us-west-2-341826891138' with key 'resources/environments/e-rzpyvmyjqg/_runtime/_versions/flask-tutorial/app-6d2c-161230_211741' and version '' to '/opt/elasticbeanstalk/deploy/appsource/source_bundle'.
+  [2016-12-30T13:17:55.689Z] INFO  [27006] : Size: 14753, ETag: "2ded4c7e80ac387d5ca4c95334c735fa", Metadata: {"environmentid"=>"e-rzpyvmyjqg", "requestid"=>"5b743c5d-ce92-11e6-a81a-21b40acb26ef"}.
+  [2016-12-30T13:17:55.699Z] INFO  [27006] : Downloaded size: 14753.
+  [2016-12-30T13:17:55.699Z] INFO  [27006] : Successfully downloaded to '/opt/elasticbeanstalk/deploy/appsource/source_bundle'.
+[2016-12-30T13:17:55.712Z] INFO  [26983] - [Application update app-6d2c-161230_211741@10/AppDeployStage0/EbExtensionPreBuild] : Starting activity...
+[2016-12-30T13:17:55.975Z] INFO  [26983] - [Application update app-6d2c-161230_211741@10/AppDeployStage0/EbExtensionPreBuild/Infra-EmbeddedPreBuild] : Starting activity...
+[2016-12-30T13:17:55.975Z] INFO  [26983] - [Application update app-6d2c-161230_211741@10/AppDeployStage0/EbExtensionPreBuild/Infra-EmbeddedPreBuild] : Completed activity.
+[2016-12-30T13:17:55.991Z] INFO  [26983] - [Application update app-6d2c-161230_211741@10/AppDeployStage0/EbExtensionPreBuild] : Completed activity.
+[2016-12-30T13:17:55.991Z] INFO  [26983] - [Application update app-6d2c-161230_211741@10/AppDeployStage0/AppDeployPreHook] : Starting activity...
+[2016-12-30T13:17:55.991Z] INFO  [26983] - [Application update app-6d2c-161230_211741@10/AppDeployStage0/AppDeployPreHook/01new.py] : Starting activity...
+[2016-12-30T13:17:56.305Z] INFO  [26983] - [Application update app-6d2c-161230_211741@10/AppDeployStage0/AppDeployPreHook/01new.py] : Completed activity.
+[2016-12-30T13:17:56.305Z] INFO  [26983] - [Application update app-6d2c-161230_211741@10/AppDeployStage0/AppDeployPreHook/02unzip.py] : Starting activity...
+[2016-12-30T13:17:56.626Z] INFO  [26983] - [Application update app-6d2c-161230_211741@10/AppDeployStage0/AppDeployPreHook/02unzip.py] : Completed activity. Result:
+  Archive:  /opt/elasticbeanstalk/deploy/appsource/source_bundle
+  6d2c81660d50cf0d81da7fe4745d2a9e67545bc2
+    inflating: /opt/python/ondeck/app/.DS_Store  
+    inflating: /opt/python/ondeck/app/.gitignore  
+    inflating: /opt/python/ondeck/app/application.py  
+    inflating: /opt/python/ondeck/app/archive.json  
+   extracting: /opt/python/ondeck/app/config.py  
+    inflating: /opt/python/ondeck/app/forms.py  
+    inflating: /opt/python/ondeck/app/requirements.txt  
+     creating: /opt/python/ondeck/app/static/
+   extracting: /opt/python/ondeck/app/static/globe-report-news.png  
+    inflating: /opt/python/ondeck/app/storage.py  
+     creating: /opt/python/ondeck/app/templates/
+    inflating: /opt/python/ondeck/app/templates/base.html  
+    inflating: /opt/python/ondeck/app/templates/index.html  
+    inflating: /opt/python/ondeck/app/templates/story.html  
+[2016-12-30T13:17:56.626Z] INFO  [26983] - [Application update app-6d2c-161230_211741@10/AppDeployStage0/AppDeployPreHook/03deploy.py] : Starting activity...
+[2016-12-30T13:17:57.043Z] INFO  [26983] - [Application update app-6d2c-161230_211741@10/AppDeployStage0/AppDeployPreHook/03deploy.py] : Completed activity. Result:
+  Requirement already satisfied (use --upgrade to upgrade): Flask==0.11.1 in /opt/python/run/venv/lib/python2.7/site-packages (from -r /opt/python/ondeck/app/requirements.txt (line 1))
+  Requirement already satisfied (use --upgrade to upgrade): itsdangerous==0.24 in /opt/python/run/venv/lib/python2.7/site-packages (from -r /opt/python/ondeck/app/requirements.txt (line 2))
+  Requirement already satisfied (use --upgrade to upgrade): Jinja2==2.7.3 in /opt/python/run/venv/lib/python2.7/site-packages (from -r /opt/python/ondeck/app/requirements.txt (line 3))
+  Requirement already satisfied (use --upgrade to upgrade): MarkupSafe==0.23 in /opt/python/run/venv/lib64/python2.7/site-packages (from -r /opt/python/ondeck/app/requirements.txt (line 4))
+  Requirement already satisfied (use --upgrade to upgrade): Werkzeug==0.10.1 in /opt/python/run/venv/lib/python2.7/site-packages (from -r /opt/python/ondeck/app/requirements.txt (line 5))
+  Requirement already satisfied (use --upgrade to upgrade): WTForms==2.1 in /opt/python/run/venv/lib/python2.7/site-packages (from -r /opt/python/ondeck/app/requirements.txt (line 6))
+  Requirement already satisfied (use --upgrade to upgrade): Flask-WTF==0.13.1 in /opt/python/run/venv/lib/python2.7/site-packages (from -r /opt/python/ondeck/app/requirements.txt (line 7))
+  Requirement already satisfied (use --upgrade to upgrade): click>=2.0 in /opt/python/run/venv/lib/python2.7/site-packages (from Flask==0.11.1->-r /opt/python/ondeck/app/requirements.txt (line 1))
+  You are using pip version 7.1.2, however version 9.0.1 is available.
+  You should consider upgrading via the 'pip install --upgrade pip' command.
+[2016-12-30T13:17:57.043Z] INFO  [26983] - [Application update app-6d2c-161230_211741@10/AppDeployStage0/AppDeployPreHook/04configen.py] : Starting activity...
+[2016-12-30T13:17:58.437Z] INFO  [26983] - [Application update app-6d2c-161230_211741@10/AppDeployStage0/AppDeployPreHook/04configen.py] : Completed activity.
+[2016-12-30T13:17:58.437Z] INFO  [26983] - [Application update app-6d2c-161230_211741@10/AppDeployStage0/AppDeployPreHook] : Completed activity. Result:
+  Successfully execute hooks in directory /opt/elasticbeanstalk/hooks/appdeploy/pre.
+[2016-12-30T13:17:58.437Z] INFO  [26983] - [Application update app-6d2c-161230_211741@10/AppDeployStage0/EbExtensionPostBuild] : Starting activity...
+[2016-12-30T13:17:58.710Z] INFO  [26983] - [Application update app-6d2c-161230_211741@10/AppDeployStage0/EbExtensionPostBuild/Infra-EmbeddedPostBuild] : Starting activity...
+[2016-12-30T13:17:58.710Z] INFO  [26983] - [Application update app-6d2c-161230_211741@10/AppDeployStage0/EbExtensionPostBuild/Infra-EmbeddedPostBuild] : Completed activity.
+[2016-12-30T13:17:58.725Z] INFO  [26983] - [Application update app-6d2c-161230_211741@10/AppDeployStage0/EbExtensionPostBuild] : Completed activity.
+[2016-12-30T13:17:58.725Z] INFO  [26983] - [Application update app-6d2c-161230_211741@10/AppDeployStage0/InfraCleanEbextension] : Starting activity...
+[2016-12-30T13:17:58.727Z] INFO  [26983] - [Application update app-6d2c-161230_211741@10/AppDeployStage0/InfraCleanEbextension] : Completed activity. Result:
+  Cleaned ebextensions subdirectories from /opt/python/ondeck/app.
+[2016-12-30T13:17:58.727Z] INFO  [26983] - [Application update app-6d2c-161230_211741@10/AppDeployStage0] : Completed activity. Result:
+  Application update - Command CMD-AppDeploy stage 0 completed
+[2016-12-30T13:17:58.727Z] INFO  [26983] - [Application update app-6d2c-161230_211741@10/AppDeployStage1] : Starting activity...
+[2016-12-30T13:17:58.727Z] INFO  [26983] - [Application update app-6d2c-161230_211741@10/AppDeployStage1/AppDeployEnactHook] : Starting activity...
+[2016-12-30T13:17:58.727Z] INFO  [26983] - [Application update app-6d2c-161230_211741@10/AppDeployStage1/AppDeployEnactHook/01flip.py] : Starting activity...
+[2016-12-30T13:18:03.074Z] INFO  [26983] - [Application update app-6d2c-161230_211741@10/AppDeployStage1/AppDeployEnactHook/01flip.py] : Completed activity. Result:
+  httpd: stopped
+  httpd: started
+  httpd                            RUNNING   pid 27120, uptime 0:00:02
+[2016-12-30T13:18:03.074Z] INFO  [26983] - [Application update app-6d2c-161230_211741@10/AppDeployStage1/AppDeployEnactHook/02create_pids_for_monitoring.sh] : Starting activity...
+[2016-12-30T13:18:03.175Z] INFO  [26983] - [Application update app-6d2c-161230_211741@10/AppDeployStage1/AppDeployEnactHook/02create_pids_for_monitoring.sh] : Completed activity. Result:
+  + chmod 0755 /var/run/httpd
+  + /opt/elasticbeanstalk/bin/healthd-track-pidfile --proxy httpd
+  + /opt/elasticbeanstalk/bin/healthd-track-pidfile --name application --location /opt/python/run/supervisord.pid
+[2016-12-30T13:18:03.175Z] INFO  [26983] - [Application update app-6d2c-161230_211741@10/AppDeployStage1/AppDeployEnactHook] : Completed activity. Result:
+  Successfully execute hooks in directory /opt/elasticbeanstalk/hooks/appdeploy/enact.
+[2016-12-30T13:18:03.175Z] INFO  [26983] - [Application update app-6d2c-161230_211741@10/AppDeployStage1/AppDeployPostHook] : Starting activity...
+[2016-12-30T13:18:03.175Z] INFO  [26983] - [Application update app-6d2c-161230_211741@10/AppDeployStage1/AppDeployPostHook] : Completed activity. Result:
+  Successfully execute hooks in directory /opt/elasticbeanstalk/hooks/appdeploy/post.
+[2016-12-30T13:18:03.175Z] INFO  [26983] - [Application update app-6d2c-161230_211741@10/AppDeployStage1] : Completed activity. Result:
+  Application version switch - Command CMD-AppDeploy stage 1 completed
+[2016-12-30T13:18:03.175Z] INFO  [26983] - [Application update app-6d2c-161230_211741@10/AddonsAfter] : Starting activity...
+[2016-12-30T13:18:03.175Z] INFO  [26983] - [Application update app-6d2c-161230_211741@10/AddonsAfter/ConfigLogRotation] : Starting activity...
+[2016-12-30T13:18:03.175Z] INFO  [26983] - [Application update app-6d2c-161230_211741@10/AddonsAfter/ConfigLogRotation/10-config.sh] : Starting activity...
+[2016-12-30T13:18:03.251Z] INFO  [26983] - [Application update app-6d2c-161230_211741@10/AddonsAfter/ConfigLogRotation/10-config.sh] : Completed activity. Result:
+  Disabled forced hourly log rotation.
+[2016-12-30T13:18:03.251Z] INFO  [26983] - [Application update app-6d2c-161230_211741@10/AddonsAfter/ConfigLogRotation] : Completed activity. Result:
+  Successfully execute hooks in directory /opt/elasticbeanstalk/addons/logpublish/hooks/config.
+[2016-12-30T13:18:03.251Z] INFO  [26983] - [Application update app-6d2c-161230_211741@10/AddonsAfter/ConfigCWLAgent] : Starting activity...
+[2016-12-30T13:18:03.251Z] INFO  [26983] - [Application update app-6d2c-161230_211741@10/AddonsAfter/ConfigCWLAgent/10-config.sh] : Starting activity...
+[2016-12-30T13:18:03.367Z] INFO  [26983] - [Application update app-6d2c-161230_211741@10/AddonsAfter/ConfigCWLAgent/10-config.sh] : Completed activity. Result:
+  Log streaming option setting is not specified, ignore cloudwatch logs setup.
+  
+  Disabled log streaming.
+[2016-12-30T13:18:03.367Z] INFO  [26983] - [Application update app-6d2c-161230_211741@10/AddonsAfter/ConfigCWLAgent] : Completed activity. Result:
+  Successfully execute hooks in directory /opt/elasticbeanstalk/addons/logstreaming/hooks/config.
+[2016-12-30T13:18:03.367Z] INFO  [26983] - [Application update app-6d2c-161230_211741@10/AddonsAfter] : Completed activity.
+[2016-12-30T13:18:03.367Z] INFO  [26983] - [Application update app-6d2c-161230_211741@10] : Completed activity. Result:
+  Application update - Command CMD-AppDeploy succeeded
+[2016-12-30T13:19:20.318Z] INFO  [27256] - [Application update app-4129-161230_211903@11] : Starting activity...
+[2016-12-30T13:19:20.318Z] INFO  [27256] - [Application update app-4129-161230_211903@11/AddonsBefore] : Starting activity...
+[2016-12-30T13:19:20.318Z] INFO  [27256] - [Application update app-4129-161230_211903@11/AddonsBefore] : Completed activity.
+[2016-12-30T13:19:20.572Z] INFO  [27256] - [Application update app-4129-161230_211903@11/AppDeployStage0] : Starting activity...
+[2016-12-30T13:19:20.572Z] INFO  [27256] - [Application update app-4129-161230_211903@11/AppDeployStage0/InfraWriteConfig] : Starting activity...
+[2016-12-30T13:19:20.575Z] INFO  [27256] - [Application update app-4129-161230_211903@11/AppDeployStage0/InfraWriteConfig] : Completed activity. Result:
+  Recreated directory /opt/elasticbeanstalk/deploy/configuration/.
+  Generate appsource url file at /opt/elasticbeanstalk/deploy/configuration/appsourceurl.
+  Generate container config file at /opt/elasticbeanstalk/deploy/configuration/containerconfiguration.
+[2016-12-30T13:19:20.575Z] INFO  [27256] - [Application update app-4129-161230_211903@11/AppDeployStage0/DownloadSourceBundle] : Starting activity...
+[2016-12-30T13:19:20.887Z] INFO  [27256] - [Application update app-4129-161230_211903@11/AppDeployStage0/DownloadSourceBundle] : Completed activity. Result:
+  [2016-12-30T13:19:20.676Z] INFO  [27279] : Application version will be saved to /opt/elasticbeanstalk/deploy/appsource.
+  [2016-12-30T13:19:20.676Z] INFO  [27279] : Using manifest cache with deployment ID 11 and serial 11.
+  [2016-12-30T13:19:20.676Z] INFO  [27279] : Attempting to download application source bundle to: '/opt/elasticbeanstalk/deploy/appsource/source_bundle'.
+  [2016-12-30T13:19:20.676Z] INFO  [27279] : Using computed s3 key.
+  [2016-12-30T13:19:20.791Z] INFO  [27279] : Downloading from bucket 'elasticbeanstalk-us-west-2-341826891138' with key 'resources/environments/e-rzpyvmyjqg/_runtime/_versions/flask-tutorial/app-4129-161230_211903' and version '' to '/opt/elasticbeanstalk/deploy/appsource/source_bundle'.
+  [2016-12-30T13:19:20.850Z] INFO  [27279] : Size: 86567, ETag: "7e5ef3c6b60dce5d71d5aa94a881ecc8", Metadata: {"environmentid"=>"e-rzpyvmyjqg", "requestid"=>"8d74fc09-ce92-11e6-b6b8-4fbb5c4e7d2c"}.
+  [2016-12-30T13:19:20.875Z] INFO  [27279] : Downloaded size: 86567.
+  [2016-12-30T13:19:20.875Z] INFO  [27279] : Successfully downloaded to '/opt/elasticbeanstalk/deploy/appsource/source_bundle'.
+[2016-12-30T13:19:20.888Z] INFO  [27256] - [Application update app-4129-161230_211903@11/AppDeployStage0/EbExtensionPreBuild] : Starting activity...
+[2016-12-30T13:19:21.159Z] INFO  [27256] - [Application update app-4129-161230_211903@11/AppDeployStage0/EbExtensionPreBuild/Infra-EmbeddedPreBuild] : Starting activity...
+[2016-12-30T13:19:21.159Z] INFO  [27256] - [Application update app-4129-161230_211903@11/AppDeployStage0/EbExtensionPreBuild/Infra-EmbeddedPreBuild] : Completed activity.
+[2016-12-30T13:19:21.173Z] INFO  [27256] - [Application update app-4129-161230_211903@11/AppDeployStage0/EbExtensionPreBuild] : Completed activity.
+[2016-12-30T13:19:21.174Z] INFO  [27256] - [Application update app-4129-161230_211903@11/AppDeployStage0/AppDeployPreHook] : Starting activity...
+[2016-12-30T13:19:21.174Z] INFO  [27256] - [Application update app-4129-161230_211903@11/AppDeployStage0/AppDeployPreHook/01new.py] : Starting activity...
+[2016-12-30T13:19:21.487Z] INFO  [27256] - [Application update app-4129-161230_211903@11/AppDeployStage0/AppDeployPreHook/01new.py] : Completed activity.
+[2016-12-30T13:19:21.487Z] INFO  [27256] - [Application update app-4129-161230_211903@11/AppDeployStage0/AppDeployPreHook/02unzip.py] : Starting activity...
+[2016-12-30T13:19:21.810Z] INFO  [27256] - [Application update app-4129-161230_211903@11/AppDeployStage0/AppDeployPreHook/02unzip.py] : Completed activity. Result:
+  Archive:  /opt/elasticbeanstalk/deploy/appsource/source_bundle
+  41296c50ef834471fd07716229123f9479a808ae
+    inflating: /opt/python/ondeck/app/.DS_Store  
+    inflating: /opt/python/ondeck/app/.gitignore  
+    inflating: /opt/python/ondeck/app/application.py  
+    inflating: /opt/python/ondeck/app/archive.json  
+   extracting: /opt/python/ondeck/app/config.py  
+    inflating: /opt/python/ondeck/app/forms.py  
+    inflating: /opt/python/ondeck/app/requirements.txt  
+     creating: /opt/python/ondeck/app/static/
+    inflating: /opt/python/ondeck/app/static/global-report-news.png  
+   extracting: /opt/python/ondeck/app/static/globe-report-news.png  
+    inflating: /opt/python/ondeck/app/storage.py  
+     creating: /opt/python/ondeck/app/templates/
+    inflating: /opt/python/ondeck/app/templates/base.html  
+    inflating: /opt/python/ondeck/app/templates/index.html  
+    inflating: /opt/python/ondeck/app/templates/story.html  
+[2016-12-30T13:19:21.810Z] INFO  [27256] - [Application update app-4129-161230_211903@11/AppDeployStage0/AppDeployPreHook/03deploy.py] : Starting activity...
+[2016-12-30T13:19:22.229Z] INFO  [27256] - [Application update app-4129-161230_211903@11/AppDeployStage0/AppDeployPreHook/03deploy.py] : Completed activity. Result:
+  Requirement already satisfied (use --upgrade to upgrade): Flask==0.11.1 in /opt/python/run/venv/lib/python2.7/site-packages (from -r /opt/python/ondeck/app/requirements.txt (line 1))
+  Requirement already satisfied (use --upgrade to upgrade): itsdangerous==0.24 in /opt/python/run/venv/lib/python2.7/site-packages (from -r /opt/python/ondeck/app/requirements.txt (line 2))
+  Requirement already satisfied (use --upgrade to upgrade): Jinja2==2.7.3 in /opt/python/run/venv/lib/python2.7/site-packages (from -r /opt/python/ondeck/app/requirements.txt (line 3))
+  Requirement already satisfied (use --upgrade to upgrade): MarkupSafe==0.23 in /opt/python/run/venv/lib64/python2.7/site-packages (from -r /opt/python/ondeck/app/requirements.txt (line 4))
+  Requirement already satisfied (use --upgrade to upgrade): Werkzeug==0.10.1 in /opt/python/run/venv/lib/python2.7/site-packages (from -r /opt/python/ondeck/app/requirements.txt (line 5))
+  Requirement already satisfied (use --upgrade to upgrade): WTForms==2.1 in /opt/python/run/venv/lib/python2.7/site-packages (from -r /opt/python/ondeck/app/requirements.txt (line 6))
+  Requirement already satisfied (use --upgrade to upgrade): Flask-WTF==0.13.1 in /opt/python/run/venv/lib/python2.7/site-packages (from -r /opt/python/ondeck/app/requirements.txt (line 7))
+  Requirement already satisfied (use --upgrade to upgrade): click>=2.0 in /opt/python/run/venv/lib/python2.7/site-packages (from Flask==0.11.1->-r /opt/python/ondeck/app/requirements.txt (line 1))
+  You are using pip version 7.1.2, however version 9.0.1 is available.
+  You should consider upgrading via the 'pip install --upgrade pip' command.
+[2016-12-30T13:19:22.229Z] INFO  [27256] - [Application update app-4129-161230_211903@11/AppDeployStage0/AppDeployPreHook/04configen.py] : Starting activity...
+[2016-12-30T13:19:23.620Z] INFO  [27256] - [Application update app-4129-161230_211903@11/AppDeployStage0/AppDeployPreHook/04configen.py] : Completed activity.
+[2016-12-30T13:19:23.620Z] INFO  [27256] - [Application update app-4129-161230_211903@11/AppDeployStage0/AppDeployPreHook] : Completed activity. Result:
+  Successfully execute hooks in directory /opt/elasticbeanstalk/hooks/appdeploy/pre.
+[2016-12-30T13:19:23.620Z] INFO  [27256] - [Application update app-4129-161230_211903@11/AppDeployStage0/EbExtensionPostBuild] : Starting activity...
+[2016-12-30T13:19:23.882Z] INFO  [27256] - [Application update app-4129-161230_211903@11/AppDeployStage0/EbExtensionPostBuild/Infra-EmbeddedPostBuild] : Starting activity...
+[2016-12-30T13:19:23.882Z] INFO  [27256] - [Application update app-4129-161230_211903@11/AppDeployStage0/EbExtensionPostBuild/Infra-EmbeddedPostBuild] : Completed activity.
+[2016-12-30T13:19:23.897Z] INFO  [27256] - [Application update app-4129-161230_211903@11/AppDeployStage0/EbExtensionPostBuild] : Completed activity.
+[2016-12-30T13:19:23.897Z] INFO  [27256] - [Application update app-4129-161230_211903@11/AppDeployStage0/InfraCleanEbextension] : Starting activity...
+[2016-12-30T13:19:23.899Z] INFO  [27256] - [Application update app-4129-161230_211903@11/AppDeployStage0/InfraCleanEbextension] : Completed activity. Result:
+  Cleaned ebextensions subdirectories from /opt/python/ondeck/app.
+[2016-12-30T13:19:23.899Z] INFO  [27256] - [Application update app-4129-161230_211903@11/AppDeployStage0] : Completed activity. Result:
+  Application update - Command CMD-AppDeploy stage 0 completed
+[2016-12-30T13:19:23.899Z] INFO  [27256] - [Application update app-4129-161230_211903@11/AppDeployStage1] : Starting activity...
+[2016-12-30T13:19:23.899Z] INFO  [27256] - [Application update app-4129-161230_211903@11/AppDeployStage1/AppDeployEnactHook] : Starting activity...
+[2016-12-30T13:19:23.899Z] INFO  [27256] - [Application update app-4129-161230_211903@11/AppDeployStage1/AppDeployEnactHook/01flip.py] : Starting activity...
+[2016-12-30T13:19:28.192Z] INFO  [27256] - [Application update app-4129-161230_211903@11/AppDeployStage1/AppDeployEnactHook/01flip.py] : Completed activity. Result:
+  httpd: stopped
+  httpd: started
+  httpd                            RUNNING   pid 27392, uptime 0:00:03
+[2016-12-30T13:19:28.192Z] INFO  [27256] - [Application update app-4129-161230_211903@11/AppDeployStage1/AppDeployEnactHook/02create_pids_for_monitoring.sh] : Starting activity...
+[2016-12-30T13:19:28.292Z] INFO  [27256] - [Application update app-4129-161230_211903@11/AppDeployStage1/AppDeployEnactHook/02create_pids_for_monitoring.sh] : Completed activity. Result:
+  + chmod 0755 /var/run/httpd
+  + /opt/elasticbeanstalk/bin/healthd-track-pidfile --proxy httpd
+  + /opt/elasticbeanstalk/bin/healthd-track-pidfile --name application --location /opt/python/run/supervisord.pid
+[2016-12-30T13:19:28.292Z] INFO  [27256] - [Application update app-4129-161230_211903@11/AppDeployStage1/AppDeployEnactHook] : Completed activity. Result:
+  Successfully execute hooks in directory /opt/elasticbeanstalk/hooks/appdeploy/enact.
+[2016-12-30T13:19:28.292Z] INFO  [27256] - [Application update app-4129-161230_211903@11/AppDeployStage1/AppDeployPostHook] : Starting activity...
+[2016-12-30T13:19:28.293Z] INFO  [27256] - [Application update app-4129-161230_211903@11/AppDeployStage1/AppDeployPostHook] : Completed activity. Result:
+  Successfully execute hooks in directory /opt/elasticbeanstalk/hooks/appdeploy/post.
+[2016-12-30T13:19:28.293Z] INFO  [27256] - [Application update app-4129-161230_211903@11/AppDeployStage1] : Completed activity. Result:
+  Application version switch - Command CMD-AppDeploy stage 1 completed
+[2016-12-30T13:19:28.293Z] INFO  [27256] - [Application update app-4129-161230_211903@11/AddonsAfter] : Starting activity...
+[2016-12-30T13:19:28.293Z] INFO  [27256] - [Application update app-4129-161230_211903@11/AddonsAfter/ConfigLogRotation] : Starting activity...
+[2016-12-30T13:19:28.293Z] INFO  [27256] - [Application update app-4129-161230_211903@11/AddonsAfter/ConfigLogRotation/10-config.sh] : Starting activity...
+[2016-12-30T13:19:28.369Z] INFO  [27256] - [Application update app-4129-161230_211903@11/AddonsAfter/ConfigLogRotation/10-config.sh] : Completed activity. Result:
+  Disabled forced hourly log rotation.
+[2016-12-30T13:19:28.369Z] INFO  [27256] - [Application update app-4129-161230_211903@11/AddonsAfter/ConfigLogRotation] : Completed activity. Result:
+  Successfully execute hooks in directory /opt/elasticbeanstalk/addons/logpublish/hooks/config.
+[2016-12-30T13:19:28.369Z] INFO  [27256] - [Application update app-4129-161230_211903@11/AddonsAfter/ConfigCWLAgent] : Starting activity...
+[2016-12-30T13:19:28.369Z] INFO  [27256] - [Application update app-4129-161230_211903@11/AddonsAfter/ConfigCWLAgent/10-config.sh] : Starting activity...
+[2016-12-30T13:19:28.485Z] INFO  [27256] - [Application update app-4129-161230_211903@11/AddonsAfter/ConfigCWLAgent/10-config.sh] : Completed activity. Result:
+  Log streaming option setting is not specified, ignore cloudwatch logs setup.
+  
+  Disabled log streaming.
+[2016-12-30T13:19:28.485Z] INFO  [27256] - [Application update app-4129-161230_211903@11/AddonsAfter/ConfigCWLAgent] : Completed activity. Result:
+  Successfully execute hooks in directory /opt/elasticbeanstalk/addons/logstreaming/hooks/config.
+[2016-12-30T13:19:28.485Z] INFO  [27256] - [Application update app-4129-161230_211903@11/AddonsAfter] : Completed activity.
+[2016-12-30T13:19:28.485Z] INFO  [27256] - [Application update app-4129-161230_211903@11] : Completed activity. Result:
+  Application update - Command CMD-AppDeploy succeeded
+[2016-12-31T06:31:03.724Z] INFO  [29110] - [CMD-BundleLogs] : Starting activity...
+[2016-12-31T06:31:03.724Z] INFO  [29110] - [CMD-BundleLogs/AddonsBefore] : Starting activity...
+[2016-12-31T06:31:03.724Z] INFO  [29110] - [CMD-BundleLogs/AddonsBefore] : Completed activity.
+[2016-12-31T06:31:03.724Z] INFO  [29110] - [CMD-BundleLogs/BundleLogs] : Starting activity...
+[2016-12-31T06:31:03.724Z] INFO  [29110] - [CMD-BundleLogs/BundleLogs/BundleLogs] : Starting activity...

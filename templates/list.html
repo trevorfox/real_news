@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="row">
+  <div class="col-md-4" id="top-stories">
+    <h2>Top Stories:</h2>
+    <hr>
+    {% for story in archive.get_top_stories(-1) %}
+    <div class="row">
+      <div class="col-xs-2">
+        <div class="text-center center-block">
+          <a href="{{ url_for('story') + '/'+ story.id }}"><img src="{{ story.image }}" alt="{{story.title}}" class="img-responsive "/></a>
+        </div>
+      </div>
+      <div class="col-xs-10">
+        <a href="{{ url_for('story') + '/'+ story.id }}"><div class="h5">{{ story.title }}</div></a>
+        <div class="h6">{{story.votes}} Votes</div>
+      </div>
+    </div>
+    <hr>
+    {% endfor %}
+  </div>
+</div>
+
+{% endblock %}

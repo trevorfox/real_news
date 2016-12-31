@@ -1,0 +1,39 @@
+2016-12-28 10:13:05,638 CRIT Supervisor running as root (no user in config file)
+2016-12-28 10:13:05,649 INFO RPC interface 'supervisor' initialized
+2016-12-28 10:13:05,649 CRIT Server 'unix_http_server' running without any HTTP authentication checking
+2016-12-28 10:13:05,649 INFO supervisord started with pid 2789
+2016-12-28 10:13:06,651 INFO spawned: 'httpd' with pid 2811
+2016-12-28 10:13:07,743 INFO success: httpd entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2016-12-28 10:13:47,726 INFO stopped: httpd (exit status 0)
+2016-12-28 10:13:48,730 INFO spawned: 'httpd' with pid 3126
+2016-12-28 10:13:49,768 INFO success: httpd entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2016-12-28 10:18:53,008 INFO stopped: httpd (exit status 0)
+2016-12-28 10:18:54,012 INFO spawned: 'httpd' with pid 3526
+2016-12-28 10:18:55,050 INFO success: httpd entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2016-12-28 10:24:44,494 INFO stopped: httpd (exit status 0)
+2016-12-28 10:24:45,499 INFO spawned: 'httpd' with pid 3997
+2016-12-28 10:24:46,536 INFO success: httpd entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2016-12-28 10:27:31,249 INFO stopped: httpd (exit status 0)
+2016-12-28 10:27:32,254 INFO spawned: 'httpd' with pid 4341
+2016-12-28 10:27:33,293 INFO success: httpd entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2016-12-28 10:30:22,987 INFO stopped: httpd (exit status 0)
+2016-12-28 10:30:23,992 INFO spawned: 'httpd' with pid 4688
+2016-12-28 10:30:25,030 INFO success: httpd entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2016-12-28 10:37:19,117 INFO stopped: httpd (exit status 0)
+2016-12-28 10:37:20,122 INFO spawned: 'httpd' with pid 5175
+2016-12-28 10:37:21,162 INFO success: httpd entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2016-12-30 11:47:55,016 INFO stopped: httpd (exit status 0)
+2016-12-30 11:47:56,021 INFO spawned: 'httpd' with pid 23455
+2016-12-30 11:47:57,060 INFO success: httpd entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2016-12-30 12:52:37,969 INFO stopped: httpd (exit status 0)
+2016-12-30 12:52:38,973 INFO spawned: 'httpd' with pid 25759
+2016-12-30 12:52:40,009 INFO success: httpd entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2016-12-30 13:03:11,933 INFO stopped: httpd (exit status 0)
+2016-12-30 13:03:12,937 INFO spawned: 'httpd' with pid 26391
+2016-12-30 13:03:13,975 INFO success: httpd entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2016-12-30 13:17:59,290 INFO stopped: httpd (exit status 0)
+2016-12-30 13:18:00,295 INFO spawned: 'httpd' with pid 27120
+2016-12-30 13:18:01,338 INFO success: httpd entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2016-12-30 13:19:24,405 INFO stopped: httpd (exit status 0)
+2016-12-30 13:19:25,410 INFO spawned: 'httpd' with pid 27392
+2016-12-30 13:19:26,451 INFO success: httpd entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)

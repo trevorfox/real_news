@@ -27,11 +27,23 @@
   </head>
   <body>
     <nav class="navbar navbar-light">
-      <a class="navbar-brand" href="/">Real News |</a><span class="navbar-text">You can share it. They might believe it.</span>
+      <a class="navbar-brand" href="/">Real News |</a>
+      <p class="navbar-text">You can share it. They might believe it.</p>
     </nav>
     <div class="container">
       {% block content %}{% endblock %}
     </div>
+    <br>
+    <footer>
+      <div class="container">
+        <h3>More on Fake News...</h2>
+        <ul>
+          <li><a href="http://www.npr.org/sections/alltechconsidered/2016/11/23/503146770/npr-finds-the-head-of-a-covert-fake-news-operation-in-the-suburbs">We Tracked Down A Fake-News Creator In The Suburbs. Here's What We Learned</a> (NPR)</li>
+          <li><a href="http://www.forbes.com/sites/quora/2016/11/24/did-fake-news-on-facebook-influence-the-outcome-of-the-election/#391ea9eb22cc">Did Fake News On Facebook Influence The Outcome Of The (US) Election?</a> (Forbes)</li>
+          <li><a href="https://www.buzzfeed.com/craigsilverman/viral-fake-election-news-outperformed-real-news-on-facebook?utm_term=.mxj037gqV#.icGvwYJ3W">This Analysis Shows How Fake Election News Stories Outperformed Real News On Facebook</a> (BuzzFeed but still interesting)</li>
+        </ul>
+      </div>
+    </footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   </body>

@@ -1,0 +1,64 @@
+2016-12-28 10:16:10,064 [INFO] (3308 MainThread) [tailLogs.py-56] [root tailLogs main] Starting tail logs task with batch id a5f9ba97-cce6-11e6-b223-71a410dc87ee
+2016-12-28 10:16:10,068 [INFO] (3308 MainThread) [upload_tools.py-293] [root upload_tools execute] Successfully tailed file /var/log/httpd/error_log
+2016-12-28 10:16:10,069 [INFO] (3308 MainThread) [upload_tools.py-293] [root upload_tools execute] Successfully tailed file /opt/python/log/supervisord.log
+2016-12-28 10:16:10,069 [INFO] (3308 MainThread) [upload_tools.py-293] [root upload_tools execute] Successfully tailed file /var/log/httpd/access_log
+2016-12-28 10:16:10,071 [INFO] (3308 MainThread) [upload_tools.py-293] [root upload_tools execute] Successfully tailed file /var/log/eb-activity.log
+2016-12-28 10:16:10,074 [INFO] (3308 MainThread) [upload_tools.py-293] [root upload_tools execute] Successfully tailed file /var/log/eb-commandprocessor.log
+2016-12-28 10:16:10,157 [INFO] (3308 MainThread) [s3_tools.py-208] [root s3_tools _process_result] Received status code 200 with text: 
+2016-12-28 10:16:10,157 [INFO] (3308 MainThread) [upload_tools.py-317] [root upload_tools __exit__] Successfully uploaded tailed content for 5 files to s3 at location resources/environments/logs/tail/e-rzpyvmyjqg/i-0132531ca8714bc80/TailLogs-1482920170074.out
+2016-12-28 10:16:10,158 [INFO] (3308 MainThread) [tailLogs.py-92] [root tailLogs main] [Instance: i-0132531ca8714bc80] Successfully finished tailing 5 log(s)
+2016-12-28 10:19:48,404 [INFO] (3649 MainThread) [tailLogs.py-56] [root tailLogs main] Starting tail logs task with batch id 281b05e4-cce7-11e6-b23f-0572ebc520a1
+2016-12-28 10:19:48,408 [INFO] (3649 MainThread) [upload_tools.py-293] [root upload_tools execute] Successfully tailed file /var/log/httpd/error_log
+2016-12-28 10:19:48,408 [INFO] (3649 MainThread) [upload_tools.py-293] [root upload_tools execute] Successfully tailed file /opt/python/log/supervisord.log
+2016-12-28 10:19:48,409 [INFO] (3649 MainThread) [upload_tools.py-293] [root upload_tools execute] Successfully tailed file /var/log/httpd/access_log
+2016-12-28 10:19:48,412 [INFO] (3649 MainThread) [upload_tools.py-293] [root upload_tools execute] Successfully tailed file /var/log/eb-activity.log
+2016-12-28 10:19:48,415 [INFO] (3649 MainThread) [upload_tools.py-293] [root upload_tools execute] Successfully tailed file /var/log/eb-commandprocessor.log
+2016-12-28 10:19:48,482 [INFO] (3649 MainThread) [s3_tools.py-208] [root s3_tools _process_result] Received status code 200 with text: 
+2016-12-28 10:19:48,482 [INFO] (3649 MainThread) [upload_tools.py-317] [root upload_tools __exit__] Successfully uploaded tailed content for 5 files to s3 at location resources/environments/logs/tail/e-rzpyvmyjqg/i-0132531ca8714bc80/TailLogs-1482920388415.out
+2016-12-28 10:19:48,483 [INFO] (3649 MainThread) [tailLogs.py-92] [root tailLogs main] [Instance: i-0132531ca8714bc80] Successfully finished tailing 5 log(s)
+2016-12-28 10:20:59,791 [INFO] (3729 MainThread) [tailLogs.py-56] [root tailLogs main] Starting tail logs task with batch id 52b5dad6-cce7-11e6-b29e-ffd339ae48ac
+2016-12-28 10:20:59,795 [INFO] (3729 MainThread) [upload_tools.py-293] [root upload_tools execute] Successfully tailed file /var/log/httpd/error_log
+2016-12-28 10:20:59,795 [INFO] (3729 MainThread) [upload_tools.py-293] [root upload_tools execute] Successfully tailed file /opt/python/log/supervisord.log
+2016-12-28 10:20:59,796 [INFO] (3729 MainThread) [upload_tools.py-293] [root upload_tools execute] Successfully tailed file /var/log/httpd/access_log
+2016-12-28 10:20:59,799 [INFO] (3729 MainThread) [upload_tools.py-293] [root upload_tools execute] Successfully tailed file /var/log/eb-activity.log
+2016-12-28 10:20:59,802 [INFO] (3729 MainThread) [upload_tools.py-293] [root upload_tools execute] Successfully tailed file /var/log/eb-commandprocessor.log
+2016-12-28 10:20:59,882 [INFO] (3729 MainThread) [s3_tools.py-208] [root s3_tools _process_result] Received status code 200 with text: 
+2016-12-28 10:20:59,882 [INFO] (3729 MainThread) [upload_tools.py-317] [root upload_tools __exit__] Successfully uploaded tailed content for 5 files to s3 at location resources/environments/logs/tail/e-rzpyvmyjqg/i-0132531ca8714bc80/TailLogs-1482920459802.out
+2016-12-28 10:20:59,882 [INFO] (3729 MainThread) [tailLogs.py-92] [root tailLogs main] [Instance: i-0132531ca8714bc80] Successfully finished tailing 5 log(s)
+2016-12-28 10:23:29,716 [INFO] (3822 MainThread) [tailLogs.py-56] [root tailLogs main] Starting tail logs task with batch id abf17b70-cce7-11e6-b223-71a410dc87ee
+2016-12-28 10:23:29,721 [INFO] (3822 MainThread) [upload_tools.py-293] [root upload_tools execute] Successfully tailed file /var/log/httpd/error_log
+2016-12-28 10:23:29,721 [INFO] (3822 MainThread) [upload_tools.py-293] [root upload_tools execute] Successfully tailed file /opt/python/log/supervisord.log
+2016-12-28 10:23:29,722 [INFO] (3822 MainThread) [upload_tools.py-293] [root upload_tools execute] Successfully tailed file /var/log/httpd/access_log
+2016-12-28 10:23:29,725 [INFO] (3822 MainThread) [upload_tools.py-293] [root upload_tools execute] Successfully tailed file /var/log/eb-activity.log
+2016-12-28 10:23:29,728 [INFO] (3822 MainThread) [upload_tools.py-293] [root upload_tools execute] Successfully tailed file /var/log/eb-commandprocessor.log
+2016-12-28 10:23:29,852 [INFO] (3822 MainThread) [s3_tools.py-208] [root s3_tools _process_result] Received status code 200 with text: 
+2016-12-28 10:23:29,852 [INFO] (3822 MainThread) [upload_tools.py-317] [root upload_tools __exit__] Successfully uploaded tailed content for 5 files to s3 at location resources/environments/logs/tail/e-rzpyvmyjqg/i-0132531ca8714bc80/TailLogs-1482920609728.out
+2016-12-28 10:23:29,853 [INFO] (3822 MainThread) [tailLogs.py-92] [root tailLogs main] [Instance: i-0132531ca8714bc80] Successfully finished tailing 5 log(s)
+2016-12-28 10:25:28,244 [INFO] (4121 MainThread) [tailLogs.py-56] [root tailLogs main] Starting tail logs task with batch id f27b7e61-cce7-11e6-9cbb-9fcfe0a5ccc9
+2016-12-28 10:25:28,249 [INFO] (4121 MainThread) [upload_tools.py-293] [root upload_tools execute] Successfully tailed file /var/log/httpd/error_log
+2016-12-28 10:25:28,249 [INFO] (4121 MainThread) [upload_tools.py-293] [root upload_tools execute] Successfully tailed file /opt/python/log/supervisord.log
+2016-12-28 10:25:28,250 [INFO] (4121 MainThread) [upload_tools.py-293] [root upload_tools execute] Successfully tailed file /var/log/httpd/access_log
+2016-12-28 10:25:28,253 [INFO] (4121 MainThread) [upload_tools.py-293] [root upload_tools execute] Successfully tailed file /var/log/eb-activity.log
+2016-12-28 10:25:28,256 [INFO] (4121 MainThread) [upload_tools.py-293] [root upload_tools execute] Successfully tailed file /var/log/eb-commandprocessor.log
+2016-12-28 10:25:28,343 [INFO] (4121 MainThread) [s3_tools.py-208] [root s3_tools _process_result] Received status code 200 with text: 
+2016-12-28 10:25:28,343 [INFO] (4121 MainThread) [upload_tools.py-317] [root upload_tools __exit__] Successfully uploaded tailed content for 5 files to s3 at location resources/environments/logs/tail/e-rzpyvmyjqg/i-0132531ca8714bc80/TailLogs-1482920728256.out
+2016-12-28 10:25:28,343 [INFO] (4121 MainThread) [tailLogs.py-92] [root tailLogs main] [Instance: i-0132531ca8714bc80] Successfully finished tailing 5 log(s)
+2016-12-28 10:29:10,060 [INFO] (4507 MainThread) [tailLogs.py-56] [root tailLogs main] Starting tail logs task with batch id 76cb69b9-cce8-11e6-a2e3-cde9169de95e
+2016-12-28 10:29:10,066 [INFO] (4507 MainThread) [upload_tools.py-293] [root upload_tools execute] Successfully tailed file /var/log/httpd/error_log
+2016-12-28 10:29:10,067 [INFO] (4507 MainThread) [upload_tools.py-293] [root upload_tools execute] Successfully tailed file /opt/python/log/supervisord.log
+2016-12-28 10:29:10,069 [INFO] (4507 MainThread) [upload_tools.py-293] [root upload_tools execute] Successfully tailed file /var/log/httpd/access_log
+2016-12-28 10:29:10,072 [INFO] (4507 MainThread) [upload_tools.py-293] [root upload_tools execute] Successfully tailed file /var/log/eb-activity.log
+2016-12-28 10:29:10,074 [INFO] (4507 MainThread) [upload_tools.py-293] [root upload_tools execute] Successfully tailed file /var/log/eb-commandprocessor.log
+2016-12-28 10:29:10,160 [INFO] (4507 MainThread) [s3_tools.py-208] [root s3_tools _process_result] Received status code 200 with text: 
+2016-12-28 10:29:10,160 [INFO] (4507 MainThread) [upload_tools.py-317] [root upload_tools __exit__] Successfully uploaded tailed content for 5 files to s3 at location resources/environments/logs/tail/e-rzpyvmyjqg/i-0132531ca8714bc80/TailLogs-1482920950074.out
+2016-12-28 10:29:10,161 [INFO] (4507 MainThread) [tailLogs.py-92] [root tailLogs main] [Instance: i-0132531ca8714bc80] Successfully finished tailing 5 log(s)
+2016-12-28 10:35:50,028 [INFO] (4937 MainThread) [tailLogs.py-56] [root tailLogs main] Starting tail logs task with batch id 65438998-cce9-11e6-910a-a90d3ad3205f
+2016-12-28 10:35:50,035 [INFO] (4937 MainThread) [upload_tools.py-293] [root upload_tools execute] Successfully tailed file /var/log/httpd/error_log
+2016-12-28 10:35:50,035 [INFO] (4937 MainThread) [upload_tools.py-293] [root upload_tools execute] Successfully tailed file /opt/python/log/supervisord.log
+2016-12-28 10:35:50,037 [INFO] (4937 MainThread) [upload_tools.py-293] [root upload_tools execute] Successfully tailed file /var/log/httpd/access_log
+2016-12-28 10:35:50,040 [INFO] (4937 MainThread) [upload_tools.py-293] [root upload_tools execute] Successfully tailed file /var/log/eb-activity.log
+2016-12-28 10:35:50,043 [INFO] (4937 MainThread) [upload_tools.py-293] [root upload_tools execute] Successfully tailed file /var/log/eb-commandprocessor.log
+2016-12-28 10:35:50,179 [INFO] (4937 MainThread) [s3_tools.py-208] [root s3_tools _process_result] Received status code 200 with text: 
+2016-12-28 10:35:50,180 [INFO] (4937 MainThread) [upload_tools.py-317] [root upload_tools __exit__] Successfully uploaded tailed content for 5 files to s3 at location resources/environments/logs/tail/e-rzpyvmyjqg/i-0132531ca8714bc80/TailLogs-1482921350043.out
+2016-12-28 10:35:50,180 [INFO] (4937 MainThread) [tailLogs.py-92] [root tailLogs main] [Instance: i-0132531ca8714bc80] Successfully finished tailing 5 log(s)
+2016-12-31 06:31:03,803 [INFO] (29115 MainThread) [bundleLogs.py-54] [root bundleLogs main] Starting bundle logs task with batch id b2c2b0bf-cf22-11e6-a472-6b1b59f72ad1

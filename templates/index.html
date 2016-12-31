@@ -8,30 +8,46 @@
 {% block image %}{{url_for('static', filename='global-report-news.png', _external=True)}}{% endblock %}
 
 {% block content %}
-<div class="col-xs-12 col-md-8">
+<div class="col-xs-12">
   <h1>Real News</h1>
   <p class="lead">An experiment to observe the effects of fake news in social media.</p>
   <p>Create a fake news story and watch how many of your followers click on your link.</p>
-  <br>
+</div>
+<div class="col-xs-12 col-md-8">
   <form action={{ url_for('story') }} method="post">
     {{ form.hidden_tag() }}
     <div class="form-group row">
-      <label class="col-xs-6 col-sm-3 col-form-label" for="title">Story Title *</label>
-      {{ form.title(placeholder="Mouth Breathing Causes Heart Attacks", class_="col-xs-12 col-sm-9 form-control", required="true") }}
+      <label class="col-form-label" for="title" aria-describedby="title-help">Story Title *</label>
+      {{ form.title(placeholder="Mouth Breathing Causes Lung Disease", class_="col-xs-12 col-sm-9 form-control", required="true") }}
+      <span class="help-block" id="title-help">5 to 40 characters</span>
     </div>
     <div class="form-group row">
-      <label class="col-xs-6 col-sm-3 col-form-label">Story Description *</label>
-      {{ form.description(placeholder="Up to 200 characters", class_="col-xs-12 col-sm-9 form-control") }}
+      <label class="col-form-label" aria-describedby="description-help">Story Description *</label>
+      {{ form.description(placeholder="Researchers at the ITT Technical Institute...", class_="col-xs-12 col-sm-9 form-control") }}
+      <span class="help-block" id="description-help">5 to 200 characters</span>
     </div>
-    <div class="form-group row">
-      <label class="col-xs-6 col-sm-3 col-form-label">Story Image URL *</label>
-      {{ form.image(placeholder="http://www.example.com/some-image.jpg", type="URL", class_="col-xs-12 col-sm-9 form-control") }}
+    <div class="form-group row" aria-describedby="image-help">
+      <label class="col-form-label">Story Image URL *</label>
+      {{ form.image(placeholder="http://www.example.com/image.jpg", type="URL", class_="col-xs-12 col-sm-9 form-control") }}
+      <span class="help-block" id="image-help">Use a large image (at least 200px by 200px). Must be a valid URL starting with http(s)://...</span>
     </div>
-    <div class="form-group row">
-      <label class="col-xs-6 col-sm-3 col-form-label">Story Author</label>
+    <div class="form-group row" aria-describedby="author-help">
+      <label class="col-form-label">Story Author</label>
       {{ form.author(placeholder="Your name or alias", class_="col-xs-12 col-sm-9 form-control") }}
+      <span class="help-block" id="author-help">This will be used on the "Story" page but not on any social media posts.</span>
     </div>
     <input type=submit value="Submit Your Story" class="btn btn-primary">
   </form>
+</div>
+<div class="col-md-4 center-block">
+  <div class="row">
+    <div class="col-md-offset-1">
+      <p class="h4">Your Facebook post will look like <a href="http://globalreportnews.com/story/106772">this</a>:</p>
+      <a href="http://globalreportnews.com/story/106772">
+        <img class="img-responsive center-block" src="{{url_for('static', filename='example-post.png', _external=True)}}" alt="Example Facebook Post">
+      </a>      
+      <p><b>Use discretion.</b> The intent of this site is to observe how people react to fake news. Please try to avoid harming your friends and acquintances.</p>
+    </div>
+  </div>
 </div>
 {% endblock %}

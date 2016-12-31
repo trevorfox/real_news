@@ -8,8 +8,13 @@
 {% block post_description %}{{ story.description }}{% endblock %}
 {% block image %}{{ story.image }}{% endblock %}
 {% block style %}
+  #top-stories > h2 { margin-top: 0px; }
   #sharing { margin-top: 20px; }
-  #sharing a { color: white; }
+  #sharing a {
+    color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+   }
   .Facebook { background-color: #365899; }
   .Twitter { background-color: #1DA1F2; }
 {% endblock %}
@@ -18,11 +23,15 @@
 
   <div class="container-fluid">
     <div class="row">
-      <div class="col-md-8 col-md-offset-2">
+      <div class="col-md-8">
         <h1>{{ story.title }}</h1>
         <p class="lead">{{ story.description}}</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-8">
         <div class="text-center center-block">
-          <img src="{{ story.image }}" alt="{{story.title}}" class="img-responsive "/>
+          <img src="{{ story.image }}" alt="{{story.title}}" class="img-responsive"/>
         </div>
         <div class="row">
           <div class="col-xs-12 col-sm-3 col-sm-push-9 text-right">
@@ -52,6 +61,24 @@
             <p class="lead">Can you do better? <a href="{{ url_for('index') }}"><b>Create your own!</b></a></p>
           </div>
         </div>
+      </div>
+      <div class="col-md-4" id="top-stories">
+        <h2>Top Stories:</h2>
+        <hr>
+        {% for story in archive.get_top_stories(5) %}
+        <div class="row">
+          <div class="col-xs-2">
+            <div class="text-center center-block">
+              <a href="{{ url_for('story') + '/'+ story.id }}"><img src="{{ story.image }}" alt="{{story.title}}" class="img-responsive "/></a>
+            </div>
+          </div>
+          <div class="col-xs-10">
+            <a href="{{ url_for('story') + '/'+ story.id }}"><div class="h5">{{ story.title }}</div></a>
+            <div class="h6">{{story.votes}} Votes</div>
+          </div>
+        </div>
+        <hr>
+        {% endfor %}
       </div>
     </div>
   </div>
